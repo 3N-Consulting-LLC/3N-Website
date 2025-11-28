@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soorya Rajendran - Business Analyst | 3N Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Inline CSS so this preview actually renders with layout */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111827;
+      background-color: #f9fafb;
+      line-height: 1.6;
+    }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+    .main { flex: 1; }
+
+    .site-header {
+      background: #020617;
+      color: #e5e7eb;
+      border-bottom: 1px solid #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
+    .brand-logo { height: 70px; width: auto; max-width: 250px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .nav-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-links a:hover { background: #111827; }
+    .nav-links a.active { background: #e5e7eb; color: #020617; }
+    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    @media (max-width: 768px) {
+      .nav-inner { flex-wrap: wrap; }
+      .nav-toggle { display: block; margin-left: auto; }
+      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
+      .nav-links.show { display: flex; }
+    }
+
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
+      color: #e5e7eb;
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .hero-body {
+      font-size: 0.98rem;
+      color: #d1d5db;
+      max-width: 48rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section { padding: 3rem 1.5rem; }
+    .section-alt { background: #f3f4f6; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-header { margin-bottom: 2rem; }
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      color: #4b5563;
+      max-width: 48rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+    
+    .content-block {
+      color: #4b5563;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-section {
+      color: #4b5563;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      max-width: 48rem;
+    }
+    
+    .bio-section p {
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 2rem;
+      background: #f3f4f6;
+      border-radius: 1rem;
+      margin-top: 3rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+    }
+    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
+    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
+
+    .site-footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.5rem 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      background: #f9fafb;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-image { max-width: 150px; height: auto; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 1.5rem 2rem; }
+      .section { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="images/3nlogo.png" alt="3N Consulting Logo" style="height: 70px; width: auto; max-width: 250px;">
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Service Lines</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="thought-leadership.html" class="active">Meet Our Team</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">Meet Our Team</div>
+          <h1 class="hero-title">Soorya Rajendran</h1>
+          <div class="hero-subtitle">Business Analyst</div>
+          <p class="hero-body">
+            Bachelor of Science in Computer Science | Data-Driven Research Specialist | Education & Public-Sector Focus
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIOGRAPHY SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">About Soorya</h2>
+        </div>
+        <div class="bio-section">
+          <p>
+            Soorya Rajendran is a Business Analyst at 3N Consulting who specializes in data-driven research, stakeholder engagement, and organizational assessment for education and public-sector initiatives. He brings an analytical and structured approach to helping institutions improve performance, strengthen collaboration, and make evidence-based decisions aligned with their strategic objectives.
+          </p>
+          <p>
+            At 3N, Soorya contributes to statewide projects that enhance operational efficiency, policy development, and institutional planning. His work involves synthesizing large volumes of qualitative and quantitative input into clear insights that guide leadership priorities and improve accountability. He is recognized for his ability to translate complex data into accessible, actionable strategies that inform decision-making across diverse stakeholders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKGROUND SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Background & Expertise</h2>
+        </div>
+        <div class="bio-section">
+          <p>
+            A Maryland native, Soorya holds a Bachelor of Science in Computer Science from Mount St. Mary's University. His work reflects a strong commitment to public impact—applying analytical rigor, clarity, and stakeholder alignment to help strengthen Maryland's education and governance systems.
+          </p>
+          <p>
+            <strong>Core Competencies:</strong> Data analysis and visualization, stakeholder engagement, organizational assessment, policy analysis, research synthesis, and strategic planning for education and public-sector organizations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="cta-section">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Ready to Drive Data-Informed Change?</h3>
+          <p style="margin-bottom: 1.5rem; color: #4b5563;">Let's discuss how strategic analysis and stakeholder engagement can strengthen your organization.</p>
+          <a href="contact.html" class="btn btn-primary">Contact Us →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="flex: 1; min-width: 200px;">
+        <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+        <p style="color: #6b7280;">Results. Delivered.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="thought-leadership.html">Meet Our Team</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+      <p>&copy; 2024 3N Consulting. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
