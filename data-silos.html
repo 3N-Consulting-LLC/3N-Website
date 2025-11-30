@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryland Educator Pipeline Case Study - 3N Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset and base styles */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #111827;
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        .site-header {
+            background: #020617;
+            color: #e5e7eb;
+            border-bottom: 1px solid #1f2937;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+        .brand { display: flex; align-items: center; }
+        .brand img { height: 70px; width: auto; max-width: 250px; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .nav-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .nav-links a:hover { background: #111827; }
+        .nav-links a.active { background: #e5e7eb; color: #020617; }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            color: #e5e7eb;
+            padding: 5rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #1f2937;
+        }
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 750;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .hero-section p {
+            font-size: 1.15rem;
+            color: #9ca3af;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main content */
+        .case-study-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            background: white;
+        }
+
+        .section-group {
+            margin-bottom: 3rem;
+        }
+
+        .section-group h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #020617;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #38bdf8;
+            padding-bottom: 0.75rem;
+        }
+
+        .section-group h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111827;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-group p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-group ul, .section-group ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-group li {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .highlight-box p {
+            color: white;
+            margin: 0;
+        }
+
+        .result-highlight {
+            background: #f0fdf4;
+            border-left: 4px solid #34d399;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .result-highlight p {
+            color: #166534;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Value boxes */
+        .value-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .value-box {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+
+        .value-box h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-box p {
+            color: white;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Framework steps */
+        .framework-steps {
+            background: #f3f4f6;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .framework-step {
+            margin-bottom: 1.5rem;
+        }
+
+        .framework-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #020617;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #38bdf8;
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .framework-step ul {
+            margin-left: 1.5rem;
+        }
+
+        .framework-step li {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 0.4rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            color: #e5e7eb;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid #1f2937;
+            margin-top: 3rem;
+        }
+
+        .cta-section-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: #38bdf8;
+            color: #020617;
+            padding: 0.75rem 1.8rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: gap 0.2s ease;
+        }
+
+        .back-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 2rem 1.5rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+            background: #f9fafb;
+            margin-top: 0;
+        }
+
+        .footer-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .footer-section h4 {
+            color: #111827;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .section-group h2 {
+                font-size: 1.3rem;
+            }
+            .case-study-content {
+                padding: 2rem 1.5rem;
+            }
+            .step-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="nav-inner">
+            <div class="brand">
+                <img src="images/3nlogo.png" alt="3N Consulting Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Service Lines</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="thought-leadership.html">Meet Our Team</a>
+                <a href="toolkit.html">Our Toolkit</a>
+                <a href="disclaimers.html">Disclaimers</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>From Data Silos to Data Strategy</h1>
+        <p>How 3N Consulting Built a Statewide Analytics Platform to Strengthen Maryland's Educator Pipeline.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="case-study-content">
+        <a href="case-studies.html" class="back-link">← Back to Case Studies</a>
+
+        <!-- Situation Section -->
+        <section class="section-group">
+            <h2>Situation &amp; Challenge</h2>
+            <p>The Maryland State Department of Education (MSDE) sought to strengthen the state's educator pipeline amid rising teacher shortages, uneven retention rates, and growing demands for workforce diversity. Each of Maryland's 24 Local Education Agencies (LEAs)—including St. Mary's, Charles, Carroll, Cecil, and Wicomico Counties—collected workforce, certification, and fiscal data independently using disparate systems and manual processes.</p>
+            
+            <p>Without an integrated analytics platform, MSDE lacked the visibility needed to monitor staffing trends, assess recruitment strategies, or make proactive policy decisions under the Blueprint for Maryland's Future. Key challenges included:</p>
+            
+            <ul>
+                <li><strong>Data fragmentation</strong> across HR, certification, and fiscal systems</li>
+                <li><strong>Manual, time-intensive reporting</strong> limiting responsiveness</li>
+                <li><strong>No standardized metrics</strong> for teacher retention, mobility, and diversity</li>
+                <li><strong>Limited predictive capabilities</strong> to forecast shortage areas and support equitable resource planning</li>
+            </ul>
+
+            <p>MSDE engaged 3N Consulting as its lead business and analytics partner to design and implement a comprehensive data and performance dashboard—transforming disconnected data into actionable insights for state and district leaders.</p>
+        </section>
+
+        <!-- 3N Approach Section -->
+        <section class="section-group">
+            <h2>3N Approach &amp; Solution — Powered by AAA (Assess–Align–Accelerate)</h2>
+
+            <div class="framework-steps">
+                <div class="framework-step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        Assess — Data-Driven Baseline &amp; Diagnostic
+                    </div>
+                    <ul>
+                        <li>Convened cross-functional sessions with MSDE's Human Resources, Budget &amp; Fiscal Services, and Educator Certification teams to map current workflows and data flows.</li>
+                        <li>Led end-to-end assessment of data sources and architecture across HRIS, personnel, and certification systems; defined quality rules and validation checks.</li>
+                        <li>Stood up automated ETL pipelines to ingest, clean, and transform data; profiled historical trends in retention, mobility, and diversity.</li>
+                    </ul>
+                </div>
+
+                <div class="framework-step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        Align — Standards, Governance &amp; Design
+                    </div>
+                    <ul>
+                        <li>Established standardized statewide metrics for retention and diversity to ensure apples-to-apples comparisons across all 24 LEAs.</li>
+                        <li>Designed the unified Educator Workforce Dashboard architecture, aligning business requirements with technical components (data model, permissions, refresh cadence).</li>
+                        <li>Introduced a pragmatic data governance model with role definitions, change control, and versioning to coordinate work across departments.</li>
+                    </ul>
+                </div>
+
+                <div class="framework-step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        Accelerate — Implementation, Training &amp; Continuous Improvement
+                    </div>
+                    <ul>
+                        <li>Built interactive, real-time dashboards to visualize educator demographics, certification trends, attrition, and recruitment effectiveness.</li>
+                        <li>Implemented predictive models to anticipate shortage areas based on demographic, geographic, and certification signals.</li>
+                        <li>Automated previously manual reporting workflows to reduce cycle time and enable self-service analytics.</li>
+                        <li>Delivered hands-on training, documentation, and a sustainability plan (refresh protocols, access, and support model) to ensure durable adoption and ongoing improvement.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section-group">
+            <h2>Results Delivered</h2>
+            <p>The Maryland Educator Workforce Dashboard now operates as a statewide benchmark and decision-support tool, giving MSDE and all 24 LEAs a unified view of recruitment, retention, and diversity. Through the AAA delivery rhythm, 3N helped MSDE shift from reactive reporting to strategic, data-driven workforce management.</p>
+
+            <h3>Key Outcomes</h3>
+            
+            <div class="value-boxes">
+                <div class="value-box">
+                    <h4>Cost Optimization</h4>
+                    <p>Projected annual savings through optimized substitute and contract teacher utilization</p>
+                </div>
+                <div class="value-box">
+                    <h4>Efficiency Gains</h4>
+                    <p>Reduction in manual reporting time via automated data pipelines and streamlined workflows</p>
+                </div>
+                <div class="value-box">
+                    <h4>Cross-Department Alignment</h4>
+                    <p>Realigned internal HR and data functions, improving coordination and responsiveness to district needs</p>
+                </div>
+                <div class="value-box">
+                    <h4>Standardized Metrics</h4>
+                    <p>Statewide, standardized metrics for retention and diversity enabling consistent tracking and equitable analysis</p>
+                </div>
+                <div class="value-box">
+                    <h4>Predictive Insights</h4>
+                    <p>Predictive modeling supporting proactive staffing decisions aligned with the Blueprint for Maryland's Future</p>
+                </div>
+                <div class="value-box">
+                    <h4>Sustainable Platform</h4>
+                    <p>Governance and practices to sustain the platform, setting a new standard for state education agencies</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Platform Impact:</strong> The engagement delivered not only a robust analytics platform but also the governance and practices to sustain it—setting a new standard for how state education agencies use data to shape workforce outcomes.</p>
+            </div>
+        </section>
+
+        <!-- Closing Section -->
+        <section class="section-group">
+            <h2>Why This Matters</h2>
+            <p>This project reflects 3N Consulting's commitment to helping public institutions turn insight into impact. Through the Assess–Align–Accelerate model, we deliver solutions that align people, process, data, and technology—enabling measurable performance, efficiency, and long-term value.</p>
+        </section>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-section-inner">
+            <h2>Ready to Transform Your Organization?</h2>
+            <p>Let's discuss how we can help you achieve measurable results. Contact us today to explore a tailored consulting engagement.</p>
+            <a href="contact.html" class="cta-button">Schedule Your Consultation →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <h4>About 3N Consulting</h4>
+                <p><strong>Results. Delivered.</strong></p>
+                <p style="font-size: 0.85rem;">Execution-focused consulting measured on outcomes.</p>
+            </div>
+            <div>
+                <h4>Contact Information</h4>
+                <p>📞 (301) 723-7057</p>
+                <p>📍 6710A Rockledge Drive<br>Bethesda, MD 20817</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="disclaimers.html">Disclaimers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

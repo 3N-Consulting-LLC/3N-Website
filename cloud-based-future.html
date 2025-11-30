@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud-Based Future Case Study: Treasury Technology Transformation | 3N Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Inline CSS so this preview actually renders with layout */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111827;
+      background-color: #f9fafb;
+      line-height: 1.6;
+    }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+    .main { flex: 1; }
+
+    .site-header {
+      background: #020617;
+      color: #e5e7eb;
+      border-bottom: 1px solid #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
+    .brand-logo { height: 70px; width: auto; max-width: 250px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .nav-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-links a:hover { background: #111827; }
+    .nav-links a.active { background: #e5e7eb; color: #020617; }
+    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    @media (max-width: 768px) {
+      .nav-inner { flex-wrap: wrap; }
+      .nav-toggle { display: block; margin-left: auto; }
+      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
+      .nav-links.show { display: flex; }
+    }
+
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
+      color: #e5e7eb;
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-highlight { color: #38bdf8; }
+    .hero-body {
+      font-size: 0.98rem;
+      color: #d1d5db;
+      max-width: 48rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section { padding: 3rem 1.5rem; }
+    .section-alt { background: #f3f4f6; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-header { margin-bottom: 2rem; }
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      color: #4b5563;
+      max-width: 48rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-block {
+      color: #4b5563;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .content-block h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .content-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .content-block li {
+      padding: 0.5rem 0 0.5rem 1.8rem;
+      position: relative;
+    }
+
+    .content-block li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+
+    .data-table thead {
+      background: #f3f4f6;
+    }
+
+    .data-table th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 700;
+      color: #111827;
+      font-size: 0.9rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .data-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .data-table tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    .value-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #38bdf8;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .value-box h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #020617;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-box p {
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    .results-highlight {
+      background: #f0fdf4;
+      border-left: 4px solid #34d399;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .results-highlight h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #065f46;
+      margin-bottom: 0.5rem;
+    }
+
+    .results-highlight p {
+      color: #166534;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 2rem;
+      background: #f3f4f6;
+      border-radius: 1rem;
+      margin-top: 3rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+    }
+    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
+    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
+
+    .site-footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.5rem 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      background: #f9fafb;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 1.5rem 2rem; }
+      .section { padding: 2rem 1.5rem; }
+      .table-wrapper { margin: 1.5rem -1.5rem; }
+      .data-table { border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="images/3nlogo.png" alt="3N Consulting Logo" style="height: 70px; width: auto; max-width: 250px;">
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Service Lines</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="thought-leadership.html">Meet Our Team</a>
+        <a href="toolkit.html">Our Toolkit</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">Case Study: Cloud-Based Technology Transformation</div>
+          <h1 class="hero-title">From Reactive to <span class="hero-highlight">Resilient</span></h1>
+          <p class="hero-body">
+            How 3N Consulting Transformed a State Treasury's IT Operations Through Cloud Readiness Assessment and Governance Redesign
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITUATION SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">The Situation</h2>
+        </div>
+        <div class="content-block">
+          <p>
+            A major state treasury agency faced growing operational and technology challenges following its large-scale migration to Microsoft Dynamics 365 (D365) and Azure Cloud. While the transformation modernized financial systems, it also exposed structural, governance, and readiness gaps within the IT organization.
+          </p>
+          <p style="margin-top: 1.5rem; font-weight: 600; color: #020617;">Key challenges included:</p>
+          <ul>
+            <li>Fragmented ownership of D365 modules and absence of product governance</li>
+            <li>Limited capacity to support post-implementation operations and maintenance</li>
+            <li>An overstretched IT team with single points of failure</li>
+            <li>Inconsistent change management and unclear accountability for enhancements</li>
+            <li>Lack of defined performance metrics, workforce planning, and training strategy</li>
+          </ul>
+          <p style="margin-top: 1.5rem;">
+            With several critical system transitions approaching—covering accounting, insurance, banking, and agency portals—the treasury required a comprehensive organizational readiness assessment to stabilize operations, define sustainable structures, and prepare for a fully cloud-based future.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3N APPROACH SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">3N Approach and Solution — Guided by O-RAM™</h2>
+        </div>
+        <div class="content-block">
+          <p>
+            3N Consulting applied its proprietary Organizational Readiness Assessment Methodology (O-RAM) to evaluate leadership alignment, governance maturity, technical capability, and workforce readiness. Through deep analysis and collaboration, 3N conducted:
+          </p>
+          <ul>
+            <li>Stakeholder interviews and process mapping across treasury divisions</li>
+            <li>Organizational maturity benchmarking against peer treasuries in Virginia, Delaware, Pennsylvania, Wisconsin, and Colorado</li>
+            <li>Role and skill gap assessment for post-implementation support of D365, AS400, and Azure environments</li>
+            <li>Governance redesign introducing a Change Control Board (CCB), Product Ownership model, and Technical Scrum Master roles</li>
+            <li>Future-state operating model development integrating DevOps, agile product management, and cross-functional accountability</li>
+            <li>Training and change-management roadmap covering cybersecurity, cloud administration, and business systems adoption for both IT and end-users</li>
+          </ul>
+          <p style="margin-top: 1.5rem;">
+            The O-RAM process identified readiness levels across five dimensions—leadership, governance, people, technology, and process—and generated a prioritized transformation roadmap from 2024 to 2027.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Results Delivered</h2>
+        </div>
+
+        <div class="content-block">
+          <p>
+            Through disciplined execution and strategic partnership, 3N Consulting guided the treasury from reactive maintenance toward a resilient, metrics-driven IT organization.
+          </p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Clear Ownership and Governance</h4>
+          <p>Established the Change Control Board chaired by the Deputy Treasurer, defining decision rights, prioritization, and risk management for all system enhancements.</p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Defined Operating Model</h4>
+          <p>Created an integrated Product-Support and DevOps structure combining Technical Scrum Masters, Product Owners, and Analysts aligned to each functional area (Accounting, Insurance, Banking, and Agency Portals).</p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Workforce Planning</h4>
+          <p>Delivered a detailed multi-year staffing roadmap identifying phased resource onboarding, training, and cross-training to eliminate single-point dependencies.</p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Training and Capability Building</h4>
+          <p>Introduced a structured curriculum covering Microsoft Azure, Dynamics 365, cybersecurity, and collaboration tools, ensuring sustainable in-house expertise.</p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Service Management Modernization</h4>
+          <p>Recommended expansion of ITSM capabilities using Microsoft Dynamics 365 Service Management and Azure-based automation, improving incident response and end-user satisfaction.</p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Center of Excellence (COE)</h4>
+          <p>Designed a Technology COE to preserve the state's IT investment, foster innovation, and ensure alignment with enterprise goals.</p>
+        </div>
+
+        <div class="results-highlight">
+          <h4>Quantifiable Performance Improvement</h4>
+          <p>Defined KPIs such as application availability, average resolution time, and customer satisfaction—enabling leadership to track efficiency, ROI, and citizen impact in real time.</p>
+        </div>
+
+        <div class="content-block" style="margin-top: 2rem;">
+          <p>
+            Collectively, these initiatives positioned the Treasury's IT division to manage a $20-million-plus technology portfolio with transparency, agility, and measurable performance. The agency reported increased confidence from executive leadership, improved inter-departmental collaboration, and higher workforce morale as the IT organization transitioned from "keeping the lights on" to driving digital transformation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Closing Note</h2>
+        </div>
+
+        <div class="content-block">
+          <p>
+            3N Consulting's O-RAM™ framework ensures readiness, governance, and capability development are built into every transformation. By aligning leadership, workforce, and technology, 3N helps commercial, government, and higher-education clients achieve sustainable, high-performing operations—on time and with lasting results.
+          </p>
+        </div>
+
+        <div class="cta-section">
+          <p style="color: #111827; margin-bottom: 1rem;">Ready to transform your organization's cloud readiness and IT governance?</p>
+          <a href="contact.html" class="btn btn-primary">Discuss your cloud transformation →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h4>About 3N Consulting</h4>
+        <p><strong>Results. Delivered.</strong></p>
+        <p style="font-size: 0.85rem;">Execution-focused consulting measured on outcomes.</p>
+      </div>
+      <div>
+        <h4>Contact Information</h4>
+        <p>📞 (301) 723-7057</p>
+        <p>📍 6710A Rockledge Drive<br>Bethesda, MD 20817</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
