@@ -126,28 +126,55 @@
       grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 1.5rem;
     }
+
+    /* Symmetric 5-card layout */
+    .grid-5-symmetrical {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .grid-5-symmetrical .card {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+    .grid-5-symmetrical .card:nth-child(5) {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+
     @media (max-width: 900px) {
       .grid-2 { grid-template-columns: minmax(0,1fr); }
       .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .grid-5-symmetrical .card {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
     }
     @media (max-width: 640px) {
       .grid-3 { grid-template-columns: minmax(0,1fr); }
+      .grid-5-symmetrical .card {
+        flex: 0 1 100%;
+      }
     }
 
     .card {
       border-radius: 1rem;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      padding: 1.5rem;
+      border: 1px solid #1e3a8a;
+      background: #001f3f;
+      padding: 1.1rem 1.1rem 1.25rem;
       box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
     .card-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #111827;
+      margin-bottom: 0;
+      color: #ffffff;
     }
-    .card-body { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
+    .card-body { font-size: 0.9rem; color: #e5e7eb; line-height: 1.7; }
 
     .list-section {
       margin-top: 1.5rem;
@@ -306,7 +333,7 @@
           Our solution includes:
         </p>
 
-        <div class="grid-3" style="margin-top: 2rem;">
+        <div class="grid-5-symmetrical">
           <article class="card">
             <h3 class="card-title">Diagnostic Assessment</h3>
             <p class="card-body">
