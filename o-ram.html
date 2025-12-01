@@ -156,30 +156,44 @@
     }
 
     .dimensions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
       margin: 2rem 0;
     }
 
     .dimension-box {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
+      background: #001f3f;
+      border: 1px solid #1e3a8a;
       border-radius: 1rem;
       padding: 1.5rem;
       box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      flex: 0 1 calc(33.333% - 1rem);
+      max-width: 300px;
+      color: #ffffff;
     }
 
     .dimension-box h4 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: #020617;
+      color: #ffffff;
       margin-bottom: 0.5rem;
     }
 
     .dimension-box p {
       font-size: 0.9rem;
-      color: #6b7280;
+      color: #e5e7eb;
+    }
+
+    .dimensions-grid .dimension-box:nth-child(5) {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+
+    .dimensions-grid .dimension-box:nth-child(6) {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
     }
 
     .value-box {
@@ -249,10 +263,30 @@
     }
     .footer-links a:hover { text-decoration: underline; }
 
+    @media (max-width: 900px) {
+      .dimension-box {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
+      .dimensions-grid .dimension-box:nth-child(5) {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
+      .dimensions-grid .dimension-box:nth-child(6) {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
+    }
+
     @media (max-width: 768px) {
       .hero { padding: 3rem 1.5rem 2rem; }
       .section { padding: 2rem 1.5rem; }
-      .dimensions-grid { grid-template-columns: minmax(0, 1fr); }
+      .dimension-box {
+        flex: 0 1 100%;
+      }
+      .dimensions-grid .dimension-box:nth-child(5) {
+        flex: 0 1 100%;
+      }
+      .dimensions-grid .dimension-box:nth-child(6) {
+        flex: 0 1 100%;
+      }
     }
   </style>
 </head>
@@ -262,7 +296,7 @@
     <div class="nav-inner">
       <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
         <div>
-          <img src="images/logos/3N Consulting.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
+          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
         </div>
         <div style="display: flex; flex-direction: column; line-height: 1.1;">
           <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
@@ -412,6 +446,15 @@
           <p>
             Deployed across sectors — from higher education to public agencies and private enterprises — O-RAM has become a cornerstone of 3N Consulting's performance improvement work. It empowers decision-makers with clarity, structure, and confidence to execute transformation that endures.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div style="margin: 2rem 0;">
+          <img src="images/orampic.png" alt="O-RAM Framework Overview" style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);">
         </div>
       </div>
     </section>

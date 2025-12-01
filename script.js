@@ -63,4 +63,14 @@ document.querySelectorAll('.capability-item, .solution-card, .value-card').forEa
     observer.observe(el);
 });
 
+// Make entire case study cards clickable
+document.querySelectorAll('.case-study-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const link = this.querySelector('.case-study-link');
+        if (link) {
+            window.location.href = link.getAttribute('href');
+        }
+    });
+});
+
 console.log('3N Consulting website initialized successfully');
