@@ -141,20 +141,47 @@
       .grid-4 { grid-template-columns: minmax(0,1fr); }
     }
 
+    /* 5-item symmetrical grid */
+    .grid-5-symmetrical {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .grid-5-symmetrical .card {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+    .grid-5-symmetrical .card:nth-child(5) {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+    @media (max-width: 900px) {
+      .grid-5-symmetrical .card {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
+    }
+    @media (max-width: 640px) {
+      .grid-5-symmetrical .card {
+        flex: 0 1 100%;
+      }
+    }
+
     .card {
       border-radius: 1rem;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      padding: 1.5rem;
+      border: 1px solid #1e3a8a;
+      background: #001f3f;
+      padding: 1.1rem 1.1rem 1.25rem;
       box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      color: #ffffff;
     }
     .card-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #111827;
+      margin-bottom: 0.4rem;
+      color: #ffffff;
     }
-    .card-body { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
+    .card-body { font-size: 0.9rem; color: #e5e7eb; line-height: 1.7; }
 
     .list-section {
       margin-top: 1.5rem;
@@ -365,7 +392,7 @@
           Organizations using 3N's CIO Services Solution achieve measurable results, including:
         </p>
 
-        <div class="grid-2" style="margin-top: 2rem;">
+        <div class="grid-5-symmetrical" style="margin-top: 2rem;">
           <article class="card">
             <h3 class="card-title">10–30% Reduction in IT Spend</h3>
             <p class="card-body">
@@ -391,6 +418,13 @@
             <h3 class="card-title">Greater Strategic Alignment</h3>
             <p class="card-body">
               Between IT operations and business strategy.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Enhanced Governance & Transparency</h3>
+            <p class="card-body">
+              Enhanced governance, transparency, and performance measurement.
             </p>
           </article>
         </div>
