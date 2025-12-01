@@ -181,21 +181,23 @@
 
     .card {
       border-radius: 1rem;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
+      border: 1px solid #1e3a8a;
+      background: #001f3f;
       padding: 1.1rem 1.1rem 1.25rem;
       box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      color: #ffffff;
     }
     .card-title {
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
+      color: #ffffff;
     }
-    .card-body { font-size: 0.9rem; color: #4b5563; }
+    .card-body { font-size: 0.9rem; color: #e5e7eb; }
 
-    .testimonial-quote { font-style: italic; margin-bottom: 0.4rem; }
-    .testimonial-client { font-weight: 600; margin-bottom: 0.2rem; }
-    .testimonial-ratings { font-size: 0.8rem; color: #4b5563; line-height: 1.4; }
+    .testimonial-quote { font-style: italic; margin-bottom: 0.4rem; color: #e5e7eb; }
+    .testimonial-client { font-weight: 600; margin-bottom: 0.2rem; color: #ffffff; }
+    .testimonial-ratings { font-size: 0.8rem; color: #d1d5db; line-height: 1.4; }
 
     .btn {
       display: inline-flex;
@@ -242,6 +244,72 @@
     }
     .footer-links a:hover { text-decoration: underline; }
     .footer-image { max-width: 150px; height: auto; }
+
+    /* Carousel/Testimonial Flipper Styles */
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .carousel-button {
+      background: #38bdf8;
+      color: #020617;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.08s ease;
+    }
+    .carousel-button:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+    .carousel-button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .carousel-card {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .carousel-counter {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 0.5rem;
+    }
+
+    /* 5-item symmetrical grid */
+    .grid-5-symmetrical {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .grid-5-symmetrical .card {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+    .grid-5-symmetrical .card:nth-child(5) {
+      flex: 0 1 calc(50% - 0.75rem);
+      max-width: 300px;
+    }
+    @media (max-width: 900px) {
+      .grid-5-symmetrical .card {
+        flex: 0 1 calc(50% - 0.75rem);
+      }
+    }
+    @media (max-width: 640px) {
+      .grid-5-symmetrical .card {
+        flex: 0 1 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -335,21 +403,21 @@
           <article class="card">
             <h3 class="card-title">Vested in client success</h3>
             <p class="card-body">
-              <strong>Vested in Client Success:</strong> Outcome-based partnerships and long-term relationships.
+              Outcome-based partnerships and long-term relationships.
             </p>
           </article>
 
           <article class="card">
             <h3 class="card-title">Ownership</h3>
             <p class="card-body">
-              <strong>Ownership:</strong> We don't "staff"—we own results and keep our commitments.
+              We don't "staff"—we own results and keep our commitments.
             </p>
           </article>
 
           <article class="card">
             <h3 class="card-title">Cost structure</h3>
             <p class="card-body">
-              <strong>Cost Structure:</strong> Frugal by design—invest in talent, minimize overhead, pass savings on.
+              Frugal by design—invest in talent, minimize overhead, pass savings on.
             </p>
           </article>
         </div>
@@ -367,50 +435,26 @@
           Our performance is continuously evaluated. Below are excerpts from formal client satisfaction surveys.
         </p>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="testimonial-client">State Education Agency ~ Project Executive</div>
-            <p class="testimonial-quote">
-              "3N delivered tremendous value"
-            </p>
-            <div class="testimonial-ratings">
-              <strong>Client Satisfaction Survey Rating:</strong><br>
-              Quality of Work: "Exceptional"<br>
-              Management Team: "Exceptional"<br>
-              Cost Control: "Exceptional"<br>
-              Schedule Management: "Very Good"
-            </div>
-          </article>
+        <div id="testimonial-carousel" class="carousel-card card" style="max-width: 600px; margin: 2rem auto;">
+          <div class="testimonial-client">State Education Agency ~ Project Executive</div>
+          <p class="testimonial-quote">
+            "3N delivered tremendous value"
+          </p>
+          <div class="testimonial-ratings">
+            <strong>Client Satisfaction Survey Rating:</strong><br>
+            Quality of Work: "Exceptional"<br>
+            Management Team: "Exceptional"<br>
+            Cost Control: "Exceptional"<br>
+            Schedule Management: "Very Good"
+          </div>
+        </div>
 
-          <article class="card">
-            <div class="testimonial-client">State Treasurer's Office ~ Deputy State Treasurer</div>
-            <p class="testimonial-quote">
-              "Their communication was fantastic"
-            </p>
-            <div class="testimonial-ratings">
-              <strong>Client Satisfaction Survey Rating:</strong><br>
-              Quality of Work: "Very Good"<br>
-              Management Team: "Exceptional"<br>
-              Cost Control: "Exceptional"<br>
-              Schedule Management: "Exceptional"
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="testimonial-client">
-              CEO, Cosmetics, Health and Beauty Products Manufacturing firm
-            </div>
-            <p class="testimonial-quote">
-              "We would highly recommend them to others"
-            </p>
-            <div class="testimonial-ratings">
-              <strong>Client Satisfaction Survey Rating:</strong><br>
-              Quality of Work: "Exceptional"<br>
-              Management Team: "Very Good"<br>
-              Cost Control: "Exceptional"<br>
-              Schedule Management: "Exceptional"
-            </div>
-          </article>
+        <div class="carousel-container">
+          <button class="carousel-button" id="prev-testimonial">← Previous</button>
+          <div class="carousel-counter">
+            <span id="testimonial-counter">1</span> / <span id="testimonial-total">3</span>
+          </div>
+          <button class="carousel-button" id="next-testimonial">Next →</button>
         </div>
       </div>
     </section>
@@ -427,7 +471,7 @@
           </p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-5-symmetrical">
           <article class="card">
             <a href="organizational-redesign.html" style="text-decoration: none; color: inherit;">
               <div class="card-title">Organizational Redesign</div>
@@ -545,6 +589,7 @@
 </div>
 
 <script>
+  // Navigation toggle
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if (toggle && links) {
@@ -552,6 +597,62 @@
       links.classList.toggle('show');
     });
   }
+
+  // Testimonial carousel
+  const testimonials = [
+    {
+      client: "State Education Agency ~ Project Executive",
+      quote: "3N delivered tremendous value",
+      ratings: 'Quality of Work: "Exceptional"<br>Management Team: "Exceptional"<br>Cost Control: "Exceptional"<br>Schedule Management: "Very Good"'
+    },
+    {
+      client: "State Treasurer's Office ~ Deputy State Treasurer",
+      quote: "Their communication was fantastic",
+      ratings: 'Quality of Work: "Very Good"<br>Management Team: "Exceptional"<br>Cost Control: "Exceptional"<br>Schedule Management: "Exceptional"'
+    },
+    {
+      client: "CEO, Cosmetics, Health and Beauty Products Manufacturing firm",
+      quote: "We would highly recommend them to others",
+      ratings: 'Quality of Work: "Exceptional"<br>Management Team: "Very Good"<br>Cost Control: "Exceptional"<br>Schedule Management: "Exceptional"'
+    }
+  ];
+
+  let currentTestimonial = 0;
+
+  function updateTestimonial() {
+    const carousel = document.getElementById('testimonial-carousel');
+    const testimonial = testimonials[currentTestimonial];
+    carousel.innerHTML = `
+      <div class="testimonial-client">${testimonial.client}</div>
+      <p class="testimonial-quote">"${testimonial.quote}"</p>
+      <div class="testimonial-ratings">
+        <strong>Client Satisfaction Survey Rating:</strong><br>
+        ${testimonial.ratings}
+      </div>
+    `;
+    document.getElementById('testimonial-counter').textContent = currentTestimonial + 1;
+    
+    // Update button states
+    document.getElementById('prev-testimonial').disabled = currentTestimonial === 0;
+    document.getElementById('next-testimonial').disabled = currentTestimonial === testimonials.length - 1;
+  }
+
+  document.getElementById('prev-testimonial').addEventListener('click', () => {
+    if (currentTestimonial > 0) {
+      currentTestimonial--;
+      updateTestimonial();
+    }
+  });
+
+  document.getElementById('next-testimonial').addEventListener('click', () => {
+    if (currentTestimonial < testimonials.length - 1) {
+      currentTestimonial++;
+      updateTestimonial();
+    }
+  });
+
+  // Initialize
+  updateTestimonial();
 </script>
 </body>
 </html>
