@@ -125,6 +125,11 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
+      align-items: stretch;
+    }
+
+    .grid-2 > a {
+      display: flex;
     }
 
     .toolkit-card {
@@ -136,6 +141,9 @@
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .toolkit-card::before {
@@ -180,6 +188,7 @@
     .toolkit-highlights {
       position: relative;
       z-index: 1;
+      flex-grow: 1;
     }
 
     .toolkit-highlights ul {
