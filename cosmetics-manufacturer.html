@@ -1,473 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmetics Manufacturer Case Study - 3N Consulting</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Reset and base styles */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            color: #111827;
-            background-color: #f9fafb;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <title>Cosmetics Manufacturer Case Study: Operational Restructuring | 3N Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Inline CSS so this preview actually renders with layout */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111827;
+      background-color: #f9fafb;
+      line-height: 1.6;
+    }
+    img, video { max-width: 100%; height: auto; display: block; }
+    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+    .main { flex: 1; }
 
-        /* Header styles */
-        .site-header {
-            background: #020617;
-            color: #e5e7eb;
-            border-bottom: 1px solid #1f2937;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        .nav-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-        }
-        .brand { display: flex; align-items: center; }
-        .brand img { height: 70px; width: auto; max-width: 250px; }
-        .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .nav-links a {
-            color: #e5e7eb;
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 0.35rem 0.7rem;
-            border-radius: 999px;
-            transition: background 0.15s ease, color 0.15s ease;
-        }
-        .nav-links a:hover { background: #111827; }
-        .nav-links a.active { background: #e5e7eb; color: #020617; }
+    .site-header {
+      background: #020617;
+      color: #e5e7eb;
+      border-bottom: 1px solid #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
+    .brand-logo { height: 70px; width: auto; max-width: 250px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .nav-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-links a:hover { background: #111827; }
+    .nav-links a.active { background: #e5e7eb; color: #020617; }
+    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-            color: #e5e7eb;
-            padding: 5rem 1.5rem;
-            text-align: center;
-            border-bottom: 1px solid #1f2937;
-        }
-        .hero-section h1 {
-            font-size: 2.8rem;
-            font-weight: 750;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-        .hero-section p {
-            font-size: 1.15rem;
-            color: #9ca3af;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    @media (max-width: 768px) {
+      .nav-inner { flex-wrap: wrap; }
+      .nav-toggle { display: block; margin-left: auto; }
+      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
+      .nav-links.show { display: flex; }
+    }
 
-        /* Main content */
-        .case-study-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-            background: white;
-        }
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
+      color: #e5e7eb;
+    }
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero-highlight { color: #38bdf8; }
+    .hero-body {
+      font-size: 0.98rem;
+      color: #d1d5db;
+      max-width: 48rem;
+      margin-bottom: 1.5rem;
+    }
 
-        .section-group {
-            margin-bottom: 3rem;
-        }
+    .section { padding: 3rem 1.5rem; }
+    .section-alt { background: #f3f4f6; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-header { margin-bottom: 2rem; }
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      color: #4b5563;
+      max-width: 48rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
 
-        .section-group h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #020617;
-            margin-bottom: 1.2rem;
-            letter-spacing: -0.01em;
-            border-bottom: 2px solid #38bdf8;
-            padding-bottom: 0.75rem;
-        }
+    .content-block {
+      color: #4b5563;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
 
-        .section-group h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #111827;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
+    .content-block h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
 
-        .section-group p {
-            font-size: 0.95rem;
-            color: #4b5563;
-            line-height: 1.7;
-            margin-bottom: 0.75rem;
-        }
+    .content-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
 
-        .section-group ul, .section-group ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
+    .content-block li {
+      padding: 0.5rem 0 0.5rem 1.8rem;
+      position: relative;
+    }
 
-        .section-group li {
-            font-size: 0.95rem;
-            color: #4b5563;
-            line-height: 1.7;
-            margin-bottom: 0.5rem;
-        }
+    .content-block li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+      font-weight: 600;
+    }
 
-        /* Highlight boxes */
-        .highlight-box {
-            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #0ea5e9;
-        }
+    .value-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #38bdf8;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
 
-        .highlight-box p {
-            color: white;
-            margin: 0;
-        }
+    .value-box h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #020617;
+      margin-bottom: 0.5rem;
+    }
 
-        .result-highlight {
-            background: #f0fdf4;
-            border-left: 4px solid #34d399;
-            padding: 1rem 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0.5rem;
-        }
+    .value-box p {
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
 
-        .result-highlight p {
-            color: #166534;
-            margin: 0;
-            font-weight: 500;
-        }
+    .value-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
 
-        /* Value boxes */
-        .value-boxes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
+    .value-boxes .value-box {
+      background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      border: none;
+      margin: 0;
+    }
 
-        .value-box {
-            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            text-align: center;
-        }
+    .value-boxes .value-box h4 {
+      color: white;
+    }
 
-        .value-box h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
+    .value-boxes .value-box p {
+      color: white;
+    }
 
-        .value-box p {
-            color: white;
-            font-size: 0.9rem;
-            margin: 0;
-        }
+    .results-highlight {
+      background: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
-            color: #e5e7eb;
-            padding: 3rem 1.5rem;
-            text-align: center;
-            border-top: 1px solid #1f2937;
-            margin-top: 3rem;
-        }
+    .results-highlight h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0c4a6e;
+      margin-bottom: 0.5rem;
+    }
 
-        .cta-section-inner {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .results-highlight p {
+      color: #164e63;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
-        .cta-section h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0ea5e9;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
 
-        .cta-section p {
-            font-size: 1rem;
-            color: #d1d5db;
-            margin-bottom: 1.5rem;
-        }
+    .highlight-box p {
+      color: #164e63;
+      margin: 0;
+    }
 
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: #38bdf8;
-            color: #020617;
-            padding: 0.75rem 1.8rem;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
-        }
+    .cta-section {
+      text-align: center;
+      padding: 2rem;
+      background: #f3f4f6;
+      border-radius: 1rem;
+      margin-top: 3rem;
+    }
 
-        .cta-button:hover {
-            background: #0ea5e9;
-            transform: translateY(-2px);
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+    }
+    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
+    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
 
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            transition: gap 0.2s ease;
-        }
+    .site-footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.5rem 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      background: #f9fafb;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+    .footer-links a:hover { text-decoration: underline; }
 
-        .back-link:hover {
-            gap: 0.75rem;
-        }
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 1.5rem 2rem; }
+      .section { padding: 2rem 1.5rem; }
+      .value-boxes { grid-template-columns: repeat(2, 1fr); }
+    }
 
-        /* Footer */
-        .site-footer {
-            border-top: 1px solid #e5e7eb;
-            padding: 2rem 1.5rem;
-            font-size: 0.8rem;
-            color: #6b7280;
-            background: #f9fafb;
-            margin-top: 0;
-        }
-
-        .footer-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-        }
-
-        .footer-section h4 {
-            color: #111827;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 0.9rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #6b7280;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover { text-decoration: underline; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            .hero-section p {
-                font-size: 1rem;
-            }
-            .section-group h2 {
-                font-size: 1.3rem;
-            }
-            .case-study-content {
-                padding: 2rem 1.5rem;
-            }
-        }
-    </style>
+    @media (max-width: 500px) {
+      .value-boxes { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="site-header">
-        <div class="nav-inner">
-            <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
-                <div>
-                    <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
-                </div>
-                <div style="display: flex; flex-direction: column; line-height: 1.1;">
-                    <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
-                    <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
-                </div>
-            </div>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Service Lines</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="thought-leadership.html">Meet Our Team</a>
-                <a href="toolkit.html">Our Toolkit</a>
-                <a href="disclaimers.html">Disclaimers</a>
-            </nav>
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+        <div>
+          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
         </div>
-    </header>
+        <div style="display: flex; flex-direction: column; line-height: 1.1;">
+          <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
+          <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Service Lines</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="thought-leadership.html">Meet Our Team</a>
+        <a href="toolkit.html">Our Toolkit</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <h1>From Chaos to Coordination</h1>
-        <p>How 3N Consulting Restructured Operations, Leadership, and IT to Unlock Scalable Growth for a Fast-Growing Manufacturer.</p>
+  <main class="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">Case Study: Organizational Readiness Assessment Methodology</div>
+          <h1 class="hero-title">From Chaos to <span class="hero-highlight">Coordination</span></h1>
+          <p class="hero-body">
+            How 3N Consulting Restructured Operations, Leadership, and IT to Unlock Scalable Growth for a Fast-Growing Manufacturer
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="case-study-content">
-        <a href="case-studies.html" class="back-link">← Back to Case Studies</a>
-
-        <!-- Situation Section -->
-        <section class="section-group">
-            <h2>Situation &amp; Challenge</h2>
-            <p>A global cosmetics manufacturer experiencing rapid growth faced significant operational strain across its core business functions. The company's CEO and Board had recognized that while demand was rising sharply, its organizational model—particularly within operations, HR, finance and procurement—was not equipped to scale effectively.</p>
-            
-            <h3>Symptoms of Misalignment</h3>
-            <ul>
-                <li><strong>Overlapping roles and unclear accountability</strong> under the Chief Operating Officer (COO).</li>
-                <li><strong>Fragmented reporting lines</strong> and communication breakdowns between executive leadership and production teams.</li>
-                <li><strong>Reliance on temporary contractor staff</strong> to meet seasonal demand spikes, creating inconsistent quality and rising costs.</li>
-                <li><strong>Multiple, disconnected systems</strong> for financial, production, and customer data—leading to inefficiency and delayed decision-making.</li>
-                <li><strong>Leadership uncertainty</strong> about the COO's current scope, performance metrics, and long-term fit for driving operational excellence.</li>
-            </ul>
-
-            <p>The CEO and Board sought an independent partner capable of assessing organizational readiness, redesigning structures, and aligning leadership and workforce capacity to meet the company's growth objectives—quickly, objectively, and with measurable outcomes.</p>
-        </section>
-
-        <!-- 3N Approach Section -->
-        <section class="section-group">
-            <h2>3N Approach &amp; Solution — Guided by O-RAM™</h2>
-            <p>3N Consulting applied its proprietary Organizational Readiness Assessment Methodology (O-RAM) to evaluate the company's leadership structure, workforce utilization, and operational efficiency. O-RAM's five dimensions—<strong>Leadership Alignment, Governance &amp; Controls, People &amp; Capability, Technology &amp; Data, and Process &amp; Performance</strong>—formed the backbone of the assessment and solution design.</p>
-
-            <h3>Leadership Assessment</h3>
-            <ul>
-                <li>Conducted in-depth interviews with the CEO, principal founder and Board Chair, and senior executives to evaluate decision-making cadence, transparency, and alignment of goals.</li>
-                <li>Analyzed the COO's span of control, communication process, and performance metrics, identifying gaps in governance and role clarity.</li>
-                <li>Recommended redefinition of the COO role, emphasizing proactive engagement with operational leaders and accountability for cross-functional outcomes.</li>
-            </ul>
-
-            <h3>Workforce and Operations Evaluation</h3>
-            <ul>
-                <li>Reviewed workforce utilization and production capacity, identifying inefficiencies in scheduling, workload balance, and contractor management.</li>
-                <li>Developed a rightsizing plan aligning headcount with projected demand, optimizing both full-time and contingent labor.</li>
-                <li>Introduced process improvements to streamline production planning, inventory management, and vendor sourcing.</li>
-            </ul>
-
-            <h3>IT and Systems Analysis</h3>
-            <ul>
-                <li>Evaluated the company's ERP and CRM environments to uncover duplication of effort, inconsistent reporting, and missing integration points.</li>
-                <li>Recommended data centralization for financial and operational metrics, establishing a "single version of the truth" across departments.</li>
-            </ul>
-
-            <h3>Governance and Performance Framework</h3>
-            <ul>
-                <li>Established new Key Performance Indicators (KPIs) and dashboards to track operational performance daily, weekly, and monthly.</li>
-                <li>Redefined governance structures to ensure alignment between business units and executive priorities.</li>
-                <li>Introduced value-engineering levers—reskilling staff and realigning tasks—to reduce cost and improve agility.</li>
-            </ul>
-
-            <h3>Strategic Advisory and Leadership Transition</h3>
-            <ul>
-                <li>Benchmarked comparable organizations to advise the CEO and Board on future leadership requirements.</li>
-                <li>Designed a search strategy and executive selection framework to identify the next operations leader equipped to drive transformation.</li>
-            </ul>
-        </section>
-
-        <!-- Results Section -->
-        <section class="section-group">
-            <h2>Results Delivered</h2>
-            <p>Within six weeks, 3N Consulting delivered a comprehensive Operations and IT Transformation Plan, integrating leadership, workforce, and systems improvements. The results were both immediate and transformative:</p>
-
-            <div class="value-boxes">
-                <div class="value-box">
-                    <h4>Operational Efficiency</h4>
-                    <p>Streamlined production planning, rightsized staffing, and clarified job roles</p>
-                </div>
-                <div class="value-box">
-                    <h4>Cross-Functional Alignment</h4>
-                    <p>IT, Finance, and Operations adopted new workflows aligned to production forecasting</p>
-                </div>
-                <div class="value-box">
-                    <h4>Leadership Clarity</h4>
-                    <p>Redefined COO responsibilities with improved communication and accountability metrics</p>
-                </div>
-                <div class="value-box">
-                    <h4>Real-Time Visibility</h4>
-                    <p>New dashboards and KPIs providing performance visibility to CEO and Board</p>
-                </div>
-                <div class="value-box">
-                    <h4>Cost Reduction</h4>
-                    <p>Workforce development initiatives reduced reliance on contractors and lowered operational costs</p>
-                </div>
-                <div class="value-box">
-                    <h4>Rapid Implementation</h4>
-                    <p>Workforce capability improvements implemented within weeks of recommendations</p>
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <p><strong>Client Outcome:</strong> The company's Board rated 3N Consulting's performance as "Exceptional" for Quality of Work, Schedule Management, and Cost Control—and "Very Good" for Management Team performance.</p>
-            </div>
-
-            <p>The client acted swiftly on 3N's recommendations, implementing workforce capability improvements within weeks. The CEO and principal owner subsequently invited 3N to assume a broader operational advisory role, reflecting the firm's deep trust and the tangible impact of its work.</p>
-        </section>
-
-        <!-- Closing Section -->
-        <section class="section-group">
-            <h2>Why This Matters</h2>
-            <p>This engagement exemplifies how 3N Consulting uses its O-RAM framework to deliver transformation that is both analytical and actionable. By aligning leadership, people, processes, and systems, 3N enabled a high-growth manufacturer to scale efficiently, sustain profitability, and build a leadership model for long-term success.</p>
-        </section>
-    </main>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-section-inner">
-            <h2>Ready to Transform Your Organization?</h2>
-            <p>Let's discuss how we can help you achieve measurable results. Contact us today to explore a tailored consulting engagement.</p>
-            <a href="contact.html" class="cta-button">Schedule Your Consultation →</a>
+    <!-- SITUATION SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">The Situation</h2>
         </div>
+        <div class="content-block">
+          <p>
+            A global cosmetics manufacturer experiencing rapid growth faced significant operational strain across its core business functions. The company's CEO and Board had recognized that while demand was rising sharply, its organizational model—particularly within operations, HR, finance and procurement—was not equipped to scale effectively.
+          </p>
+          <h3>Symptoms of Misalignment</h3>
+          <ul>
+            <li>Overlapping roles and unclear accountability under the Chief Operating Officer (COO).</li>
+            <li>Fragmented reporting lines and communication breakdowns between executive leadership and production teams.</li>
+            <li>Reliance on temporary contractor staff to meet seasonal demand spikes, creating inconsistent quality and rising costs.</li>
+            <li>Multiple, disconnected systems for financial, production, and customer data—leading to inefficiency and delayed decision-making.</li>
+            <li>Leadership uncertainty about the COO's current scope, performance metrics, and long-term fit for driving operational excellence.</li>
+          </ul>
+          <p style="margin-top: 1.5rem;">
+            The CEO and Board sought an independent partner capable of assessing organizational readiness, redesigning structures, and aligning leadership and workforce capacity to meet the company's growth objectives—quickly, objectively, and with measurable outcomes.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div>
-                <h4>About 3N Consulting</h4>
-                <p><strong>Results. Delivered.</strong></p>
-                <p style="font-size: 0.85rem;">Execution-focused consulting measured on outcomes.</p>
-            </div>
-            <div>
-                <h4>Contact Information</h4>
-                <p>📞 (301) 723-7057</p>
-                <p>📍 6710A Rockledge Drive<br>Bethesda, MD 20817</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="disclaimers.html">Disclaimers</a>
-                </div>
-            </div>
+    <!-- 3N APPROACH SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">3N Approach and Solution — Guided by O-RAM™</h2>
         </div>
-    </footer>
+        <div class="content-block">
+          <p>
+            3N Consulting applied its proprietary Organizational Readiness Assessment Methodology (O-RAM) to evaluate the company's leadership structure, workforce utilization, and operational efficiency. O-RAM's five dimensions—<strong>Leadership Alignment, Governance &amp; Controls, People &amp; Capability, Technology &amp; Data, and Process &amp; Performance</strong>—formed the backbone of the assessment and solution design.
+          </p>
 
-    <script src="script.js"></script>
+          <h3>Leadership Assessment</h3>
+          <ul>
+            <li>Conducted in-depth interviews with the CEO, principal founder and Board Chair, and senior executives to evaluate decision-making cadence, transparency, and alignment of goals.</li>
+            <li>Analyzed the COO's span of control, communication process, and performance metrics, identifying gaps in governance and role clarity.</li>
+            <li>Recommended redefinition of the COO role, emphasizing proactive engagement with operational leaders and accountability for cross-functional outcomes.</li>
+          </ul>
+
+          <h3>Workforce and Operations Evaluation</h3>
+          <ul>
+            <li>Reviewed workforce utilization and production capacity, identifying inefficiencies in scheduling, workload balance, and contractor management.</li>
+            <li>Developed a rightsizing plan aligning headcount with projected demand, optimizing both full-time and contingent labor.</li>
+            <li>Introduced process improvements to streamline production planning, inventory management, and vendor sourcing.</li>
+          </ul>
+
+          <h3>IT and Systems Analysis</h3>
+          <ul>
+            <li>Evaluated the company's ERP and CRM environments to uncover duplication of effort, inconsistent reporting, and missing integration points.</li>
+            <li>Recommended data centralization for financial and operational metrics, establishing a "single version of the truth" across departments.</li>
+          </ul>
+
+          <h3>Governance and Performance Framework</h3>
+          <ul>
+            <li>Established new Key Performance Indicators (KPIs) and dashboards to track operational performance daily, weekly, and monthly.</li>
+            <li>Redefined governance structures to ensure alignment between business units and executive priorities.</li>
+            <li>Introduced value-engineering levers—reskilling staff and realigning tasks—to reduce cost and improve agility.</li>
+          </ul>
+
+          <h3>Strategic Advisory and Leadership Transition</h3>
+          <ul>
+            <li>Benchmarked comparable organizations to advise the CEO and Board on future leadership requirements.</li>
+            <li>Designed a search strategy and executive selection framework to identify the next operations leader equipped to drive transformation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Results Delivered</h2>
+        </div>
+        <div class="content-block">
+          <p>
+            Within six weeks, 3N Consulting delivered a comprehensive Operations and IT Transformation Plan, integrating leadership, workforce, and systems improvements. The results were both immediate and transformative:
+          </p>
+        </div>
+
+        <div class="content-block">
+          <div class="value-boxes">
+            <div class="value-box">
+              <h4>Operational Efficiency</h4>
+              <p>Streamlined production planning, rightsized staffing, and clarified job roles</p>
+            </div>
+            <div class="value-box">
+              <h4>Cross-Functional Alignment</h4>
+              <p>IT, Finance, and Operations adopted new workflows aligned to production forecasting</p>
+            </div>
+            <div class="value-box">
+              <h4>Leadership Clarity</h4>
+              <p>Redefined COO responsibilities with improved communication and accountability metrics</p>
+            </div>
+            <div class="value-box">
+              <h4>Real-Time Visibility</h4>
+              <p>New dashboards and KPIs providing performance visibility to CEO and Board</p>
+            </div>
+            <div class="value-box">
+              <h4>Cost Reduction</h4>
+              <p>Workforce development initiatives reduced reliance on contractors and lowered operational costs</p>
+            </div>
+            <div class="value-box">
+              <h4>Rapid Implementation</h4>
+              <p>Workforce capability improvements implemented within weeks of recommendations</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <div class="results-highlight">
+            <h4>Client Outcome</h4>
+            <p>The company's Board rated 3N Consulting's performance as "Exceptional" for Quality of Work, Schedule Management, and Cost Control—and "Very Good" for Management Team performance.</p>
+          </div>
+
+          <p style="margin-top: 1.5rem;">
+            The client acted swiftly on 3N's recommendations, implementing workforce capability improvements within weeks. The CEO and principal owner subsequently invited 3N to assume a broader operational advisory role, reflecting the firm's deep trust and the tangible impact of its work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2 class="section-title">Why This Matters</h2>
+        </div>
+        <div class="content-block">
+          <p>
+            This engagement exemplifies how 3N Consulting uses its O-RAM framework to deliver transformation that is both analytical and actionable. By aligning leadership, people, processes, and systems, 3N enabled a high-growth manufacturer to scale efficiently, sustain profitability, and build a leadership model for long-term success.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="cta-section">
+          <h2>Ready to Transform Your Organization?</h2>
+          <p>Let's discuss how we can help you achieve measurable results. Contact us today to explore a tailored consulting engagement.</p>
+          <a href="contact.html" class="btn btn-primary">Schedule Your Consultation →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div style="flex: 1; min-width: 200px;">
+        <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+        <p style="color: #6b7280;">Results. Delivered.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="thought-leadership.html">Meet Our Team</a>
+        <a href="toolkit.html">Our Toolkit</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+      <p>&copy; 2024 3N Consulting. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</div>
 </body>
 </html>
