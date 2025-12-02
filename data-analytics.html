@@ -60,6 +60,7 @@
       .nav-toggle { display: block; margin-left: auto; }
       .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
       .nav-links.show { display: flex; }
+      .hero-inner { grid-template-columns: minmax(0, 1fr); }
     }
 
     .hero {
@@ -70,6 +71,10 @@
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 2rem;
+      align-items: flex-start;
     }
     .hero-eyebrow {
       text-transform: uppercase;
@@ -222,13 +227,18 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-eyebrow">Core Capability</div>
-        <h1 class="hero-title">
-          Data <span class="hero-highlight">Analytics</span>
-        </h1>
-        <p class="hero-body">
-          Frameworks & dashboards that uncover patterns and predict trends.
-        </p>
+        <div>
+          <div class="hero-eyebrow">Core Capability</div>
+          <h1 class="hero-title">
+            Data <span class="hero-highlight">Analytics</span>
+          </h1>
+          <p class="hero-body">
+            Frameworks & dashboards that uncover patterns and predict trends.
+          </p>
+        </div>
+        <div style="border-radius: 0.75rem; overflow: hidden; box-shadow: 0 12px 30px rgba(56,189,248,0.2);">
+          <img src="images/data_analysis.png" alt="Data Analysis" style="width: 100%; height: auto; display: block;">
+        </div>
       </div>
     </section>
 
