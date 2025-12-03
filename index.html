@@ -203,9 +203,9 @@
     }
     .card-body { font-size: 0.9rem; color: #e5e7eb; }
 
-    .testimonial-quote { font-style: italic; margin-bottom: 0.4rem; color: #e5e7eb; }
-    .testimonial-client { font-weight: 600; margin-bottom: 0.2rem; color: #ffffff; }
-    .testimonial-ratings { font-size: 0.8rem; color: #d1d5db; line-height: 1.4; }
+    .testimonial-quote { font-style: italic; margin-bottom: 0.4rem; color: #000000; }
+    .testimonial-client { font-weight: 600; margin-bottom: 0.2rem; color: #000000; }
+    .testimonial-ratings { font-size: 0.8rem; color: #000000; line-height: 1.4; }
 
     .btn {
       display: inline-flex;
@@ -443,7 +443,7 @@
           Our performance is continuously evaluated. Below are excerpts from formal client satisfaction surveys.
         </p>
 
-        <div id="testimonial-carousel" class="carousel-card card" style="max-width: 600px; margin: 2rem auto;">
+        <div id="testimonial-carousel" class="carousel-card card" style="max-width: 600px; margin: 2rem auto; background: #38bdf8; color: black;">
           <div class="testimonial-client">State Education Agency ~ Project Executive</div>
           <p class="testimonial-quote">
             "3N delivered tremendous value"
@@ -460,7 +460,7 @@
         <div class="carousel-container">
           <button class="carousel-button" id="prev-testimonial">← Previous</button>
           <div class="carousel-counter">
-            <span id="testimonial-counter">1</span> / <span id="testimonial-total">3</span>
+            <span id="testimonial-counter">1</span> / <span id="testimonial-total">4</span>
           </div>
           <button class="carousel-button" id="next-testimonial">Next →</button>
         </div>
@@ -614,6 +614,11 @@
 
   // Testimonial carousel
   const testimonials = [
+    {
+      client: "Higher Education Institute ~ Director of Procurement",
+      quote: "3N has truly been a pleasure to work with. They produced quality work that was not only meaningful, and informative, it was actionable as well",
+      ratings: 'Quality of Work: "Exceptional"<br>Management Team: "Exceptional"<br>Cost Control: "Exceptional"<br>Schedule Management: "Exceptional"'
+    },
     {
       client: "State Education Agency ~ Project Executive",
       quote: "3N delivered tremendous value",
