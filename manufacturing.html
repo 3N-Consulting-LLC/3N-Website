@@ -70,6 +70,15 @@
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
     }
     .hero-eyebrow {
       text-transform: uppercase;
@@ -268,13 +277,18 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-eyebrow">Productized Solution</div>
-        <h1 class="hero-title">
-          Manufacturing Planning <span class="hero-highlight">Solution</span>
-        </h1>
-        <p class="hero-body">
-          Aligning Production, Demand, and Profitability
-        </p>
+        <div>
+          <div class="hero-eyebrow">Productized Solution</div>
+          <h1 class="hero-title">
+            Manufacturing Planning <span class="hero-highlight">Solution</span>
+          </h1>
+          <p class="hero-body">
+            Aligning Production, Demand, and Profitability
+          </p>
+        </div>
+        <div style="border-radius: 0.75rem; overflow: hidden; box-shadow: 0 12px 30px rgba(56,189,248,0.2);">
+          <img src="images/manufacturing.png" alt="Manufacturing Planning" style="width: 100%; height: auto; display: block;">
+        </div>
       </div>
     </section>
 
