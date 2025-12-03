@@ -198,6 +198,86 @@
       .hero { padding: 3rem 1.5rem 2rem; }
       .section { padding: 2rem 1.5rem; }
     }
+
+    #bzOpeningsContainer {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    #bzOpeningsContainer > div > div,
+    #bzOpeningsContainer > ul > li,
+    #bzOpeningsContainer li,
+    #bzOpeningsContainer [class*="job"],
+    #bzOpeningsContainer [class*="opening"],
+    #bzOpeningsContainer [class*="position"],
+    #bzOpeningsContainer .breezy-job-card {
+      background: #001f3f !important;
+      border: 1px solid #1e3a8a !important;
+      color: #ffffff !important;
+      border-radius: 1rem !important;
+      padding: 1rem !important;
+      margin-bottom: 1.5rem !important;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.04) !important;
+      cursor: default !important;
+    }
+
+    #bzOpeningsContainer > div > div:hover,
+    #bzOpeningsContainer > ul > li:hover,
+    #bzOpeningsContainer li:hover,
+    #bzOpeningsContainer [class*="job"]:hover,
+    #bzOpeningsContainer [class*="opening"]:hover,
+    #bzOpeningsContainer [class*="position"]:hover,
+    #bzOpeningsContainer .breezy-job-card:hover {
+      box-shadow: 0 12px 30px rgba(15,23,42,0.04) !important;
+    }
+
+    #bzOpeningsContainer h1,
+    #bzOpeningsContainer h2,
+    #bzOpeningsContainer h3,
+    #bzOpeningsContainer h4,
+    #bzOpeningsContainer h5,
+    #bzOpeningsContainer h6,
+    #bzOpeningsContainer [class*="title"],
+    #bzOpeningsContainer [class*="heading"],
+    #bzOpeningsContainer strong,
+    #bzOpeningsContainer b {
+      color: #ffffff !important;
+    }
+
+    #bzOpeningsContainer p,
+    #bzOpeningsContainer span,
+    #bzOpeningsContainer div,
+    #bzOpeningsContainer li {
+      color: #e5e7eb !important;
+    }
+
+    #bzOpeningsContainer a {
+      color: #38bdf8 !important;
+    }
+
+    #bzOpeningsContainer a:hover {
+      color: #0ea5e9 !important;
+    }
+
+    #bzOpeningsContainer button,
+    #bzOpeningsContainer [type="button"],
+    #bzOpeningsContainer [type="submit"] {
+      background: #38bdf8 !important;
+      color: #020617 !important;
+      border-color: #0ea5e9 !important;
+      padding: 0.75rem 2rem !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: background 0.15s ease, transform 0.08s ease !important;
+    }
+
+    #bzOpeningsContainer button:hover,
+    #bzOpeningsContainer [type="button"]:hover,
+    #bzOpeningsContainer [type="submit"]:hover {
+      background: #0ea5e9 !important;
+      transform: translateY(-1px) !important;
+    }
   </style>
 </head>
 <body>
@@ -228,19 +308,10 @@
   </header>
 
   <main class="main">
-    <!-- UNDER CONSTRUCTION -->
+    <!-- JOB OPENINGS -->
     <section class="section section-alt">
       <div class="section-inner">
-        <div class="under-construction">
-          <div class="under-construction-inner">
-            <div class="construction-icon">🚧</div>
-            <h1 class="construction-title">Page Under Construction</h1>
-            <p class="construction-text">
-              We're currently building our job opportunities page. Check back soon for exciting career opportunities at 3N Consulting!
-            </p>
-            <a href="careers.html" class="btn btn-primary">← Back to Careers</a>
-          </div>
-        </div>
+        <div id='bzOpeningsContainer'></div><script src='https://3n-consulting-llc.breezy.hr/embed/js?inline=true'></script>
       </div>
     </section>
   </main>
