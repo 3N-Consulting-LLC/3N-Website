@@ -1,9 +1,9 @@
 {
-    "checksum": "749de61ac4fb6fa856053b58b79135607e5983c154cee27d94a61e3ffe2d5f3e",
+    "checksum": "748378d92dfd94ea1c5a98449c6b0452cf8a5a9f117a6a26c60a385864828495",
     "data": {
     "id": "9be0695b-7c50-4272-a26b-a220cbb984b5",
     "createdAt": 1764770502355,
-    "updatedAt": 1764770514095,
+    "updatedAt": 1764774695154,
     "title": "Redirected Formspree Inbox Link Swap",
     "messages": [
         {
@@ -136,15 +136,647 @@
             "context": {
                 "author": "Code agent",
                 "operationId": "0cc0b1cd-1383-47cc-9c6c-6e9864789cc2",
-                "cliSessionId": "714475f9-f35a-4bce-8c24-1fa57c68bb6b",
+                "cliSessionId": "714475f9-f35a-4bce-8c24-1fa57c68bb6b"
+            },
+            "createdAt": 1764770514095,
+            "isInternal": false
+        },
+        {
+            "id": "860559cf-72ff-430a-b820-e5eea0351159",
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "In about.html, I want to take out the section “Our Mission”, move “Who We Are” to be the first section, and use this as the text for the section “Who We Are”: 3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management. "
+                },
+                {
+                    "type": "text",
+                    "text": "3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities."
+                }
+            ],
+            "context": {
+                "currentFile": {
+                    "path": "about.html",
+                    "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                    "sources": [
+                        "opened_tab"
+                    ],
+                    "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>About Us - 3N Consulting | Results. Delivered.</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <style>\n    /* Inline CSS so this preview actually renders with layout */\n    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n    html, body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: #111827;\n      background-color: #f9fafb;\n      line-height: 1.6;\n    }\n    img, video { max-width: 100%; height: auto; display: block; }\n    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }\n    .main { flex: 1; }\n\n    .site-header {\n      background: #020617;\n      color: #e5e7eb;\n      border-bottom: 1px solid #1f2937;\n      position: sticky;\n      top: 0;\n      z-index: 10;\n    }\n    .nav-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      padding: 0.75rem 1.5rem;\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 1.5rem;\n    }\n    .brand-title {\n      font-weight: 700;\n      letter-spacing: 0.08em;\n      text-transform: uppercase;\n      font-size: 0.9rem;\n    }\n    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }\n    .brand-logo { height: 70px; width: auto; max-width: 250px; }\n    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }\n    .nav-links a {\n      color: #e5e7eb;\n      text-decoration: none;\n      font-size: 0.85rem;\n      padding: 0.35rem 0.7rem;\n      border-radius: 999px;\n      transition: background 0.15s ease, color 0.15s ease;\n    }\n    .nav-links a:hover { background: #111827; }\n    .nav-links a.active { background: #e5e7eb; color: #020617; }\n    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }\n\n    @media (max-width: 768px) {\n      .nav-inner { flex-wrap: wrap; }\n      .nav-toggle { display: block; margin-left: auto; }\n      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }\n      .nav-links.show { display: flex; }\n    }\n\n    .hero {\n      padding: 4rem 1.5rem 3rem;\n      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);\n      color: #e5e7eb;\n    }\n    .hero-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: grid;\n      grid-template-columns: minmax(0, 1fr);\n      gap: 3rem;\n      align-items: center;\n    }\n    .hero-eyebrow {\n      text-transform: uppercase;\n      letter-spacing: 0.13em;\n      font-size: 0.75rem;\n      color: #9ca3af;\n      margin-bottom: 0.75rem;\n    }\n    .hero-title {\n      font-size: clamp(2.1rem, 3vw, 2.7rem);\n      font-weight: 750;\n      letter-spacing: -0.03em;\n      margin-bottom: 0.5rem;\n    }\n    .hero-body {\n      font-size: 0.98rem;\n      color: #d1d5db;\n      max-width: 48rem;\n      margin-bottom: 1.5rem;\n    }\n\n    .section { padding: 3rem 1.5rem; }\n    .section-alt { background: #f3f4f6; }\n    .section-inner { max-width: 1120px; margin: 0 auto; }\n    .section-header { margin-bottom: 2rem; }\n    .section-kicker {\n      text-transform: uppercase;\n      letter-spacing: 0.15em;\n      font-size: 0.75rem;\n      font-weight: 600;\n      color: #6b7280;\n      margin-bottom: 0.5rem;\n    }\n    .section-title {\n      font-size: 1.8rem;\n      font-weight: 700;\n      letter-spacing: -0.02em;\n      margin-bottom: 1rem;\n    }\n    .section-subtitle {\n      color: #4b5563;\n      max-width: 48rem;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 1.5rem;\n    }\n\n    .content-block {\n      color: #4b5563;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 2rem;\n    }\n\n    .content-block h3 {\n      font-size: 1.3rem;\n      font-weight: 700;\n      color: #111827;\n      margin-bottom: 1rem;\n      margin-top: 1.5rem;\n    }\n\n    .values-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n      gap: 1.5rem;\n      margin: 2rem 0;\n    }\n\n    .value-box {\n      background: #001f3f;\n      border: 1px solid #1e3a8a;\n      border-radius: 1rem;\n      padding: 1.5rem;\n      box-shadow: 0 12px 30px rgba(15,23,42,0.04);\n    }\n\n    .value-box h4 {\n      font-size: 1.1rem;\n      font-weight: 700;\n      color: #ffffff;\n      margin-bottom: 0.5rem;\n    }\n\n    .value-box p {\n      font-size: 0.95rem;\n      color: #e5e7eb;\n    }\n\n    .cta-section {\n      text-align: center;\n      padding: 2rem;\n      background: #f3f4f6;\n      border-radius: 1rem;\n      margin-top: 3rem;\n    }\n\n    .btn {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.4rem;\n      border-radius: 999px;\n      padding: 0.55rem 1.2rem;\n      font-size: 0.85rem;\n      font-weight: 600;\n      text-decoration: none;\n      border: 1px solid transparent;\n      cursor: pointer;\n      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;\n    }\n    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }\n    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }\n\n    .site-footer {\n      border-top: 1px solid #e5e7eb;\n      padding: 1.5rem 1.5rem 2rem;\n      font-size: 0.8rem;\n      color: #6b7280;\n      background: #f9fafb;\n      margin-top: 2rem;\n    }\n    .footer-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: flex;\n      flex-wrap: wrap;\n      gap: 1rem;\n      justify-content: space-between;\n    }\n    .footer-links {\n      display: flex;\n      gap: 0.9rem;\n      flex-wrap: wrap;\n    }\n    .footer-links a {\n      color: #6b7280;\n      text-decoration: none;\n    }\n    .footer-links a:hover { text-decoration: underline; }\n\n    @media (max-width: 768px) {\n      .hero { padding: 3rem 1.5rem 2rem; }\n      .section { padding: 2rem 1.5rem; }\n      .values-grid { grid-template-columns: minmax(0, 1fr); }\n    }\n  </style>\n</head>\n<body>\n<div class=\"site-wrapper\">\n  <header class=\"site-header\">\n    <div class=\"nav-inner\">\n      <div class=\"brand\" style=\"display: flex; align-items: center; gap: 1rem;\">\n        <div>\n          <img src=\"images/logos/new 3n logo.png\" alt=\"3N Consulting Logo\" style=\"height: 90px; width: auto; max-width: 300px;\">\n        </div>\n        <div style=\"display: flex; flex-direction: column; line-height: 1.1;\">\n          <div style=\"font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;\">3N Consulting</div>\n          <div style=\"font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;\">Results. Delivered.</div>\n        </div>\n      </div>\n      <button class=\"nav-toggle\" aria-label=\"Toggle navigation\">Menu</button>\n      <nav class=\"nav-links\">\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\" class=\"active\">About Us</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"careers.html\">Careers</a>\n        <a href=\"contact.html\">Contact Us</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </nav>\n    </div>\n  </header>\n\n  <main class=\"main\">\n    <!-- HERO -->\n    <section class=\"hero\">\n      <div class=\"hero-inner\">\n        <div>\n          <div class=\"hero-eyebrow\">About 3N Consulting</div>\n          <h1 class=\"hero-title\">Results. Delivered.</h1>\n          <p class=\"hero-body\">\n            Execution-focused consulting measured on outcomes. We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR MISSION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Mission</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Values</h2>\n          <p class=\"section-subtitle\">The principles that guide everything we do</p>\n        </div>\n\n        <div class=\"values-grid\">\n          <div class=\"value-box\">\n            <h4>Integrity</h4>\n            <p>We maintain the highest standards of integrity in all our dealings, ensuring transparency and honesty in every engagement.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Client-Centric</h4>\n            <p>Our clients are at the heart of everything we do. We invest in understanding their challenges and delivering tailored solutions.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- WHO WE ARE -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- CTA SECTION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"cta-section\">\n          <h3 style=\"font-size: 1.3rem; margin-bottom: 1rem;\">Ready to Work with Us?</h3>\n          <p style=\"margin-bottom: 1.5rem; color: #4b5563;\">Let's discuss how 3N Consulting can help your organization achieve measurable results.</p>\n          <a href=\"contact.html\" class=\"btn btn-primary\">Get in Touch →</a>\n        </div>\n      </div>\n    </section>\n  </main>\n\n  <footer class=\"site-footer\">\n    <div class=\"footer-inner\">\n      <div style=\"flex: 1; min-width: 200px;\">\n        <div style=\"font-weight: 600; margin-bottom: 0.5rem;\">3N Consulting</div>\n        <p style=\"color: #6b7280;\">Results. Delivered.</p>\n      </div>\n      <div class=\"footer-links\">\n        <a href=\"https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all\" target=\"_blank\">LinkedIn</a>\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\">About</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"contact.html\">Contact</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </div>\n    </div>\n    <div style=\"text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;\">\n      <p>&copy; 2024 3N Consulting. All rights reserved.</p>\n    </div>\n  </footer>\n</div>\n\n<script src=\"script.js\"></script>\n</body>\n</html>",
+                    "language": "html"
+                }
+            },
+            "createdAt": 1764774002889,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "In about.html, I want to take out the section “Our Mission”, move “Who We Are” to be the first section, and use this as the text for the section “Who We Are”: 3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management. "
+                            }
+                        ]
+                    },
+                    {
+                        "type": "paragraph"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "autoAppliedRules": []
+        },
+        {
+            "id": "msg_01SzQpEPpPjFdSEbjrFvEES8",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "The user wants me to:\n1. Take out the section \"Our Mission\"\n2. Move \"Who We Are\" to be the first section\n3. Replace the text in \"Who We Are\" with the new text they provided\n\nLet me first read the about.html file to see the current structure."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_01PVSdvbmRNLyGGZQa6BQH74",
+                    "toolName": "Read",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html"
+                    },
+                    "output": "Lines 1-374 of 374 from /Users/anupeesay/PycharmProjects/3NWebsite2/about.html:\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>About Us - 3N Consulting | Results. Delivered.</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <style>\n    /* Inline CSS so this preview actually renders with layout */\n    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n    html, body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: #111827;\n      background-color: #f9fafb;\n      line-height: 1.6;\n    }\n    img, video { max-width: 100%; height: auto; display: block; }\n    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }\n    .main { flex: 1; }\n\n    .site-header {\n      background: #020617;\n      color: #e5e7eb;\n      border-bottom: 1px solid #1f2937;\n      position: sticky;\n      top: 0;\n      z-index: 10;\n    }\n    .nav-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      padding: 0.75rem 1.5rem;\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 1.5rem;\n    }\n    .brand-title {\n      font-weight: 700;\n      letter-spacing: 0.08em;\n      text-transform: uppercase;\n      font-size: 0.9rem;\n    }\n    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }\n    .brand-logo { height: 70px; width: auto; max-width: 250px; }\n    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }\n    .nav-links a {\n      color: #e5e7eb;\n      text-decoration: none;\n      font-size: 0.85rem;\n      padding: 0.35rem 0.7rem;\n      border-radius: 999px;\n      transition: background 0.15s ease, color 0.15s ease;\n    }\n    .nav-links a:hover { background: #111827; }\n    .nav-links a.active { background: #e5e7eb; color: #020617; }\n    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }\n\n    @media (max-width: 768px) {\n      .nav-inner { flex-wrap: wrap; }\n      .nav-toggle { display: block; margin-left: auto; }\n      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }\n      .nav-links.show { display: flex; }\n    }\n\n    .hero {\n      padding: 4rem 1.5rem 3rem;\n      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);\n      color: #e5e7eb;\n    }\n    .hero-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: grid;\n      grid-template-columns: minmax(0, 1fr);\n      gap: 3rem;\n      align-items: center;\n    }\n    .hero-eyebrow {\n      text-transform: uppercase;\n      letter-spacing: 0.13em;\n      font-size: 0.75rem;\n      color: #9ca3af;\n      margin-bottom: 0.75rem;\n    }\n    .hero-title {\n      font-size: clamp(2.1rem, 3vw, 2.7rem);\n      font-weight: 750;\n      letter-spacing: -0.03em;\n      margin-bottom: 0.5rem;\n    }\n    .hero-body {\n      font-size: 0.98rem;\n      color: #d1d5db;\n      max-width: 48rem;\n      margin-bottom: 1.5rem;\n    }\n\n    .section { padding: 3rem 1.5rem; }\n    .section-alt { background: #f3f4f6; }\n    .section-inner { max-width: 1120px; margin: 0 auto; }\n    .section-header { margin-bottom: 2rem; }\n    .section-kicker {\n      text-transform: uppercase;\n      letter-spacing: 0.15em;\n      font-size: 0.75rem;\n      font-weight: 600;\n      color: #6b7280;\n      margin-bottom: 0.5rem;\n    }\n    .section-title {\n      font-size: 1.8rem;\n      font-weight: 700;\n      letter-spacing: -0.02em;\n      margin-bottom: 1rem;\n    }\n    .section-subtitle {\n      color: #4b5563;\n      max-width: 48rem;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 1.5rem;\n    }\n\n    .content-block {\n      color: #4b5563;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 2rem;\n    }\n\n    .content-block h3 {\n      font-size: 1.3rem;\n      font-weight: 700;\n      color: #111827;\n      margin-bottom: 1rem;\n      margin-top: 1.5rem;\n    }\n\n    .values-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n      gap: 1.5rem;\n      margin: 2rem 0;\n    }\n\n    .value-box {\n      background: #001f3f;\n      border: 1px solid #1e3a8a;\n      border-radius: 1rem;\n      padding: 1.5rem;\n      box-shadow: 0 12px 30px rgba(15,23,42,0.04);\n    }\n\n    .value-box h4 {\n      font-size: 1.1rem;\n      font-weight: 700;\n      color: #ffffff;\n      margin-bottom: 0.5rem;\n    }\n\n    .value-box p {\n      font-size: 0.95rem;\n      color: #e5e7eb;\n    }\n\n    .cta-section {\n      text-align: center;\n      padding: 2rem;\n      background: #f3f4f6;\n      border-radius: 1rem;\n      margin-top: 3rem;\n    }\n\n    .btn {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.4rem;\n      border-radius: 999px;\n      padding: 0.55rem 1.2rem;\n      font-size: 0.85rem;\n      font-weight: 600;\n      text-decoration: none;\n      border: 1px solid transparent;\n      cursor: pointer;\n      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;\n    }\n    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }\n    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }\n\n    .site-footer {\n      border-top: 1px solid #e5e7eb;\n      padding: 1.5rem 1.5rem 2rem;\n      font-size: 0.8rem;\n      color: #6b7280;\n      background: #f9fafb;\n      margin-top: 2rem;\n    }\n    .footer-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: flex;\n      flex-wrap: wrap;\n      gap: 1rem;\n      justify-content: space-between;\n    }\n    .footer-links {\n      display: flex;\n      gap: 0.9rem;\n      flex-wrap: wrap;\n    }\n    .footer-links a {\n      color: #6b7280;\n      text-decoration: none;\n    }\n    .footer-links a:hover { text-decoration: underline; }\n\n    @media (max-width: 768px) {\n      .hero { padding: 3rem 1.5rem 2rem; }\n      .section { padding: 2rem 1.5rem; }\n      .values-grid { grid-template-columns: minmax(0, 1fr); }\n    }\n  </style>\n</head>\n<body>\n<div class=\"site-wrapper\">\n  <header class=\"site-header\">\n    <div class=\"nav-inner\">\n      <div class=\"brand\" style=\"display: flex; align-items: center; gap: 1rem;\">\n        <div>\n          <img src=\"images/logos/new 3n logo.png\" alt=\"3N Consulting Logo\" style=\"height: 90px; width: auto; max-width: 300px;\">\n        </div>\n        <div style=\"display: flex; flex-direction: column; line-height: 1.1;\">\n          <div style=\"font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;\">3N Consulting</div>\n          <div style=\"font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;\">Results. Delivered.</div>\n        </div>\n      </div>\n      <button class=\"nav-toggle\" aria-label=\"Toggle navigation\">Menu</button>\n      <nav class=\"nav-links\">\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\" class=\"active\">About Us</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"careers.html\">Careers</a>\n        <a href=\"contact.html\">Contact Us</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </nav>\n    </div>\n  </header>\n\n  <main class=\"main\">\n    <!-- HERO -->\n    <section class=\"hero\">\n      <div class=\"hero-inner\">\n        <div>\n          <div class=\"hero-eyebrow\">About 3N Consulting</div>\n          <h1 class=\"hero-title\">Results. Delivered.</h1>\n          <p class=\"hero-body\">\n            Execution-focused consulting measured on outcomes. We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR MISSION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Mission</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Values</h2>\n          <p class=\"section-subtitle\">The principles that guide everything we do</p>\n        </div>\n\n        <div class=\"values-grid\">\n          <div class=\"value-box\">\n            <h4>Integrity</h4>\n            <p>We maintain the highest standards of integrity in all our dealings, ensuring transparency and honesty in every engagement.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Client-Centric</h4>\n            <p>Our clients are at the heart of everything we do. We invest in understanding their challenges and delivering tailored solutions.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- WHO WE ARE -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- CTA SECTION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"cta-section\">\n          <h3 style=\"font-size: 1.3rem; margin-bottom: 1rem;\">Ready to Work with Us?</h3>\n          <p style=\"margin-bottom: 1.5rem; color: #4b5563;\">Let's discuss how 3N Consulting can help your organization achieve measurable results.</p>\n          <a href=\"contact.html\" class=\"btn btn-primary\">Get in Touch →</a>\n        </div>\n      </div>\n    </section>\n  </main>\n\n  <footer class=\"site-footer\">\n    <div class=\"footer-inner\">\n      <div style=\"flex: 1; min-width: 200px;\">\n        <div style=\"font-weight: 600; margin-bottom: 0.5rem;\">3N Consulting</div>\n        <p style=\"color: #6b7280;\">Results. Delivered.</p>\n      </div>\n      <div class=\"footer-links\">\n        <a href=\"https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all\" target=\"_blank\">LinkedIn</a>\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\">About</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"contact.html\">Contact</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </div>\n    </div>\n    <div style=\"text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;\">\n      <p>&copy; 2024 3N Consulting. All rights reserved.</p>\n    </div>\n  </footer>\n</div>\n\n<script src=\"script.js\"></script>\n</body>\n</html>"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "98dba39c-637e-4c8c-a25b-35a77fe79bd3",
+                "cliSessionId": "35de8067-e574-4514-8aec-e645f6088ba4"
+            },
+            "createdAt": 1764774006687,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01JRtxWAsGPnu4xditB6KbkF",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "I need to:\n1. Remove the \"Our Mission\" section (lines 266-278)\n2. Move \"Who We Are\" (lines 309-321) to be the first section after the hero\n3. Update the \"Who We Are\" text with the new text provided\n\nThe new text for \"Who We Are\" is:\n\"3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management. \n3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\"\n\nSo the new order should be:\n1. HERO (unchanged)\n2. WHO WE ARE (with new text)\n3. OUR VALUES (unchanged)\n4. OUR APPROACH (unchanged)\n5. CTA SECTION (unchanged)\n\nLet me do this in steps:\n1. First, replace the \"Our Mission\" section and \"Who We Are\" section with just the new \"Who We Are\" section positioned first\n2. Then the rest follows\n\nActually, let me think about this more carefully. I need to:\n1. Delete the \"Our Mission\" section\n2. Move \"Who We Are\" to where \"Our Mission\" was\n3. Keep \"Our Values\" where it is\n4. Keep \"Our Approach\" where it is\n5. Update the text in \"Who We Are\"\n\nLet me do these edits step by step.\n\nFirst, I'll remove the \"Our Mission\" section and move \"Who We Are\" content up. Then I'll update the text."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_01Bh2KTbw17bk4vRtCYBcRXA",
+                    "toolName": "Edit",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "old_string": "    <!-- OUR MISSION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Mission</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Values</h2>\n          <p class=\"section-subtitle\">The principles that guide everything we do</p>\n        </div>\n\n        <div class=\"values-grid\">\n          <div class=\"value-box\">\n            <h4>Integrity</h4>\n            <p>We maintain the highest standards of integrity in all our dealings, ensuring transparency and honesty in every engagement.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Client-Centric</h4>\n            <p>Our clients are at the heart of everything we do. We invest in understanding their challenges and delivering tailored solutions.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- WHO WE ARE -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n        </div>\n      </div>\n    </section>",
+                        "new_string": "    <!-- WHO WE ARE -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Values</h2>\n          <p class=\"section-subtitle\">The principles that guide everything we do</p>\n        </div>\n\n        <div class=\"values-grid\">\n          <div class=\"value-box\">\n            <h4>Integrity</h4>\n            <p>We maintain the highest standards of integrity in all our dealings, ensuring transparency and honesty in every engagement.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Client-Centric</h4>\n            <p>Our clients are at the heart of everything we do. We invest in understanding their challenges and delivering tailored solutions.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>"
+                    },
+                    "output": "   262→        </div>\n   263→      </div>\n   264→    </section>\n   265→\n   266→    <!-- WHO WE ARE -->\n   267→    <section class=\"section section-alt\">\n   268→      <div class=\"section-inner\">\n   269→        <div class=\"section-header\">\n   270→          <h2 class=\"section-title\">Who We Are</h2>\n   271→        </div>\n   272→        <div class=\"content-block\">\n   273→          <p>\n   274→            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n   275→          </p>\n   276→          <p>\n   277→            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n   278→          </p>\n   279→        </div>\n   280→      </div>\n   281→    </section>\n   282→\n...\n   308→        </div>\n   309→      </div>\n   310→    </section>\n   311→\n   312→    <!-- OUR APPROACH -->\n   313→    <section class=\"section\">\n   314→      <div class=\"section-inner\">\n   315→        <div class=\"section-header\">"
+                },
+                {
+                    "type": "codeHunk",
+                    "lineBasedDiff": "--- /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n+++ /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n@@ -263,16 +263,19 @@\n       </div>\n     </section>\n \n-    <!-- OUR MISSION -->\n+    <!-- WHO WE ARE -->\n     <section class=\"section section-alt\">\n       <div class=\"section-inner\">\n         <div class=\"section-header\">\n-          <h2 class=\"section-title\">Our Mission</h2>\n+          <h2 class=\"section-title\">Who We Are</h2>\n         </div>\n         <div class=\"content-block\">\n           <p>\n-            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients.\n+            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n           </p>\n+          <p>\n+            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n+          </p>\n         </div>\n       </div>\n     </section>\n@@ -306,20 +309,6 @@\n       </div>\n     </section>\n \n-    <!-- WHO WE ARE -->\n-    <section class=\"section section-alt\">\n-      <div class=\"section-inner\">\n-        <div class=\"section-header\">\n-          <h2 class=\"section-title\">Who We Are</h2>\n-        </div>\n-        <div class=\"content-block\">\n-          <p>\n-            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n-          </p>\n-        </div>\n-      </div>\n-    </section>\n-\n     <!-- OUR APPROACH -->\n     <section class=\"section\">\n       <div class=\"section-inner\">",
+                    "refToolCallId": "toolu_01Bh2KTbw17bk4vRtCYBcRXA",
+                    "language": "html"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "98dba39c-637e-4c8c-a25b-35a77fe79bd3",
+                "cliSessionId": "35de8067-e574-4514-8aec-e645f6088ba4"
+            },
+            "createdAt": 1764774009773,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01YCoRs251jgcSqkjW15EwSu",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "Good, I've successfully:\n1. Removed the \"Our Mission\" section\n2. Moved \"Who We Are\" to be the first section\n3. Updated the \"Who We Are\" text with the new content provided by the user\n\nThe sections are now in this order:\n1. HERO\n2. WHO WE ARE (first section with combined new text)\n3. OUR VALUES\n4. OUR APPROACH\n5. CTA SECTION\n\nThe task is complete."
+                },
+                {
+                    "type": "text",
+                    "text": "Done. I've removed the \"Our Mission\" section, moved \"Who We Are\" to be the first section, and updated it with the new text you provided."
+                },
+                {
+                    "type": "codePatch",
+                    "diffs": [
+                        {
+                            "path": "about.html",
+                            "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                            "patch": "@@ -7647,19 +7647,18 @@\n !-- \n-OUR MISSION\n+WHO WE ARE\n  --%3E\n@@ -7811,19 +7811,18 @@\n le%22%3E\n-Our Mission\n+Who We Are\n %3C/h2\n@@ -7921,235 +7921,956 @@\n  is \n-dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our client\n+a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.%0A          %3C/p%3E%0A          %3Cp%3E%0A            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunitie\n s.%0A \n@@ -10065,24 +10065,24 @@\n y time.%3C/p%3E%0A\n+\n           %3C/\n@@ -10134,740 +10134,8 @@\n n%3E%0A%0A\n-    %3C!-- WHO WE ARE --%3E%0A    %3Csection class=%22section section-alt%22%3E%0A      %3Cdiv class=%22section-inner%22%3E%0A        %3Cdiv class=%22section-header%22%3E%0A          %3Ch2 class=%22section-title%22%3EWho We Are%3C/h2%3E%0A        %3C/div%3E%0A        %3Cdiv class=%22content-block%22%3E%0A          %3Cp%3E%0A            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.%0A          %3C/p%3E%0A        %3C/div%3E%0A      %3C/div%3E%0A    %3C/section%3E%0A%0A\n     \n",
+                            "isNew": false,
+                            "isApplied": true,
+                            "timestamp": 1764774021067,
+                            "snapshotId": "17df2e23-b8d8-4467-9fff-7da2499eb759"
+                        }
+                    ]
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "98dba39c-637e-4c8c-a25b-35a77fe79bd3",
+                "cliSessionId": "35de8067-e574-4514-8aec-e645f6088ba4"
+            },
+            "createdAt": 1764774023282,
+            "isInternal": false
+        },
+        {
+            "id": "faf2070c-f297-41dc-9c5f-70ff088851b5",
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "in about.html, I want to put a space between this paragraph: \"3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\" and this paragraph: 3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities."
+                }
+            ],
+            "context": {},
+            "createdAt": 1764774180620,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "in about.html, I want to put a space between this paragraph: \"3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\" and this paragraph: 3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "autoAppliedRules": []
+        },
+        {
+            "id": "msg_01PMWZ7AbLYAgxxrSmbU8Kzz",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "The user wants to add a space between the two paragraphs in the \"Who We Are\" section. Looking at the current structure, both paragraphs are already in separate `<p>` tags which should already have space between them due to the CSS margin-bottom on the content-block class.\n\nHowever, the user is asking for more space. I should re-read the file to see the current state, then I can add additional margin or padding to create more visual separation between the paragraphs.\n\nLet me read the file first to see the current state."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_014DCdnSXrK5LVd7JFFFawEv",
+                    "toolName": "Read",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "offset": 266,
+                        "limit": 20
+                    },
+                    "output": "Lines 267-286 of 363 from /Users/anupeesay/PycharmProjects/3NWebsite2/about.html:\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "202b6edd-1a77-4ac0-977e-5b07c5f584d8",
+                "cliSessionId": "f7e3729e-3f9c-41d7-bbd4-0de4dcd768de"
+            },
+            "createdAt": 1764774184192,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01QRnhMPMf55JkUCTxCwkNuV",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "I can see the two paragraphs are already in separate `<p>` tags. To add more space between them, I can add a margin-bottom style to the first paragraph or add a margin-top style to the second paragraph. The easiest approach would be to add an inline style to one of them, or I could add CSS to create more space between p elements inside the content-block.\n\nLet me add an inline style to the first paragraph to give it more bottom margin."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_01J344hcSYtg6QjxQ31Ln8ty",
+                    "toolName": "Edit",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "old_string": "        <div class=\"content-block\">\n          <p>\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>",
+                        "new_string": "        <div class=\"content-block\">\n          <p style=\"margin-bottom: 1.5rem;\">\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>"
+                    },
+                    "output": "   269→        <div class=\"section-header\">\n   270→          <h2 class=\"section-title\">Who We Are</h2>\n   271→        </div>\n   272→        <div class=\"content-block\">\n   273→          <p style=\"margin-bottom: 1.5rem;\">\n   274→            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n   275→          </p>\n   276→          <p>\n   277→            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities."
+                },
+                {
+                    "type": "codeHunk",
+                    "lineBasedDiff": "--- /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n+++ /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n@@ -270,7 +270,7 @@\n           <h2 class=\"section-title\">Who We Are</h2>\n         </div>\n         <div class=\"content-block\">\n-          <p>\n+          <p style=\"margin-bottom: 1.5rem;\">\n             3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n           </p>\n           <p>",
+                    "refToolCallId": "toolu_01J344hcSYtg6QjxQ31Ln8ty",
+                    "language": "html"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "202b6edd-1a77-4ac0-977e-5b07c5f584d8",
+                "cliSessionId": "f7e3729e-3f9c-41d7-bbd4-0de4dcd768de"
+            },
+            "createdAt": 1764774188194,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01BFQYjm1C65EN5tGXtvnvza",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "Good, I've added extra margin-bottom to the first paragraph to create more space between the two paragraphs. This should provide the visual separation the user wants."
+                },
+                {
+                    "type": "text",
+                    "text": "Done. Added extra spacing between the two paragraphs."
+                },
+                {
+                    "type": "codePatch",
+                    "diffs": [
+                        {
+                            "path": "about.html",
+                            "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                            "patch": "@@ -7878,32 +7878,63 @@\n k%22%3E%0A          %3Cp\n+ style=%22margin-bottom: 1.5rem;%22\n %3E%0A            3N\n",
+                            "isNew": false,
+                            "isApplied": true,
+                            "timestamp": 1764774191890,
+                            "snapshotId": "30d99c49-9165-406d-bd8b-e636f39bc4be"
+                        }
+                    ]
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "202b6edd-1a77-4ac0-977e-5b07c5f584d8",
+                "cliSessionId": "f7e3729e-3f9c-41d7-bbd4-0de4dcd768de"
+            },
+            "createdAt": 1764774194983,
+            "isInternal": false
+        },
+        {
+            "id": "7eb19091-ecd1-478b-8f2c-cb79359a024e",
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "in about.html, After the “Our Values” section, I want to put a section called “Our Story” with the same spacing between paragraphs as in the \"Who We Are\" section. Here is the text for “Our Story”: "
+                },
+                {
+                    "type": "text",
+                    "text": "3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region’s deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity."
+                },
+                {
+                    "type": "text",
+                    "text": "By 2024, 3N Consulting’s core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete—and win—against leading global consulting firms by combining exceptional work quality with what clients often describe as “shockingly” reasonable prices."
+                },
+                {
+                    "type": "text",
+                    "text": "We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with."
+                }
+            ],
+            "context": {
+                "currentFile": {
+                    "path": "about.html",
+                    "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                    "sources": [
+                        "opened_tab"
+                    ],
+                    "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>About Us - 3N Consulting | Results. Delivered.</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <style>\n    /* Inline CSS so this preview actually renders with layout */\n    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n    html, body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: #111827;\n      background-color: #f9fafb;\n      line-height: 1.6;\n    }\n    img, video { max-width: 100%; height: auto; display: block; }\n    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }\n    .main { flex: 1; }\n\n    .site-header {\n      background: #020617;\n      color: #e5e7eb;\n      border-bottom: 1px solid #1f2937;\n      position: sticky;\n      top: 0;\n      z-index: 10;\n    }\n    .nav-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      padding: 0.75rem 1.5rem;\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 1.5rem;\n    }\n    .brand-title {\n      font-weight: 700;\n      letter-spacing: 0.08em;\n      text-transform: uppercase;\n      font-size: 0.9rem;\n    }\n    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }\n    .brand-logo { height: 70px; width: auto; max-width: 250px; }\n    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }\n    .nav-links a {\n      color: #e5e7eb;\n      text-decoration: none;\n      font-size: 0.85rem;\n      padding: 0.35rem 0.7rem;\n      border-radius: 999px;\n      transition: background 0.15s ease, color 0.15s ease;\n    }\n    .nav-links a:hover { background: #111827; }\n    .nav-links a.active { background: #e5e7eb; color: #020617; }\n    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }\n\n    @media (max-width: 768px) {\n      .nav-inner { flex-wrap: wrap; }\n      .nav-toggle { display: block; margin-left: auto; }\n      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }\n      .nav-links.show { display: flex; }\n    }\n\n    .hero {\n      padding: 4rem 1.5rem 3rem;\n      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);\n      color: #e5e7eb;\n    }\n    .hero-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: grid;\n      grid-template-columns: minmax(0, 1fr);\n      gap: 3rem;\n      align-items: center;\n    }\n    .hero-eyebrow {\n      text-transform: uppercase;\n      letter-spacing: 0.13em;\n      font-size: 0.75rem;\n      color: #9ca3af;\n      margin-bottom: 0.75rem;\n    }\n    .hero-title {\n      font-size: clamp(2.1rem, 3vw, 2.7rem);\n      font-weight: 750;\n      letter-spacing: -0.03em;\n      margin-bottom: 0.5rem;\n    }\n    .hero-body {\n      font-size: 0.98rem;\n      color: #d1d5db;\n      max-width: 48rem;\n      margin-bottom: 1.5rem;\n    }\n\n    .section { padding: 3rem 1.5rem; }\n    .section-alt { background: #f3f4f6; }\n    .section-inner { max-width: 1120px; margin: 0 auto; }\n    .section-header { margin-bottom: 2rem; }\n    .section-kicker {\n      text-transform: uppercase;\n      letter-spacing: 0.15em;\n      font-size: 0.75rem;\n      font-weight: 600;\n      color: #6b7280;\n      margin-bottom: 0.5rem;\n    }\n    .section-title {\n      font-size: 1.8rem;\n      font-weight: 700;\n      letter-spacing: -0.02em;\n      margin-bottom: 1rem;\n    }\n    .section-subtitle {\n      color: #4b5563;\n      max-width: 48rem;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 1.5rem;\n    }\n\n    .content-block {\n      color: #4b5563;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 2rem;\n    }\n\n    .content-block h3 {\n      font-size: 1.3rem;\n      font-weight: 700;\n      color: #111827;\n      margin-bottom: 1rem;\n      margin-top: 1.5rem;\n    }\n\n    .values-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n      gap: 1.5rem;\n      margin: 2rem 0;\n    }\n\n    .value-box {\n      background: #001f3f;\n      border: 1px solid #1e3a8a;\n      border-radius: 1rem;\n      padding: 1.5rem;\n      box-shadow: 0 12px 30px rgba(15,23,42,0.04);\n    }\n\n    .value-box h4 {\n      font-size: 1.1rem;\n      font-weight: 700;\n      color: #ffffff;\n      margin-bottom: 0.5rem;\n    }\n\n    .value-box p {\n      font-size: 0.95rem;\n      color: #e5e7eb;\n    }\n\n    .cta-section {\n      text-align: center;\n      padding: 2rem;\n      background: #f3f4f6;\n      border-radius: 1rem;\n      margin-top: 3rem;\n    }\n\n    .btn {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.4rem;\n      border-radius: 999px;\n      padding: 0.55rem 1.2rem;\n      font-size: 0.85rem;\n      font-weight: 600;\n      text-decoration: none;\n      border: 1px solid transparent;\n      cursor: pointer;\n      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;\n    }\n    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }\n    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }\n\n    .site-footer {\n      border-top: 1px solid #e5e7eb;\n      padding: 1.5rem 1.5rem 2rem;\n      font-size: 0.8rem;\n      color: #6b7280;\n      background: #f9fafb;\n      margin-top: 2rem;\n    }\n    .footer-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: flex;\n      flex-wrap: wrap;\n      gap: 1rem;\n      justify-content: space-between;\n    }\n    .footer-links {\n      display: flex;\n      gap: 0.9rem;\n      flex-wrap: wrap;\n    }\n    .footer-links a {\n      color: #6b7280;\n      text-decoration: none;\n    }\n    .footer-links a:hover { text-decoration: underline; }\n\n    @media (max-width: 768px) {\n      .hero { padding: 3rem 1.5rem 2rem; }\n      .section { padding: 2rem 1.5rem; }\n      .values-grid { grid-template-columns: minmax(0, 1fr); }\n    }\n  </style>\n</head>\n<body>\n<div class=\"site-wrapper\">\n  <header class=\"site-header\">\n    <div class=\"nav-inner\">\n      <div class=\"brand\" style=\"display: flex; align-items: center; gap: 1rem;\">\n        <div>\n          <img src=\"images/logos/new 3n logo.png\" alt=\"3N Consulting Logo\" style=\"height: 90px; width: auto; max-width: 300px;\">\n        </div>\n        <div style=\"display: flex; flex-direction: column; line-height: 1.1;\">\n          <div style=\"font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;\">3N Consulting</div>\n          <div style=\"font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;\">Results. Delivered.</div>\n        </div>\n      </div>\n      <button class=\"nav-toggle\" aria-label=\"Toggle navigation\">Menu</button>\n      <nav class=\"nav-links\">\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\" class=\"active\">About Us</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"careers.html\">Careers</a>\n        <a href=\"contact.html\">Contact Us</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </nav>\n    </div>\n  </header>\n\n  <main class=\"main\">\n    <!-- HERO -->\n    <section class=\"hero\">\n      <div class=\"hero-inner\">\n        <div>\n          <div class=\"hero-eyebrow\">About 3N Consulting</div>\n          <h1 class=\"hero-title\">Results. Delivered.</h1>\n          <p class=\"hero-body\">\n            Execution-focused consulting measured on outcomes. We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- WHO WE ARE -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p style=\"margin-bottom: 1.5rem;\">\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Values</h2>\n          <p class=\"section-subtitle\">The principles that guide everything we do</p>\n        </div>\n\n        <div class=\"values-grid\">\n          <div class=\"value-box\">\n            <h4>Integrity</h4>\n            <p>We maintain the highest standards of integrity in all our dealings, ensuring transparency and honesty in every engagement.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Client-Centric</h4>\n            <p>Our clients are at the heart of everything we do. We invest in understanding their challenges and delivering tailored solutions.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- CTA SECTION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"cta-section\">\n          <h3 style=\"font-size: 1.3rem; margin-bottom: 1rem;\">Ready to Work with Us?</h3>\n          <p style=\"margin-bottom: 1.5rem; color: #4b5563;\">Let's discuss how 3N Consulting can help your organization achieve measurable results.</p>\n          <a href=\"contact.html\" class=\"btn btn-primary\">Get in Touch →</a>\n        </div>\n      </div>\n    </section>\n  </main>\n\n  <footer class=\"site-footer\">\n    <div class=\"footer-inner\">\n      <div style=\"flex: 1; min-width: 200px;\">\n        <div style=\"font-weight: 600; margin-bottom: 0.5rem;\">3N Consulting</div>\n        <p style=\"color: #6b7280;\">Results. Delivered.</p>\n      </div>\n      <div class=\"footer-links\">\n        <a href=\"https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all\" target=\"_blank\">LinkedIn</a>\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\">About</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"contact.html\">Contact</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </div>\n    </div>\n    <div style=\"text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;\">\n      <p>&copy; 2024 3N Consulting. All rights reserved.</p>\n    </div>\n  </footer>\n</div>\n\n<script src=\"script.js\"></script>\n</body>\n</html>",
+                    "language": "html"
+                }
+            },
+            "createdAt": 1764774393920,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "in about.html, After the “Our Values” section, I want to put a section called “Our Story” with the same spacing between paragraphs as in the \"Who We Are\" section. Here is the text for “Our Story”: "
+                            }
+                        ]
+                    },
+                    {
+                        "type": "paragraph"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region’s deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "paragraph"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "By 2024, 3N Consulting’s core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete—and win—against leading global consulting firms by combining exceptional work quality with what clients often describe as “shockingly” reasonable prices."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "paragraph"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "autoAppliedRules": []
+        },
+        {
+            "id": "msg_013sQt8ixaEFFCwZfVZ98VQt",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "The user wants me to add a new \"Our Story\" section after the \"Our Values\" section in about.html. The section should have the same spacing between paragraphs as the \"Who We Are\" section.\n\nLooking at the \"Who We Are\" section, it has:\n- First paragraph with `style=\"margin-bottom: 1.5rem;\"`\n- Second paragraph without the style\n\nSo for \"Our Story\", which has three paragraphs, I should apply the same pattern:\n- First paragraph: `style=\"margin-bottom: 1.5rem;\"`\n- Second paragraph: `style=\"margin-bottom: 1.5rem;\"`\n- Third paragraph: no style\n\nLet me find where to insert this. The \"Our Values\" section ends around line 310, and then \"Our Approach\" starts. I should insert \"Our Story\" between them.\n\nLet me read the current state of the file to see the exact location."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_019e3t63oi8oYnsAHJH2BCs5",
+                    "toolName": "Read",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "offset": 300,
+                        "limit": 30
+                    },
+                    "output": "Lines 301-330 of 363 from /Users/anupeesay/PycharmProjects/3NWebsite2/about.html:\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- CTA SECTION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"cta-section\">\n          <h3 style=\"font-size: 1.3rem; margin-bottom: 1rem;\">Ready to Work with Us?</h3>"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "90d3fca2-577f-40f7-b5e5-1cf33e9c8ec9",
+                "cliSessionId": "efe1f364-ee20-4fad-ab5e-1f831f7a30f7"
+            },
+            "createdAt": 1764774396986,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01A6fwzsciVBqFVvxgsZRpoh",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "I need to insert the \"Our Story\" section after the \"Our Values\" section (which ends at line 310) and before the \"Our Approach\" section (which starts at line 313). I'll insert it between lines 310 and 312."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_01HmcxhsYaPeV9Zt1ayYUV6n",
+                    "toolName": "Edit",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "old_string": "      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">",
+                        "new_string": "      </div>\n    </section>\n\n    <!-- OUR STORY -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Story</h2>\n        </div>\n        <div class=\"content-block\">\n          <p style=\"margin-bottom: 1.5rem;\">\n            3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region's deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity.\n          </p>\n          <p style=\"margin-bottom: 1.5rem;\">\n            By 2024, 3N Consulting's core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete—and win—against leading global consulting firms by combining exceptional work quality with what clients often describe as \"shockingly\" reasonable prices.\n          </p>\n          <p>\n            We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">"
+                    },
+                    "output": "   308→        </div>\n   309→      </div>\n   310→    </section>\n   311→\n   312→    <!-- OUR STORY -->\n   313→    <section class=\"section section-alt\">\n   314→      <div class=\"section-inner\">\n   315→        <div class=\"section-header\">\n   316→          <h2 class=\"section-title\">Our Story</h2>\n   317→        </div>\n   318→        <div class=\"content-block\">\n   319→          <p style=\"margin-bottom: 1.5rem;\">\n   320→            3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region's deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity.\n   321→          </p>\n   322→          <p style=\"margin-bottom: 1.5rem;\">\n   323→            By 2024, 3N Consulting's core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete—and win—against leading global consulting firms by combining exceptional work quality with what clients often describe as \"shockingly\" reasonable prices.\n   324→          </p>\n   325→          <p>\n   326→            We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with.\n   327→          </p>\n   328→        </div>\n   329→      </div>\n   330→    </section>\n   331→\n   332→    <!-- OUR APPROACH -->\n   333→    <section class=\"section\">\n   334→      <div class=\"section-inner\">\n   335→        <div class=\"section-header\">"
+                },
+                {
+                    "type": "codeHunk",
+                    "lineBasedDiff": "--- /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n+++ /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n@@ -309,6 +309,26 @@\n       </div>\n     </section>\n \n+    <!-- OUR STORY -->\n+    <section class=\"section section-alt\">\n+      <div class=\"section-inner\">\n+        <div class=\"section-header\">\n+          <h2 class=\"section-title\">Our Story</h2>\n+        </div>\n+        <div class=\"content-block\">\n+          <p style=\"margin-bottom: 1.5rem;\">\n+            3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region's deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity.\n+          </p>\n+          <p style=\"margin-bottom: 1.5rem;\">\n+            By 2024, 3N Consulting's core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete—and win—against leading global consulting firms by combining exceptional work quality with what clients often describe as \"shockingly\" reasonable prices.\n+          </p>\n+          <p>\n+            We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with.\n+          </p>\n+        </div>\n+      </div>\n+    </section>\n+\n     <!-- OUR APPROACH -->\n     <section class=\"section\">\n       <div class=\"section-inner\">",
+                    "refToolCallId": "toolu_01HmcxhsYaPeV9Zt1ayYUV6n",
+                    "language": "html"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "90d3fca2-577f-40f7-b5e5-1cf33e9c8ec9",
+                "cliSessionId": "efe1f364-ee20-4fad-ab5e-1f831f7a30f7"
+            },
+            "createdAt": 1764774401103,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01ViQFUdSeGAxCT2BPYwpyjn",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "Perfect! I've successfully added the \"Our Story\" section after the \"Our Values\" section with the same paragraph spacing pattern as the \"Who We Are\" section (1.5rem margin-bottom on the first two paragraphs, no style on the last one)."
+                },
+                {
+                    "type": "text",
+                    "text": "Done. Added the \"Our Story\" section after \"Our Values\" with the same paragraph spacing as \"Who We Are\"."
+                },
+                {
+                    "type": "codePatch",
+                    "diffs": [
+                        {
+                            "path": "about.html",
+                            "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                            "patch": "@@ -10153,32 +10153,1651 @@\n     %3C/section%3E%0A%0A\n+    %3C!-- OUR STORY --%3E%0A    %3Csection class=%22section section-alt%22%3E%0A      %3Cdiv class=%22section-inner%22%3E%0A        %3Cdiv class=%22section-header%22%3E%0A          %3Ch2 class=%22section-title%22%3EOur Story%3C/h2%3E%0A        %3C/div%3E%0A        %3Cdiv class=%22content-block%22%3E%0A          %3Cp style=%22margin-bottom: 1.5rem;%22%3E%0A            3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region's deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity.%0A          %3C/p%3E%0A          %3Cp style=%22margin-bottom: 1.5rem;%22%3E%0A            By 2024, 3N Consulting's core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete%E2%80%94and win%E2%80%94against leading global consulting firms by combining exceptional work quality with what clients often describe as %22shockingly%22 reasonable prices.%0A          %3C/p%3E%0A          %3Cp%3E%0A            We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with.%0A          %3C/p%3E%0A        %3C/div%3E%0A      %3C/div%3E%0A    %3C/section%3E%0A%0A\n     %3C!-- OUR APP\n",
+                            "isNew": false,
+                            "isApplied": true,
+                            "timestamp": 1764774407401,
+                            "snapshotId": "81078ffa-1314-43cd-bd9f-ec6c13306e3d"
+                        }
+                    ]
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "90d3fca2-577f-40f7-b5e5-1cf33e9c8ec9",
+                "cliSessionId": "efe1f364-ee20-4fad-ab5e-1f831f7a30f7"
+            },
+            "createdAt": 1764774411726,
+            "isInternal": false
+        },
+        {
+            "id": "d77428b3-a777-4c7e-b515-27463289711e",
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "In about.html, I want to take out the “Our Approach” section and instead put a section called “Our Work” with the same spacing between paragraphs. Here is the text for “Our Work”: "
+                },
+                {
+                    "type": "text",
+                    "text": "When 3N Consulting was founded, past clients immediately reached out to re-engage our leadership, trusting us to deliver fast, high-impact results. We consistently meet client timelines and help organizations solve their most pressing operational challenges. Our engagements have included optimizing operations and production facilities to meet rising demand, redesigning administrative and shared services for cost and productivity gains, and building centralized procurement functions that standardize purchasing and capture volume discounts."
+                },
+                {
+                    "type": "text",
+                    "text": "Our client portfolio spans private equity firms, Fortune 500 companies, federal, state, and local government agencies, intergovernmental organizations, and leading higher education institutions. We have successfully delivered projects under fixed-fee, outcome-based, contingent-fee, and value-based structures. We also provide pro bono consulting services for selected causes and take pride in contributing to the Montgomery County, MD community."
+                }
+            ],
+            "context": {
+                "currentFile": {
+                    "path": "about.html",
+                    "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                    "sources": [
+                        "opened_tab"
+                    ],
+                    "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>About Us - 3N Consulting | Results. Delivered.</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <style>\n    /* Inline CSS so this preview actually renders with layout */\n    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n    html, body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: #111827;\n      background-color: #f9fafb;\n      line-height: 1.6;\n    }\n    img, video { max-width: 100%; height: auto; display: block; }\n    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }\n    .main { flex: 1; }\n\n    .site-header {\n      background: #020617;\n      color: #e5e7eb;\n      border-bottom: 1px solid #1f2937;\n      position: sticky;\n      top: 0;\n      z-index: 10;\n    }\n    .nav-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      padding: 0.75rem 1.5rem;\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 1.5rem;\n    }\n    .brand-title {\n      font-weight: 700;\n      letter-spacing: 0.08em;\n      text-transform: uppercase;\n      font-size: 0.9rem;\n    }\n    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }\n    .brand-logo { height: 70px; width: auto; max-width: 250px; }\n    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }\n    .nav-links a {\n      color: #e5e7eb;\n      text-decoration: none;\n      font-size: 0.85rem;\n      padding: 0.35rem 0.7rem;\n      border-radius: 999px;\n      transition: background 0.15s ease, color 0.15s ease;\n    }\n    .nav-links a:hover { background: #111827; }\n    .nav-links a.active { background: #e5e7eb; color: #020617; }\n    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }\n\n    @media (max-width: 768px) {\n      .nav-inner { flex-wrap: wrap; }\n      .nav-toggle { display: block; margin-left: auto; }\n      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }\n      .nav-links.show { display: flex; }\n    }\n\n    .hero {\n      padding: 4rem 1.5rem 3rem;\n      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);\n      color: #e5e7eb;\n    }\n    .hero-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: grid;\n      grid-template-columns: minmax(0, 1fr);\n      gap: 3rem;\n      align-items: center;\n    }\n    .hero-eyebrow {\n      text-transform: uppercase;\n      letter-spacing: 0.13em;\n      font-size: 0.75rem;\n      color: #9ca3af;\n      margin-bottom: 0.75rem;\n    }\n    .hero-title {\n      font-size: clamp(2.1rem, 3vw, 2.7rem);\n      font-weight: 750;\n      letter-spacing: -0.03em;\n      margin-bottom: 0.5rem;\n    }\n    .hero-body {\n      font-size: 0.98rem;\n      color: #d1d5db;\n      max-width: 48rem;\n      margin-bottom: 1.5rem;\n    }\n\n    .section { padding: 3rem 1.5rem; }\n    .section-alt { background: #f3f4f6; }\n    .section-inner { max-width: 1120px; margin: 0 auto; }\n    .section-header { margin-bottom: 2rem; }\n    .section-kicker {\n      text-transform: uppercase;\n      letter-spacing: 0.15em;\n      font-size: 0.75rem;\n      font-weight: 600;\n      color: #6b7280;\n      margin-bottom: 0.5rem;\n    }\n    .section-title {\n      font-size: 1.8rem;\n      font-weight: 700;\n      letter-spacing: -0.02em;\n      margin-bottom: 1rem;\n    }\n    .section-subtitle {\n      color: #4b5563;\n      max-width: 48rem;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 1.5rem;\n    }\n\n    .content-block {\n      color: #4b5563;\n      font-size: 0.98rem;\n      line-height: 1.8;\n      margin-bottom: 2rem;\n    }\n\n    .content-block h3 {\n      font-size: 1.3rem;\n      font-weight: 700;\n      color: #111827;\n      margin-bottom: 1rem;\n      margin-top: 1.5rem;\n    }\n\n    .values-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n      gap: 1.5rem;\n      margin: 2rem 0;\n    }\n\n    .value-box {\n      background: #001f3f;\n      border: 1px solid #1e3a8a;\n      border-radius: 1rem;\n      padding: 1.5rem;\n      box-shadow: 0 12px 30px rgba(15,23,42,0.04);\n    }\n\n    .value-box h4 {\n      font-size: 1.1rem;\n      font-weight: 700;\n      color: #ffffff;\n      margin-bottom: 0.5rem;\n    }\n\n    .value-box p {\n      font-size: 0.95rem;\n      color: #e5e7eb;\n    }\n\n    .cta-section {\n      text-align: center;\n      padding: 2rem;\n      background: #f3f4f6;\n      border-radius: 1rem;\n      margin-top: 3rem;\n    }\n\n    .btn {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.4rem;\n      border-radius: 999px;\n      padding: 0.55rem 1.2rem;\n      font-size: 0.85rem;\n      font-weight: 600;\n      text-decoration: none;\n      border: 1px solid transparent;\n      cursor: pointer;\n      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;\n    }\n    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }\n    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }\n\n    .site-footer {\n      border-top: 1px solid #e5e7eb;\n      padding: 1.5rem 1.5rem 2rem;\n      font-size: 0.8rem;\n      color: #6b7280;\n      background: #f9fafb;\n      margin-top: 2rem;\n    }\n    .footer-inner {\n      max-width: 1120px;\n      margin: 0 auto;\n      display: flex;\n      flex-wrap: wrap;\n      gap: 1rem;\n      justify-content: space-between;\n    }\n    .footer-links {\n      display: flex;\n      gap: 0.9rem;\n      flex-wrap: wrap;\n    }\n    .footer-links a {\n      color: #6b7280;\n      text-decoration: none;\n    }\n    .footer-links a:hover { text-decoration: underline; }\n\n    @media (max-width: 768px) {\n      .hero { padding: 3rem 1.5rem 2rem; }\n      .section { padding: 2rem 1.5rem; }\n      .values-grid { grid-template-columns: minmax(0, 1fr); }\n    }\n  </style>\n</head>\n<body>\n<div class=\"site-wrapper\">\n  <header class=\"site-header\">\n    <div class=\"nav-inner\">\n      <div class=\"brand\" style=\"display: flex; align-items: center; gap: 1rem;\">\n        <div>\n          <img src=\"images/logos/new 3n logo.png\" alt=\"3N Consulting Logo\" style=\"height: 90px; width: auto; max-width: 300px;\">\n        </div>\n        <div style=\"display: flex; flex-direction: column; line-height: 1.1;\">\n          <div style=\"font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;\">3N Consulting</div>\n          <div style=\"font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;\">Results. Delivered.</div>\n        </div>\n      </div>\n      <button class=\"nav-toggle\" aria-label=\"Toggle navigation\">Menu</button>\n      <nav class=\"nav-links\">\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\" class=\"active\">About Us</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"careers.html\">Careers</a>\n        <a href=\"contact.html\">Contact Us</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </nav>\n    </div>\n  </header>\n\n  <main class=\"main\">\n    <!-- HERO -->\n    <section class=\"hero\">\n      <div class=\"hero-inner\">\n        <div>\n          <div class=\"hero-eyebrow\">About 3N Consulting</div>\n          <h1 class=\"hero-title\">Results. Delivered.</h1>\n          <p class=\"hero-body\">\n            Execution-focused consulting measured on outcomes. We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- WHO WE ARE -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Who We Are</h2>\n        </div>\n        <div class=\"content-block\">\n          <p style=\"margin-bottom: 1.5rem;\">\n            3N Consulting is a Maryland-based certified Minority Business Enterprise (MBE) in the Small Business Reserve (SBR) program and an NMSDC certified MBE. With extensive experience serving public agencies, educational institutions, and private sector organizations, we bring deep expertise in organizational redesign, strategy & operations, data analytics, digital transformation, and human capital management.\n          </p>\n          <p>\n            3N Consulting is dedicated to delivering measurable results through execution-focused consulting. We build long-term partnerships with our clients, take ownership of outcomes, and practice frugality to ensure savings flow directly to our clients. We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR VALUES -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Values</h2>\n          <p class=\"section-subtitle\">The principles that guide everything we do</p>\n        </div>\n\n        <div class=\"values-grid\">\n          <div class=\"value-box\">\n            <h4>Integrity</h4>\n            <p>We maintain the highest standards of integrity in all our dealings, ensuring transparency and honesty in every engagement.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Client-Centric</h4>\n            <p>Our clients are at the heart of everything we do. We invest in understanding their challenges and delivering tailored solutions.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Results-Oriented</h4>\n            <p>We are committed to delivering tangible, measurable results that drive real business impact.</p>\n          </div>\n          <div class=\"value-box\">\n            <h4>Ownership</h4>\n            <p>We don't just staff projects—we own the results and keep our commitments, every time.</p>\n          </div>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR STORY -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Story</h2>\n        </div>\n        <div class=\"content-block\">\n          <p style=\"margin-bottom: 1.5rem;\">\n            3N Consulting was founded in 2023, when CEO Nick Gupta returned to Maryland after two decades of working across major cities and serving clients around the world. Motivated by a desire to strengthen local organizations and tap into the region's deep pool of talent, he set out to build a consulting firm rooted in community impact, excellence, and integrity.\n          </p>\n          <p style=\"margin-bottom: 1.5rem;\">\n            By 2024, 3N Consulting's core team had taken shape. Since then, we have grown quarter after quarter, propelled by a clear and consistent philosophy: deliver high-quality, high-impact consulting services at rates that make world-class support accessible. This commitment enables us to compete—and win—against leading global consulting firms by combining exceptional work quality with what clients often describe as \"shockingly\" reasonable prices.\n          </p>\n          <p>\n            We have successfully delivered on every engagement to date. Clients regularly extend our partnerships into subsequent phases of work, and many of our new projects come directly from referrals. Their trust and continued support serve as the engine of our growth and a testament to the value we strive to create for every organization we work with.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- CTA SECTION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"cta-section\">\n          <h3 style=\"font-size: 1.3rem; margin-bottom: 1rem;\">Ready to Work with Us?</h3>\n          <p style=\"margin-bottom: 1.5rem; color: #4b5563;\">Let's discuss how 3N Consulting can help your organization achieve measurable results.</p>\n          <a href=\"contact.html\" class=\"btn btn-primary\">Get in Touch →</a>\n        </div>\n      </div>\n    </section>\n  </main>\n\n  <footer class=\"site-footer\">\n    <div class=\"footer-inner\">\n      <div style=\"flex: 1; min-width: 200px;\">\n        <div style=\"font-weight: 600; margin-bottom: 0.5rem;\">3N Consulting</div>\n        <p style=\"color: #6b7280;\">Results. Delivered.</p>\n      </div>\n      <div class=\"footer-links\">\n        <a href=\"https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all\" target=\"_blank\">LinkedIn</a>\n        <a href=\"index.html\">Home</a>\n        <a href=\"about.html\">About</a>\n        <a href=\"services.html\">Services</a>\n        <a href=\"contact.html\">Contact</a>\n        <a href=\"thought-leadership.html\">Meet Our Team</a>\n        <a href=\"toolkit.html\">Our Toolkit</a>\n        <a href=\"disclaimers.html\">Disclaimers</a>\n      </div>\n    </div>\n    <div style=\"text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;\">\n      <p>&copy; 2024 3N Consulting. All rights reserved.</p>\n    </div>\n  </footer>\n</div>\n\n<script src=\"script.js\"></script>\n</body>\n</html>",
+                    "language": "html"
+                }
+            },
+            "createdAt": 1764774679766,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "In about.html, I want to take out the “Our Approach” section and instead put a section called “Our Work” with the same spacing between paragraphs. Here is the text for “Our Work”: "
+                            }
+                        ]
+                    },
+                    {
+                        "type": "paragraph"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "When 3N Consulting was founded, past clients immediately reached out to re-engage our leadership, trusting us to deliver fast, high-impact results. We consistently meet client timelines and help organizations solve their most pressing operational challenges. Our engagements have included optimizing operations and production facilities to meet rising demand, redesigning administrative and shared services for cost and productivity gains, and building centralized procurement functions that standardize purchasing and capture volume discounts."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "paragraph"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Our client portfolio spans private equity firms, Fortune 500 companies, federal, state, and local government agencies, intergovernmental organizations, and leading higher education institutions. We have successfully delivered projects under fixed-fee, outcome-based, contingent-fee, and value-based structures. We also provide pro bono consulting services for selected causes and take pride in contributing to the Montgomery County, MD community."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "autoAppliedRules": []
+        },
+        {
+            "id": "msg_01CCH8jgh1yQZpYcM8Vi7s2a",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "The user wants me to:\n1. Remove the \"Our Approach\" section\n2. Replace it with a new section called \"Our Work\"\n3. Use the same spacing between paragraphs as in \"Who We Are\" and \"Our Story\"\n\nI need to read the current state of the file around the \"Our Approach\" section and replace it with the new \"Our Work\" section."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_011meL1bqgdaSVSiaNFUx2Le",
+                    "toolName": "Read",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "offset": 330,
+                        "limit": 20
+                    },
+                    "output": "Lines 331-350 of 383 from /Users/anupeesay/PycharmProjects/3NWebsite2/about.html:\n\n    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>\n\n    <!-- CTA SECTION -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"cta-section\">\n          <h3 style=\"font-size: 1.3rem; margin-bottom: 1rem;\">Ready to Work with Us?</h3>"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "44db8bc5-814c-4dcf-a11e-22788bf5d3b7",
+                "cliSessionId": "0b74b37b-976f-4106-8a08-db5f58daca10"
+            },
+            "createdAt": 1764774682976,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01LuVDjbbu4XH66j137g4oQy",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "I need to replace the \"OUR APPROACH\" section with \"OUR WORK\" section. The new section should have the same styling as \"Who We Are\" and \"Our Story\" - using `section-alt` for the background and having paragraphs with `margin-bottom: 1.5rem;` between them."
+                },
+                {
+                    "type": "cliToolCall",
+                    "toolCallId": "toolu_01GTzwqYc4rUcDoZX97hTxDK",
+                    "toolName": "Edit",
+                    "status": "SUCCESS",
+                    "input": {
+                        "file_path": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                        "old_string": "    <!-- OUR APPROACH -->\n    <section class=\"section\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Approach</h2>\n        </div>\n        <div class=\"content-block\">\n          <p>\n            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n          </p>\n        </div>\n      </div>\n    </section>",
+                        "new_string": "    <!-- OUR WORK -->\n    <section class=\"section section-alt\">\n      <div class=\"section-inner\">\n        <div class=\"section-header\">\n          <h2 class=\"section-title\">Our Work</h2>\n        </div>\n        <div class=\"content-block\">\n          <p style=\"margin-bottom: 1.5rem;\">\n            When 3N Consulting was founded, past clients immediately reached out to re-engage our leadership, trusting us to deliver fast, high-impact results. We consistently meet client timelines and help organizations solve their most pressing operational challenges. Our engagements have included optimizing operations and production facilities to meet rising demand, redesigning administrative and shared services for cost and productivity gains, and building centralized procurement functions that standardize purchasing and capture volume discounts.\n          </p>\n          <p>\n            Our client portfolio spans private equity firms, Fortune 500 companies, federal, state, and local government agencies, intergovernmental organizations, and leading higher education institutions. We have successfully delivered projects under fixed-fee, outcome-based, contingent-fee, and value-based structures. We also provide pro bono consulting services for selected causes and take pride in contributing to the Montgomery County, MD community.\n          </p>\n        </div>\n      </div>\n    </section>"
+                    },
+                    "output": "   328→        </div>\n   329→      </div>\n   330→    </section>\n   331→\n   332→    <!-- OUR WORK -->\n   333→    <section class=\"section section-alt\">\n   334→      <div class=\"section-inner\">\n   335→        <div class=\"section-header\">\n   336→          <h2 class=\"section-title\">Our Work</h2>\n   337→        </div>\n   338→        <div class=\"content-block\">\n   339→          <p style=\"margin-bottom: 1.5rem;\">\n   340→            When 3N Consulting was founded, past clients immediately reached out to re-engage our leadership, trusting us to deliver fast, high-impact results. We consistently meet client timelines and help organizations solve their most pressing operational challenges. Our engagements have included optimizing operations and production facilities to meet rising demand, redesigning administrative and shared services for cost and productivity gains, and building centralized procurement functions that standardize purchasing and capture volume discounts.\n   341→          </p>\n   342→          <p>\n   343→            Our client portfolio spans private equity firms, Fortune 500 companies, federal, state, and local government agencies, intergovernmental organizations, and leading higher education institutions. We have successfully delivered projects under fixed-fee, outcome-based, contingent-fee, and value-based structures. We also provide pro bono consulting services for selected causes and take pride in contributing to the Montgomery County, MD community.\n   344→          </p>\n   345→        </div>\n   346→      </div>\n   347→    </section>"
+                },
+                {
+                    "type": "codeHunk",
+                    "lineBasedDiff": "--- /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n+++ /Users/anupeesay/PycharmProjects/3NWebsite2/about.html\n@@ -329,15 +329,18 @@\n       </div>\n     </section>\n \n-    <!-- OUR APPROACH -->\n-    <section class=\"section\">\n+    <!-- OUR WORK -->\n+    <section class=\"section section-alt\">\n       <div class=\"section-inner\">\n         <div class=\"section-header\">\n-          <h2 class=\"section-title\">Our Approach</h2>\n+          <h2 class=\"section-title\">Our Work</h2>\n         </div>\n         <div class=\"content-block\">\n+          <p style=\"margin-bottom: 1.5rem;\">\n+            When 3N Consulting was founded, past clients immediately reached out to re-engage our leadership, trusting us to deliver fast, high-impact results. We consistently meet client timelines and help organizations solve their most pressing operational challenges. Our engagements have included optimizing operations and production facilities to meet rising demand, redesigning administrative and shared services for cost and productivity gains, and building centralized procurement functions that standardize purchasing and capture volume discounts.\n+          </p>\n           <p>\n-            We combine strategic thinking with operational excellence to deliver sustainable change. Our team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigate challenges and seize opportunities.\n+            Our client portfolio spans private equity firms, Fortune 500 companies, federal, state, and local government agencies, intergovernmental organizations, and leading higher education institutions. We have successfully delivered projects under fixed-fee, outcome-based, contingent-fee, and value-based structures. We also provide pro bono consulting services for selected causes and take pride in contributing to the Montgomery County, MD community.\n           </p>\n         </div>\n       </div>",
+                    "refToolCallId": "toolu_01GTzwqYc4rUcDoZX97hTxDK",
+                    "language": "html"
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "44db8bc5-814c-4dcf-a11e-22788bf5d3b7",
+                "cliSessionId": "0b74b37b-976f-4106-8a08-db5f58daca10"
+            },
+            "createdAt": 1764774687172,
+            "isInternal": false
+        },
+        {
+            "id": "msg_01Uzp1GKH6kqrVDjqMngUmH9",
+            "role": "assistant",
+            "content": [
+                {
+                    "type": "thought",
+                    "text": "Perfect! I've successfully replaced the \"Our Approach\" section with the new \"Our Work\" section. The section uses `section-alt` for the background (consistent with \"Who We Are\" and \"Our Story\"), and the paragraphs have the same spacing with `margin-bottom: 1.5rem;` between them."
+                },
+                {
+                    "type": "text",
+                    "text": "Done. Replaced \"Our Approach\" with \"Our Work\" section using the same paragraph spacing."
+                },
+                {
+                    "type": "codePatch",
+                    "diffs": [
+                        {
+                            "path": "about.html",
+                            "fsPath": "/Users/anupeesay/PycharmProjects/3NWebsite2/about.html",
+                            "patch": "@@ -11797,16 +11797,12 @@\n OUR \n-APPROACH\n+WORK\n  --%3E\n@@ -11821,32 +11821,44 @@\n n class=%22section\n+ section-alt\n %22%3E%0A      %3Cdiv cl\n@@ -11959,16 +11959,12 @@\n Our \n-Approach\n+Work\n %3C/h2\n@@ -12032,293 +12032,1084 @@\n   %3Cp\n-%3E%0A            We combine strategic thinking with operational excellence to deliver sustainable\n+ style=%22margin-bottom: 1.5rem;%22%3E%0A            When 3N Consulting was founded, past clients immediately reached out to re-engage our leadership, trusting us to deliver fast, high-impact results. We consistently meet client timelines and help organizations solve their most pressing operational\n  cha\n+lle\n nge\n+s\n . Our \n-team consists of experienced consultants who understand the complexities of modern business and are committed to helping organizations navigat\n+engagements have included optimizing operations and production facilities to meet rising demand, redesigning administrative and shared services for cost and productivity gains, and building centralized procurement functions that standardize purchasing and capture volume discounts.%0A          %3C/p%3E%0A          %3Cp%3E%0A            Our client portfolio spans private equity firms, Fortune 500 companies, federal, state, and local government agencies, intergovernmental organizations, and leading higher education institutions. W\n e \n-c\n ha\n-llenges and seize opportunities\n+ve successfully delivered projects under fixed-fee, outcome-based, contingent-fee, and value-based structures. We also provide pro bono consulting services for selected causes and take pride in contributing to the Montgomery County, MD community\n .%0A  \n",
+                            "isNew": false,
+                            "isApplied": true,
+                            "timestamp": 1764774692335,
+                            "snapshotId": "44db957f-40dd-4375-9480-e03622858b69"
+                        }
+                    ]
+                }
+            ],
+            "context": {
+                "author": "Code agent",
+                "operationId": "44db8bc5-814c-4dcf-a11e-22788bf5d3b7",
+                "cliSessionId": "0b74b37b-976f-4106-8a08-db5f58daca10",
                 "usageStatistics": {
                     "llmCallsUsedForAnswer": 3.0,
-                    "llmCallsUsedTotal": 3.0,
+                    "llmCallsUsedTotal": 17.0,
                     "llmCallsLimit": 280.0,
                     "limitRenewalMillisecondTimestamp": 1764831600000
                 }
             },
-            "createdAt": 1764770514095,
+            "createdAt": 1764774695154,
             "isInternal": false
         }
     ],
