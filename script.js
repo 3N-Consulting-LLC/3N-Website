@@ -1,25 +1,3 @@
-// Testimonial Carousel functionality
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll('.testimonial-slide');
-const totalTestimonials = testimonials.length;
-
-function showTestimonial(index) {
-    // Remove active class from all slides and dots
-    testimonials.forEach(slide => slide.classList.remove('active'));
-    document.querySelectorAll('.carousel-dot').forEach(dot => dot.classList.remove('active'));
-
-    // Set current testimonial
-    currentTestimonial = index;
-    testimonials[currentTestimonial].classList.add('active');
-    document.querySelectorAll('.carousel-dot')[currentTestimonial].classList.add('active');
-}
-
-// Auto-rotate testimonials every 8 seconds
-setInterval(() => {
-    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-    showTestimonial(currentTestimonial);
-}, 8000);
-
 // Mobile Menu Toggle
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
