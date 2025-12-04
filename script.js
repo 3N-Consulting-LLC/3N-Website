@@ -20,10 +20,13 @@ setInterval(() => {
     showTestimonial(currentTestimonial);
 }, 8000);
 
-// Mobile Menu Toggle (for future enhancement)
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+// Mobile Menu Toggle
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+if (toggle && links) {
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('show');
+  });
 }
 
 // Smooth scroll functionality for navigation links
