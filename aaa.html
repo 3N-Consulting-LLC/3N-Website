@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>AAA - Assess–Align–Accelerate | 3N Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Inline CSS so this preview actually renders with layout */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #111827;
       background-color: #f9fafb;
       line-height: 1.6;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
-    .main { flex: 1; }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
 
     .site-header {
       background: #020617;
@@ -25,6 +48,7 @@
       top: 0;
       z-index: 10;
     }
+
     .nav-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -34,15 +58,31 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand-title {
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
-    .brand-logo { height: 70px; width: auto; max-width: 250px; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brand-logo {
+      height: 70px;
+      width: auto;
+      max-width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: #e5e7eb;
       text-decoration: none;
@@ -51,15 +91,43 @@
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
     }
-    .nav-links a:hover { background: #111827; }
-    .nav-links a.active { background: #e5e7eb; color: #020617; }
-    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
 
     @media (max-width: 768px) {
-      .nav-inner { flex-wrap: wrap; }
-      .nav-toggle { display: block; margin-left: auto; }
-      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
-      .nav-links.show { display: flex; }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .hero {
@@ -67,6 +135,7 @@
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
     }
+
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -75,6 +144,7 @@
       gap: 3rem;
       align-items: center;
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.13em;
@@ -82,12 +152,14 @@
       color: #9ca3af;
       margin-bottom: 0.75rem;
     }
+
     .hero-title {
       font-size: clamp(2.1rem, 3vw, 2.7rem);
       font-weight: 750;
       letter-spacing: -0.03em;
       margin-bottom: 0.5rem;
     }
+
     .hero-body {
       font-size: 0.98rem;
       color: #d1d5db;
@@ -95,10 +167,23 @@
       margin-bottom: 1.5rem;
     }
 
-    .section { padding: 3rem 1.5rem; }
-    .section-alt { background: #f3f4f6; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header { margin-bottom: 2rem; }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -107,12 +192,14 @@
       color: #6b7280;
       margin-bottom: 0.5rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
     }
+
     .section-subtitle {
       color: #4b5563;
       max-width: 48rem;
@@ -350,8 +437,17 @@
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
     }
-    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
-    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
 
     .site-footer {
       border-top: 1px solid #e5e7eb;
@@ -361,6 +457,7 @@
       background: #f9fafb;
       margin-top: 2rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -369,263 +466,309 @@
       gap: 1rem;
       justify-content: space-between;
     }
+
     .footer-links {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: #6b7280;
       text-decoration: none;
     }
-    .footer-links a:hover { text-decoration: underline; }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
 
     @media (max-width: 768px) {
-      .hero { padding: 3rem 1.5rem 2rem; }
-      .section { padding: 2rem 1.5rem; }
-      .phase-grid { grid-template-columns: minmax(0, 1fr); }
-      .benefits-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+      .hero {
+        padding: 3rem 1.5rem 2rem;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+      }
+
+      .phase-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
     }
   </style>
+  <link rel="icon" type="image/png" href="images/logos/3N Consulting.png">
 </head>
+
 <body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
-        <div>
-          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+              style="height: 90px; width: auto; max-width: 300px;">
+          </div>
+          <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <div
+              style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+              3N Consulting</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
+          </div>
         </div>
-        <div style="display: flex; flex-direction: column; line-height: 1.1;">
-          <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
-          <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
-        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+        </nav>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-eyebrow">Execution Accelerator Methodology</div>
-          <h1 class="hero-title">Assess–Align–Accelerate (AAA)</h1>
-          <p class="hero-body">
-            Strategy meets speed — transforming complex organizational challenges into actionable results in days and weeks, not months.
-          </p>
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow">Execution Accelerator Methodology</div>
+            <h1 class="hero-title">Assess–Align–Accelerate (AAA)</h1>
+            <p class="hero-body">
+              Strategy meets speed — transforming complex organizational challenges into actionable results in days and
+              weeks, not months.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- OVERVIEW SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">From Framework to Action</h2>
+      <!-- OVERVIEW SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">From Framework to Action</h2>
+          </div>
+          <div class="content-block">
+            <p>
+              While O-RAM provides the methodological foundation for every 3N Consulting engagement, our
+              Assess–Align–Accelerate (AAA) Enabler transforms that framework into action.
+            </p>
+            <p>
+              The AAA Enabler is a toolkit and delivery accelerator that allows 3N to perform complex organizational
+              assessments and transformations in days or weeks—not months. It combines structured diagnostic models,
+              financial tools, interview frameworks, and operational checklists to drive clarity and results under even
+              the most aggressive timelines.
+            </p>
+            <p style="font-weight: 600; color: #020617; margin-top: 1.5rem;">
+              AAA is where strategy meets speed—maintaining analytical rigor while enabling rapid insight,
+              collaboration, and decision-making.
+            </p>
+          </div>
         </div>
-        <div class="content-block">
-          <p>
-            While O-RAM provides the methodological foundation for every 3N Consulting engagement, our Assess–Align–Accelerate (AAA) Enabler transforms that framework into action.
-          </p>
-          <p>
-            The AAA Enabler is a toolkit and delivery accelerator that allows 3N to perform complex organizational assessments and transformations in days or weeks—not months. It combines structured diagnostic models, financial tools, interview frameworks, and operational checklists to drive clarity and results under even the most aggressive timelines.
-          </p>
-          <p style="font-weight: 600; color: #020617; margin-top: 1.5rem;">
-            AAA is where strategy meets speed—maintaining analytical rigor while enabling rapid insight, collaboration, and decision-making.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- HOW AAA WORKS -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">How AAA Works</h2>
-        </div>
+      <!-- HOW AAA WORKS -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">How AAA Works</h2>
+          </div>
 
-        <div class="how-it-works">
-          <h3>Agile-Style Execution Rhythm</h3>
-          <p>
-            AAA translates O-RAM's methodological depth into an Agile-style execution rhythm. By working in short, focused sprints across parallel workstreams, our consultants capture insights, validate data, and align stakeholders in real time.
-          </p>
-          <p>This structure allows for:</p>
-          <ul>
-            <li>Rapid discovery and data collection</li>
-            <li>Ongoing validation and feedback loops</li>
-            <li>Continuous synthesis and adjustment of recommendations</li>
-          </ul>
-          <p style="font-weight: 600; margin-top: 1.5rem; color: #020617;">
-            The result is a faster, smarter path from assessment to action—without compromising quality or stakeholder engagement.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE THREE PHASES -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">The Three Phases of AAA</h2>
-          <p class="section-subtitle">
-            Each AAA engagement moves through three integrated, iterative phases that transform data into decisions and decisions into results.
-          </p>
-        </div>
-
-        <div class="phase-grid">
-          <!-- ASSESS PHASE -->
-          <div class="phase-box">
-            <div class="phase-number">1</div>
-            <h4>Assess</h4>
-            <p style="font-size: 0.95rem; color: #666;"><strong>Data-Driven Baseline and Diagnostic</strong></p>
-            <p>Every transformation begins with facts. 3N establishes a transparent, data-driven baseline that defines how work truly gets done.</p>
-            
-            <p style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #020617;">Activities Include:</p>
+          <div class="how-it-works">
+            <h3>Agile-Style Execution Rhythm</h3>
+            <p>
+              AAA translates O-RAM's methodological depth into an Agile-style execution rhythm. By working in short,
+              focused sprints across parallel workstreams, our consultants capture insights, validate data, and align
+              stakeholders in real time.
+            </p>
+            <p>This structure allows for:</p>
             <ul>
-              <li>Process mapping and workload modeling</li>
-              <li>Cost and efficiency benchmarking</li>
-              <li>Evaluation of span-of-control ratios and technology utilization</li>
-              <li>Peer organization benchmarking</li>
+              <li>Rapid discovery and data collection</li>
+              <li>Ongoing validation and feedback loops</li>
+              <li>Continuous synthesis and adjustment of recommendations</li>
             </ul>
+            <p style="font-weight: 600; margin-top: 1.5rem; color: #020617;">
+              The result is a faster, smarter path from assessment to action—without compromising quality or stakeholder
+              engagement.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <div class="outcome-badge">
-              <strong>Outcome</strong>
-              <p>A clear operational baseline that quantifies inefficiencies and prioritizes opportunities for change.</p>
+      <!-- THE THREE PHASES -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">The Three Phases of AAA</h2>
+            <p class="section-subtitle">
+              Each AAA engagement moves through three integrated, iterative phases that transform data into decisions
+              and decisions into results.
+            </p>
+          </div>
+
+          <div class="phase-grid">
+            <!-- ASSESS PHASE -->
+            <div class="phase-box">
+              <div class="phase-number">1</div>
+              <h4>Assess</h4>
+              <p style="font-size: 0.95rem; color: #666;"><strong>Data-Driven Baseline and Diagnostic</strong></p>
+              <p>Every transformation begins with facts. 3N establishes a transparent, data-driven baseline that defines
+                how work truly gets done.</p>
+
+              <p style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #020617;">
+                Activities Include:</p>
+              <ul>
+                <li>Process mapping and workload modeling</li>
+                <li>Cost and efficiency benchmarking</li>
+                <li>Evaluation of span-of-control ratios and technology utilization</li>
+                <li>Peer organization benchmarking</li>
+              </ul>
+
+              <div class="outcome-badge">
+                <strong>Outcome</strong>
+                <p>A clear operational baseline that quantifies inefficiencies and prioritizes opportunities for change.
+                </p>
+              </div>
+            </div>
+
+            <!-- ALIGN PHASE -->
+            <div class="phase-box">
+              <div class="phase-number">2</div>
+              <h4>Align</h4>
+              <p style="font-size: 0.95rem; color: #666;"><strong>Organizational and Workforce Optimization</strong></p>
+              <p>Once insights are gathered, 3N translates data into design. We assess how organizational structures,
+                reporting relationships, and staffing models align with mission and service expectations.</p>
+
+              <p style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #020617;">
+                Activities Include:</p>
+              <ul>
+                <li>Role alignment and workload balancing</li>
+                <li>Skill-mix and resource optimization</li>
+                <li>Governance structure and collaboration redesign</li>
+              </ul>
+
+              <div class="outcome-badge">
+                <strong>Outcome</strong>
+                <p>A future-state operating model that reduces duplication, clarifies accountability, and improves
+                  cross-functional coordination.</p>
+              </div>
+            </div>
+
+            <!-- ACCELERATE PHASE -->
+            <div class="phase-box">
+              <div class="phase-number">3</div>
+              <h4>Accelerate</h4>
+              <p style="font-size: 0.95rem; color: #666;"><strong>Implementation and Continuous Improvement</strong></p>
+              <p>Efficiency gains must endure. In this phase, we turn recommendations into actionable, measurable, and
+                sustainable improvements.</p>
+
+              <p style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #020617;">
+                Activities Include:</p>
+              <ul>
+                <li>Development of implementation roadmaps with milestones and cost-benefit projections</li>
+                <li>Creation of KPI dashboards and process templates</li>
+                <li>Embedding continuous improvement tools within daily operations</li>
+              </ul>
+
+              <div class="outcome-badge">
+                <strong>Outcome</strong>
+                <p>Enduring efficiency, measurable results, and a culture of continuous improvement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPEED WITH SUBSTANCE -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Speed with Substance</h2>
+            <p class="section-subtitle">
+              3N's AAA Enabler harmonizes O-RAM's strategic rigor with execution velocity—helping clients move from
+              analysis to action with confidence.
+            </p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <p>Rapid, Data-Driven Diagnostics</p>
+            </div>
+            <div class="benefit-card">
+              <p>Aligned Organizational & Workforce Designs</p>
+            </div>
+            <div class="benefit-card">
+              <p>Implementation Roadmaps Backed by Metrics</p>
+            </div>
+            <div class="benefit-card">
+              <p>Accelerated Delivery Without Compromise</p>
             </div>
           </div>
 
-          <!-- ALIGN PHASE -->
-          <div class="phase-box">
-            <div class="phase-number">2</div>
-            <h4>Align</h4>
-            <p style="font-size: 0.95rem; color: #666;"><strong>Organizational and Workforce Optimization</strong></p>
-            <p>Once insights are gathered, 3N translates data into design. We assess how organizational structures, reporting relationships, and staffing models align with mission and service expectations.</p>
-            
-            <p style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #020617;">Activities Include:</p>
-            <ul>
-              <li>Role alignment and workload balancing</li>
-              <li>Skill-mix and resource optimization</li>
-              <li>Governance structure and collaboration redesign</li>
-            </ul>
-
-            <div class="outcome-badge">
-              <strong>Outcome</strong>
-              <p>A future-state operating model that reduces duplication, clarifies accountability, and improves cross-functional coordination.</p>
-            </div>
-          </div>
-
-          <!-- ACCELERATE PHASE -->
-          <div class="phase-box">
-            <div class="phase-number">3</div>
-            <h4>Accelerate</h4>
-            <p style="font-size: 0.95rem; color: #666;"><strong>Implementation and Continuous Improvement</strong></p>
-            <p>Efficiency gains must endure. In this phase, we turn recommendations into actionable, measurable, and sustainable improvements.</p>
-            
-            <p style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; font-size: 0.9rem; color: #020617;">Activities Include:</p>
-            <ul>
-              <li>Development of implementation roadmaps with milestones and cost-benefit projections</li>
-              <li>Creation of KPI dashboards and process templates</li>
-              <li>Embedding continuous improvement tools within daily operations</li>
-            </ul>
-
-            <div class="outcome-badge">
-              <strong>Outcome</strong>
-              <p>Enduring efficiency, measurable results, and a culture of continuous improvement.</p>
-            </div>
+          <div class="highlight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.8; color: #4b5563;">
+              Whether serving a Fortune 500 firm, portfolio of a private equity investment, state agency,
+              higher-education institution, or K–12 district, 3N's Assess–Align–Accelerate model empowers leaders to act
+              decisively—turning insight into impact faster than ever before.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- SPEED WITH SUBSTANCE -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Speed with Substance</h2>
-          <p class="section-subtitle">
-            3N's AAA Enabler harmonizes O-RAM's strategic rigor with execution velocity—helping clients move from analysis to action with confidence.
-          </p>
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <p>Rapid, Data-Driven Diagnostics</p>
-          </div>
-          <div class="benefit-card">
-            <p>Aligned Organizational & Workforce Designs</p>
-          </div>
-          <div class="benefit-card">
-            <p>Implementation Roadmaps Backed by Metrics</p>
-          </div>
-          <div class="benefit-card">
-            <p>Accelerated Delivery Without Compromise</p>
+      <!-- IMAGE SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 12px 30px rgba(15,23,42,0.04);">
+            <img src="images/AAApic.png" alt="Assess-Align-Accelerate Model"
+              style="width: 100%; height: auto; display: block;">
           </div>
         </div>
+      </section>
 
-        <div class="highlight-box">
-          <p style="margin: 0; font-size: 1rem; line-height: 1.8; color: #4b5563;">
-            Whether serving a Fortune 500 firm, portfolio of a private equity investment, state agency, higher-education institution, or K–12 district, 3N's Assess–Align–Accelerate model empowers leaders to act decisively—turning insight into impact faster than ever before.
-          </p>
+      <!-- CTA SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="cta-section">
+            <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Ready to Accelerate Your Transformation?</h3>
+            <p style="margin-bottom: 1.5rem; color: #4b5563;">Let's discuss how AAA can deliver rapid, measurable
+              results for your organization.</p>
+            <a href="contact.html" class="btn btn-primary">Start Your AAA Engagement →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+          <p style="color: #6b7280;">Results. Delivered.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+            target="_blank">LinkedIn</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+
         </div>
       </div>
-    </section>
-
-    <!-- IMAGE SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 12px 30px rgba(15,23,42,0.04);">
-          <img src="images/AAApic.png" alt="Assess-Align-Accelerate Model" style="width: 100%; height: auto; display: block;">
-        </div>
+      <div
+        style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+        <p>&copy; 2026 3N Consulting. All Rights Reserved.</p>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <!-- CTA SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="cta-section">
-          <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Ready to Accelerate Your Transformation?</h3>
-          <p style="margin-bottom: 1.5rem; color: #4b5563;">Let's discuss how AAA can deliver rapid, measurable results for your organization.</p>
-          <a href="contact.html" class="btn btn-primary">Start Your AAA Engagement →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div style="flex: 1; min-width: 200px;">
-        <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
-        <p style="color: #6b7280;">Results. Delivered.</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
-      <p>&copy; 2024 3N Consulting. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

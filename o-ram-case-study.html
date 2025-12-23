@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>O-RAM Case Study: College Procurement Transformation | 3N Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Inline CSS so this preview actually renders with layout */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #111827;
       background-color: #f9fafb;
       line-height: 1.6;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
-    .main { flex: 1; }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
 
     .site-header {
       background: #020617;
@@ -25,6 +48,7 @@
       top: 0;
       z-index: 10;
     }
+
     .nav-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -34,15 +58,31 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand-title {
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
-    .brand-logo { height: 70px; width: auto; max-width: 250px; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brand-logo {
+      height: 70px;
+      width: auto;
+      max-width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: #e5e7eb;
       text-decoration: none;
@@ -51,15 +91,43 @@
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
     }
-    .nav-links a:hover { background: #111827; }
-    .nav-links a.active { background: #e5e7eb; color: #020617; }
-    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
 
     @media (max-width: 768px) {
-      .nav-inner { flex-wrap: wrap; }
-      .nav-toggle { display: block; margin-left: auto; }
-      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
-      .nav-links.show { display: flex; }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .hero {
@@ -67,6 +135,7 @@
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
     }
+
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -75,6 +144,7 @@
       gap: 3rem;
       align-items: center;
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.13em;
@@ -82,13 +152,18 @@
       color: #9ca3af;
       margin-bottom: 0.75rem;
     }
+
     .hero-title {
       font-size: clamp(2.1rem, 3vw, 2.7rem);
       font-weight: 750;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
-    .hero-highlight { color: #38bdf8; }
+
+    .hero-highlight {
+      color: #38bdf8;
+    }
+
     .hero-body {
       font-size: 0.98rem;
       color: #d1d5db;
@@ -96,10 +171,23 @@
       margin-bottom: 1.5rem;
     }
 
-    .section { padding: 3rem 1.5rem; }
-    .section-alt { background: #f3f4f6; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header { margin-bottom: 2rem; }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -108,12 +196,14 @@
       color: #6b7280;
       margin-bottom: 0.5rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
     }
+
     .section-subtitle {
       color: #4b5563;
       max-width: 48rem;
@@ -256,8 +346,17 @@
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
     }
-    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
-    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
 
     .site-footer {
       border-top: 1px solid #e5e7eb;
@@ -267,6 +366,7 @@
       background: #f9fafb;
       margin-top: 2rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -275,297 +375,350 @@
       gap: 1rem;
       justify-content: space-between;
     }
+
     .footer-links {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: #6b7280;
       text-decoration: none;
     }
-    .footer-links a:hover { text-decoration: underline; }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
 
     @media (max-width: 768px) {
-      .hero { padding: 3rem 1.5rem 2rem; }
-      .section { padding: 2rem 1.5rem; }
-      .table-wrapper { margin: 1.5rem -1.5rem; }
-      .data-table { border-radius: 0; }
+      .hero {
+        padding: 3rem 1.5rem 2rem;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+      }
+
+      .table-wrapper {
+        margin: 1.5rem -1.5rem;
+      }
+
+      .data-table {
+        border-radius: 0;
+      }
     }
   </style>
+  <link rel="icon" type="image/png" href="images/logos/3N%20Consulting.png">
 </head>
+
 <body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
-        <div>
-          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
-        </div>
-        <div style="display: flex; flex-direction: column; line-height: 1.1;">
-          <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
-          <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-eyebrow">Case Study: Organizational Readiness Assessment Methodology</div>
-          <h1 class="hero-title">From Fragmented to <span class="hero-highlight">Future-Ready</span></h1>
-          <p class="hero-body">
-            How 3N Consulting Transformed a College's Procurement into a Model of Efficiency, Compliance, and Savings
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SITUATION SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">The Situation</h2>
-        </div>
-        <div class="content-block">
-          <p>
-            A leading college faced growing challenges in its procurement function — fragmented processes, outdated policies, and limited automation. Despite strong institutional values, the college lacked a unified structure to manage over $30 million in annual purchasing efficiently and compliantly.
-          </p>
-          <p style="margin-top: 1.5rem; font-weight: 600; color: #020617;">Stakeholder feedback revealed:</p>
-          <ul>
-            <li>35% rated procurement efficiency as below average or very inefficient</li>
-            <li>82% believed policies and procedures required revision</li>
-            <li>45% of purchases bypassed purchase orders, heightening compliance risk</li>
-            <li>Nearly half of the stakeholders surveyed reported little or no procurement training</li>
-          </ul>
-          <p style="margin-top: 1.5rem;">
-            The college sought a consulting partner capable of evaluating readiness for change and designing a realistic transformation roadmap grounded in policy compliance and operational data.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3N APPROACH SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">3N Approach and Solution — Guided by O-RAM</h2>
-        </div>
-        <div class="content-block">
-          <p>
-            3N deployed its Organizational Readiness Assessment Methodology (O-RAM) to evaluate institutional capacity, identify change barriers, and structure a transformation that could succeed within the existing culture and resources.
-          </p>
-        </div>
-
-        <div class="content-block">
-          <h3>O-RAM Readiness Dimensions Applied</h3>
-          <div class="table-wrapper">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Dimension</th>
-                  <th>Focus</th>
-                  <th>Key Findings</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Leadership Alignment</strong></td>
-                  <td>Executive buy-in and strategic goals</td>
-                  <td>Clear mission alignment with student success but limited cross-departmental governance.</td>
-                </tr>
-                <tr>
-                  <td><strong>Governance & Controls</strong></td>
-                  <td>Policy maturity and compliance</td>
-                  <td>39 policy areas assessed; 25 lacked definition, exposing audit risks.</td>
-                </tr>
-                <tr>
-                  <td><strong>People & Capability</strong></td>
-                  <td>Organizational structure and training</td>
-                  <td>Roles overlapped; 41% had no formal procurement training.</td>
-                </tr>
-                <tr>
-                  <td><strong>Technology & Systems</strong></td>
-                  <td>System automation and analytics</td>
-                  <td>ERP underutilized; manual workarounds caused delays and inconsistency.</td>
-                </tr>
-                <tr>
-                  <td><strong>Process & Performance</strong></td>
-                  <td>Efficiency, accountability, and measurement</td>
-                  <td>Fragmented workflows and absence of standard KPIs.</td>
-                </tr>
-              </tbody>
-            </table>
+  <div class=" site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+              style="height: 90px; width: auto; max-width: 300px;">
+          </div>
+          <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <div
+              style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+              3N Consulting</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
           </div>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+        </nav>
+      </div>
+    </header>
 
-        <div class="content-block">
-          <p>
-            3N analyzed annual average spend in various dimensions and identified critical inefficiencies across operational spend, non-strategic sourcing, and commodity categories.
-          </p>
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow">Case Study: Organizational Readiness Assessment Methodology</div>
+            <h1 class="hero-title">From Fragmented to <span class="hero-highlight">Future-Ready</span></h1>
+            <p class="hero-body">
+              How 3N Consulting Transformed a College's Procurement into a Model of Efficiency, Compliance, and Savings
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div style="margin: 2.5rem 0;">
-          <img src="images/case study 1 pic.png" alt="Organizational Readiness Assessment Methodology O-RAM" style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);">
+      <!-- SITUATION SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">The Situation</h2>
+          </div>
+          <div class="content-block">
+            <p>
+              A leading college faced growing challenges in its procurement function — fragmented processes, outdated
+              policies, and limited automation. Despite strong institutional values, the college lacked a unified
+              structure to manage over $30 million in annual purchasing efficiently and compliantly.
+            </p>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: #020617;">Stakeholder feedback revealed:</p>
+            <ul>
+              <li>35% rated procurement efficiency as below average or very inefficient</li>
+              <li>82% believed policies and procedures required revision</li>
+              <li>45% of purchases bypassed purchase orders, heightening compliance risk</li>
+              <li>Nearly half of the stakeholders surveyed reported little or no procurement training</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">
+              The college sought a consulting partner capable of evaluating readiness for change and designing a
+              realistic
+              transformation roadmap grounded in policy compliance and operational data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3N APPROACH SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">3N Approach and Solution — Guided by O-RAM</h2>
+          </div>
+          <div class="content-block">
+            <p>
+              3N deployed its Organizational Readiness Assessment Methodology (O-RAM) to evaluate institutional
+              capacity,
+              identify change barriers, and structure a transformation that could succeed within the existing culture
+              and
+              resources.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>O-RAM Readiness Dimensions Applied</h3>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Dimension</th>
+                    <th>Focus</th>
+                    <th>Key Findings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Leadership Alignment</strong></td>
+                    <td>Executive buy-in and strategic goals</td>
+                    <td>Clear mission alignment with student success but limited cross-departmental governance.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Governance & Controls</strong></td>
+                    <td>Policy maturity and compliance</td>
+                    <td>39 policy areas assessed; 25 lacked definition, exposing audit risks.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>People & Capability</strong></td>
+                    <td>Organizational structure and training</td>
+                    <td>Roles overlapped; 41% had no formal procurement training.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Technology & Systems</strong></td>
+                    <td>System automation and analytics</td>
+                    <td>ERP underutilized; manual workarounds caused delays and inconsistency.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Process & Performance</strong></td>
+                    <td>Efficiency, accountability, and measurement</td>
+                    <td>Fragmented workflows and absence of standard KPIs.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <p>
+              3N analyzed annual average spend in various dimensions and identified critical inefficiencies across
+              operational spend, non-strategic sourcing, and commodity categories.
+            </p>
+          </div>
+
+          <div style="margin: 2.5rem 0;">
+            <img src="images/case study 1 pic.png" alt="Organizational Readiness Assessment Methodology O-RAM"
+              style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);">
+          </div>
+        </div>
+      </section>
+
+      <!-- TRANSFORMATION FRAMEWORK SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Transformation Framework and Execution</h2>
+          </div>
+
+          <div class="content-block">
+            <h3>1. Diagnostic Analysis</h3>
+            <ul>
+              <li>Reviewed 33.5 months of spend and procurement transactions</li>
+              <li>Conducted 30 stakeholder interviews and 34 surveys</li>
+              <li>Identified over $1.8M in split-purchase activity and $609K in mis-grouped spend</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>2. Organizational Readiness Mapping</h3>
+            <p>
+              Each department was evaluated across the five O-RAM pillars to determine maturity, adoption risk, and
+              support requirements.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>3. Targeted Recommendations</h3>
+            <p>3N created a roadmap that included:</p>
+            <ul>
+              <li>Centralized procurement structure phased in over 24 months</li>
+              <li>Implementation of an eProcurement system (Jaggaer or PeopleSoft SRM)</li>
+              <li>132 automated controls within ERP workflows</li>
+              <li>A complete rewrite of policies for COMAR compliance</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>4. Change Enablement and Capability Building</h3>
+            <p>
+              3N embedded training, communication, and performance metrics to ensure readiness and sustainability.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Results Delivered</h2>
+            <p class="section-subtitle">
+              Through 3N Consulting's Organizational Readiness Assessment Methodology (O-RAM), the college achieved a
+              profound shift from fragmented processes to a fully aligned, data-driven procurement function.
+            </p>
+          </div>
+
+          <div class="results-highlight">
+            <h4>Procurement Maturity Advancement</h4>
+            <p>
+              The initiative advanced procurement maturity from Level 1 (Ad Hoc) to Level 3 (Standardized) with a clear
+              path toward Level 5 (Center of Excellence).
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>Key Metrics and Achievements</h3>
+            <ul>
+              <li><strong>Financial Impact:</strong> Identified $1.2 – $3.7 million in annual savings through vendor
+                consolidation, automation, and policy modernization</li>
+              <li><strong>Policy Compliance:</strong> Established 39 COMAR-aligned policies and a comprehensive
+                eProcurement roadmap for end-to-end digital integration</li>
+              <li><strong>Operational Excellence:</strong> Improved days cash on hand, operating margin, net tuition per
+                FTE, purchase-order cycle time, and compliance with state and college regulations</li>
+              <li><strong>Staff Engagement:</strong> Staff and stakeholder engagement rose sharply as transparency,
+                training, and accountability became embedded in daily operations</li>
+            </ul>
+          </div>
+
+          <div class="results-highlight">
+            <h4>Reinvesting in Student Success</h4>
+            <p>
+              Crucially, the realized savings are being reinvested to expand student opportunity—lowering tuition costs
+              and growing the work-study program by over 40 percent, providing more paid, hands-on learning experiences.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>Scaling the Impact</h3>
+            <p>
+              Building on this momentum, 3N partnered with the college to scale its Procurement Center of Excellence
+              into
+              a fee-based shared-services model for peer institutions. The initiative is projected to generate
+              six-figure
+              annual revenue and achieve self-funding within 12 months, while offering students ongoing real-world
+              employment pathways.
+            </p>
+            <p style="margin-top: 1.5rem;">
+              For 3N Consulting, this engagement has evolved into a multi-year strategic partnership and a replicable
+              transformation model for other institutions—demonstrating measurable, sustainable impact for both the
+              client
+              and the firm.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLOSING SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="content-block">
+            <p style="font-size: 1.05rem; font-weight: 600; color: #020617;">
+              3N Consulting's Organizational Readiness Assessment Methodology (O-RAM) ensures every engagement
+              translates
+              vision into achievable transformation. Through rigorous analysis, stakeholder partnership, and disciplined
+              execution, 3N consistently delivers exceptional, sustainable results — on time and with measurable impact.
+            </p>
+          </div>
+
+          <div class="cta-section">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Ready to Transform Your Organization?</h3>
+            <p style="margin-bottom: 1.5rem; color: #4b5563;">
+              Discover how O-RAM can unlock measurable performance gains for your organization.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Discuss your initiative →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- BACK TO CASE STUDIES -->
+      <section class="section">
+        <div class="section-inner" style="text-align: center;">
+          <a href="case-studies.html"
+            style="color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+            ← Back to Case Studies
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+          <p style="color: #6b7280;">Results. Delivered.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+            target="_blank">LinkedIn</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+
         </div>
       </div>
-    </section>
-
-    <!-- TRANSFORMATION FRAMEWORK SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Transformation Framework and Execution</h2>
-        </div>
-
-        <div class="content-block">
-          <h3>1. Diagnostic Analysis</h3>
-          <ul>
-            <li>Reviewed 33.5 months of spend and procurement transactions</li>
-            <li>Conducted 30 stakeholder interviews and 34 surveys</li>
-            <li>Identified over $1.8M in split-purchase activity and $609K in mis-grouped spend</li>
-          </ul>
-        </div>
-
-        <div class="content-block">
-          <h3>2. Organizational Readiness Mapping</h3>
-          <p>
-            Each department was evaluated across the five O-RAM pillars to determine maturity, adoption risk, and support requirements.
-          </p>
-        </div>
-
-        <div class="content-block">
-          <h3>3. Targeted Recommendations</h3>
-          <p>3N created a roadmap that included:</p>
-          <ul>
-            <li>Centralized procurement structure phased in over 24 months</li>
-            <li>Implementation of an eProcurement system (Jaggaer or PeopleSoft SRM)</li>
-            <li>132 automated controls within ERP workflows</li>
-            <li>A complete rewrite of policies for COMAR compliance</li>
-          </ul>
-        </div>
-
-        <div class="content-block">
-          <h3>4. Change Enablement and Capability Building</h3>
-          <p>
-            3N embedded training, communication, and performance metrics to ensure readiness and sustainability.
-          </p>
-        </div>
+      <div
+        style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+        <p>&copy; 2026 3N Consulting. All Rights Reserved.</p>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <!-- RESULTS SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Results Delivered</h2>
-          <p class="section-subtitle">
-            Through 3N Consulting's Organizational Readiness Assessment Methodology (O-RAM), the college achieved a profound shift from fragmented processes to a fully aligned, data-driven procurement function.
-          </p>
-        </div>
-
-        <div class="results-highlight">
-          <h4>Procurement Maturity Advancement</h4>
-          <p>
-            The initiative advanced procurement maturity from Level 1 (Ad Hoc) to Level 3 (Standardized) with a clear path toward Level 5 (Center of Excellence).
-          </p>
-        </div>
-
-        <div class="content-block">
-          <h3>Key Metrics and Achievements</h3>
-          <ul>
-            <li><strong>Financial Impact:</strong> Identified $1.2 – $3.7 million in annual savings through vendor consolidation, automation, and policy modernization</li>
-            <li><strong>Policy Compliance:</strong> Established 39 COMAR-aligned policies and a comprehensive eProcurement roadmap for end-to-end digital integration</li>
-            <li><strong>Operational Excellence:</strong> Improved days cash on hand, operating margin, net tuition per FTE, purchase-order cycle time, and compliance with state and college regulations</li>
-            <li><strong>Staff Engagement:</strong> Staff and stakeholder engagement rose sharply as transparency, training, and accountability became embedded in daily operations</li>
-          </ul>
-        </div>
-
-        <div class="results-highlight">
-          <h4>Reinvesting in Student Success</h4>
-          <p>
-            Crucially, the realized savings are being reinvested to expand student opportunity—lowering tuition costs and growing the work-study program by over 40 percent, providing more paid, hands-on learning experiences.
-          </p>
-        </div>
-
-        <div class="content-block">
-          <h3>Scaling the Impact</h3>
-          <p>
-            Building on this momentum, 3N partnered with the college to scale its Procurement Center of Excellence into a fee-based shared-services model for peer institutions. The initiative is projected to generate six-figure annual revenue and achieve self-funding within 12 months, while offering students ongoing real-world employment pathways.
-          </p>
-          <p style="margin-top: 1.5rem;">
-            For 3N Consulting, this engagement has evolved into a multi-year strategic partnership and a replicable transformation model for other institutions—demonstrating measurable, sustainable impact for both the client and the firm.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLOSING SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="content-block">
-          <p style="font-size: 1.05rem; font-weight: 600; color: #020617;">
-            3N Consulting's Organizational Readiness Assessment Methodology (O-RAM) ensures every engagement translates vision into achievable transformation. Through rigorous analysis, stakeholder partnership, and disciplined execution, 3N consistently delivers exceptional, sustainable results — on time and with measurable impact.
-          </p>
-        </div>
-
-        <div class="cta-section">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Ready to Transform Your Organization?</h3>
-          <p style="margin-bottom: 1.5rem; color: #4b5563;">
-            Discover how O-RAM can unlock measurable performance gains for your organization.
-          </p>
-          <a href="contact.html" class="btn btn-primary">Discuss your initiative →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- BACK TO CASE STUDIES -->
-    <section class="section">
-      <div class="section-inner" style="text-align: center;">
-        <a href="case-studies.html" style="color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
-          ← Back to Case Studies
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div style="flex: 1; min-width: 200px;">
-        <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
-        <p style="color: #6b7280;">Results. Delivered.</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
-      <p>&copy; 2024 3N Consulting. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

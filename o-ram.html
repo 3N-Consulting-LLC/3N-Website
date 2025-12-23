@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>O-RAM - Organizational Readiness Assessment Methodology | 3N Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Inline CSS so this preview actually renders with layout */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #111827;
       background-color: #f9fafb;
       line-height: 1.6;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
-    .main { flex: 1; }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
 
     .site-header {
       background: #020617;
@@ -25,6 +48,7 @@
       top: 0;
       z-index: 10;
     }
+
     .nav-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -34,15 +58,31 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand-title {
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
-    .brand-logo { height: 70px; width: auto; max-width: 250px; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brand-logo {
+      height: 70px;
+      width: auto;
+      max-width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: #e5e7eb;
       text-decoration: none;
@@ -51,15 +91,43 @@
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
     }
-    .nav-links a:hover { background: #111827; }
-    .nav-links a.active { background: #e5e7eb; color: #020617; }
-    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
 
     @media (max-width: 768px) {
-      .nav-inner { flex-wrap: wrap; }
-      .nav-toggle { display: block; margin-left: auto; }
-      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
-      .nav-links.show { display: flex; }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .hero {
@@ -67,6 +135,7 @@
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
     }
+
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -75,6 +144,7 @@
       gap: 3rem;
       align-items: center;
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.13em;
@@ -82,12 +152,14 @@
       color: #9ca3af;
       margin-bottom: 0.75rem;
     }
+
     .hero-title {
       font-size: clamp(2.1rem, 3vw, 2.7rem);
       font-weight: 750;
       letter-spacing: -0.03em;
       margin-bottom: 0.5rem;
     }
+
     .hero-body {
       font-size: 0.98rem;
       color: #d1d5db;
@@ -95,10 +167,23 @@
       margin-bottom: 1.5rem;
     }
 
-    .section { padding: 3rem 1.5rem; }
-    .section-alt { background: #f3f4f6; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header { margin-bottom: 2rem; }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -107,12 +192,14 @@
       color: #6b7280;
       margin-bottom: 0.5rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
     }
+
     .section-subtitle {
       color: #4b5563;
       max-width: 48rem;
@@ -168,7 +255,7 @@
       border: 1px solid #1e3a8a;
       border-radius: 1rem;
       padding: 1.5rem;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
       flex: 0 1 calc(33.333% - 1rem);
       max-width: 300px;
       color: #ffffff;
@@ -233,8 +320,17 @@
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
     }
-    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
-    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
 
     .site-footer {
       border-top: 1px solid #e5e7eb;
@@ -244,6 +340,7 @@
       background: #f9fafb;
       margin-top: 2rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -252,248 +349,290 @@
       gap: 1rem;
       justify-content: space-between;
     }
+
     .footer-links {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: #6b7280;
       text-decoration: none;
     }
-    .footer-links a:hover { text-decoration: underline; }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
 
     @media (max-width: 900px) {
       .dimension-box {
         flex: 0 1 calc(50% - 0.75rem);
       }
+
       .dimensions-grid .dimension-box:nth-child(5) {
         flex: 0 1 calc(50% - 0.75rem);
       }
+
       .dimensions-grid .dimension-box:nth-child(6) {
         flex: 0 1 calc(50% - 0.75rem);
       }
     }
 
     @media (max-width: 768px) {
-      .hero { padding: 3rem 1.5rem 2rem; }
-      .section { padding: 2rem 1.5rem; }
+      .hero {
+        padding: 3rem 1.5rem 2rem;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+      }
+
       .dimension-box {
         flex: 0 1 100%;
       }
+
       .dimensions-grid .dimension-box:nth-child(5) {
         flex: 0 1 100%;
       }
+
       .dimensions-grid .dimension-box:nth-child(6) {
         flex: 0 1 100%;
       }
     }
   </style>
+  <link rel="icon" type="image/png" href="images/logos/3N%20Consulting.png">
 </head>
+
 <body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
-        <div>
-          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
-        </div>
-        <div style="display: flex; flex-direction: column; line-height: 1.1;">
-          <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
-          <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-eyebrow">Strategic Assessment Methodology</div>
-          <h1 class="hero-title">Organizational Readiness & Alignment Model (O-RAM)</h1>
-          <p class="hero-body">
-            Transforming Insight into Actionable, Measurable Change
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- OVERVIEW SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">What is O-RAM?</h2>
-        </div>
-        <div class="content-block">
-          <p>
-            At 3N Consulting, we believe that true transformation doesn't begin with technology or structure — it begins with clarity. The Organizational Readiness & Alignment Model (O-RAM) is our proprietary assessment framework designed to help organizations understand how well their people, processes, and systems are aligned to their mission, and to identify the levers that unlock measurable performance gains.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE SIX DIMENSIONS SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">The Six Integrated Dimensions</h2>
-          <p class="section-subtitle">
-            O-RAM assesses organizational health across six key areas, each evaluated against your strategic objectives to determine readiness for change and alignment with long-term goals.
-          </p>
-        </div>
-
-        <div class="dimensions-grid">
-          <div class="dimension-box">
-            <h4>Leadership</h4>
-            <p>Vision clarity, decision-making authority, and strategic alignment at all levels.</p>
+  <div class=" site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+              style="height: 90px; width: auto; max-width: 300px;">
           </div>
-          <div class="dimension-box">
-            <h4>Structure</h4>
-            <p>Organizational design, reporting relationships, and accountability frameworks.</p>
-          </div>
-          <div class="dimension-box">
-            <h4>Metrics & Rewards</h4>
-            <p>Performance indicators, compensation alignment, and incentive structures.</p>
-          </div>
-          <div class="dimension-box">
-            <h4>Governance & Processes</h4>
-            <p>Decision frameworks, workflows, and operational efficiency.</p>
-          </div>
-          <div class="dimension-box">
-            <h4>Technology/Systems</h4>
-            <p>System capabilities, integration, and technical readiness for initiatives.</p>
-          </div>
-          <div class="dimension-box">
-            <h4>Culture & Communication</h4>
-            <p>Organizational values, engagement levels, and information flow.</p>
+          <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <div
+              style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+              3N Consulting</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
           </div>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+        </nav>
+      </div>
+    </header>
 
-        <div class="content-block">
-          <p>
-            The result is a 360-degree diagnostic that translates qualitative insights into quantitative indicators of performance maturity.
-          </p>
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow">Strategic Assessment Methodology</div>
+            <h1 class="hero-title">Organizational Readiness & Alignment Model (O-RAM)</h1>
+            <p class="hero-body">
+              Transforming Insight into Actionable, Measurable Change
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">What is O-RAM?</h2>
+          </div>
+          <div class="content-block">
+            <p>
+              At 3N Consulting, we believe that true transformation doesn't begin with technology or structure — it
+              begins
+              with clarity. The Organizational Readiness & Alignment Model (O-RAM) is our proprietary assessment
+              framework
+              designed to help organizations understand how well their people, processes, and systems are aligned to
+              their
+              mission, and to identify the levers that unlock measurable performance gains.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE SIX DIMENSIONS SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">The Six Integrated Dimensions</h2>
+            <p class="section-subtitle">
+              O-RAM assesses organizational health across six key areas, each evaluated against your strategic
+              objectives
+              to determine readiness for change and alignment with long-term goals.
+            </p>
+          </div>
+
+          <div class="dimensions-grid">
+            <div class="dimension-box">
+              <h4>Leadership</h4>
+              <p>Vision clarity, decision-making authority, and strategic alignment at all levels.</p>
+            </div>
+            <div class="dimension-box">
+              <h4>Structure</h4>
+              <p>Organizational design, reporting relationships, and accountability frameworks.</p>
+            </div>
+            <div class="dimension-box">
+              <h4>Metrics & Rewards</h4>
+              <p>Performance indicators, compensation alignment, and incentive structures.</p>
+            </div>
+            <div class="dimension-box">
+              <h4>Governance & Processes</h4>
+              <p>Decision frameworks, workflows, and operational efficiency.</p>
+            </div>
+            <div class="dimension-box">
+              <h4>Technology/Systems</h4>
+              <p>System capabilities, integration, and technical readiness for initiatives.</p>
+            </div>
+            <div class="dimension-box">
+              <h4>Culture & Communication</h4>
+              <p>Organizational values, engagement levels, and information flow.</p>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <p>
+              The result is a 360-degree diagnostic that translates qualitative insights into quantitative indicators of
+              performance maturity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSIGHTS SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">What O-RAM Reveals</h2>
+            <p class="section-subtitle">
+              By applying O-RAM, organizations gain a clear, data-driven understanding of where strengths exist and
+              where
+              misalignments may be holding back results.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <p>
+              Leadership teams receive an actionable roadmap that prioritizes initiatives based on impact, risk, and
+              readiness — enabling them to focus resources where they will drive the greatest value.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE DELIVERY SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Three Key Value Drivers</h2>
+            <p class="section-subtitle">
+              O-RAM delivers measurable value across your organization:
+            </p>
+          </div>
+
+          <div class="value-box">
+            <h4>Strategic Alignment</h4>
+            <p>Ensures leadership vision is translated into operational behavior and measurable outcomes.</p>
+          </div>
+
+          <div class="value-box">
+            <h4>Organizational Efficiency</h4>
+            <p>Identifies duplications, gaps, and process inefficiencies, creating a foundation for streamlined
+              operations
+              and improved service delivery.</p>
+          </div>
+
+          <div class="value-box">
+            <h4>Change Readiness</h4>
+            <p>Equips leaders with an objective, evidence-based view of how prepared the workforce, systems, and culture
+              are for transformation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACT SECTION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Proven Track Record Across Sectors</h2>
+          </div>
+
+          <div class="content-block">
+            <p>
+              Deployed across sectors — from higher education to public agencies and private enterprises — O-RAM has
+              become a cornerstone of 3N Consulting's performance improvement work. It empowers decision-makers with
+              clarity, structure, and confidence to execute transformation that endures.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMAGE SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div style="margin: 2rem 0;">
+            <img src="images/orampic.png" alt="O-RAM Framework Overview"
+              style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);">
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="cta-section">
+            <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Ready to Assess Your Organization?</h3>
+            <p style="margin-bottom: 1.5rem; color: #4b5563;">Let's discuss how O-RAM can provide the clarity and
+              insight
+              your organization needs to drive transformation.</p>
+            <a href="contact.html" class="btn btn-primary">Schedule Your O-RAM Assessment →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+          <p style="color: #6b7280;">Results. Delivered.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+            target="_blank">LinkedIn</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+
         </div>
       </div>
-    </section>
-
-    <!-- INSIGHTS SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">What O-RAM Reveals</h2>
-          <p class="section-subtitle">
-            By applying O-RAM, organizations gain a clear, data-driven understanding of where strengths exist and where misalignments may be holding back results.
-          </p>
-        </div>
-
-        <div class="content-block">
-          <p>
-            Leadership teams receive an actionable roadmap that prioritizes initiatives based on impact, risk, and readiness — enabling them to focus resources where they will drive the greatest value.
-          </p>
-        </div>
+      <div
+        style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+        <p>&copy; 2026 3N Consulting. All Rights Reserved.</p>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <!-- VALUE DELIVERY SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Three Key Value Drivers</h2>
-          <p class="section-subtitle">
-            O-RAM delivers measurable value across your organization:
-          </p>
-        </div>
-
-        <div class="value-box">
-          <h4>Strategic Alignment</h4>
-          <p>Ensures leadership vision is translated into operational behavior and measurable outcomes.</p>
-        </div>
-
-        <div class="value-box">
-          <h4>Organizational Efficiency</h4>
-          <p>Identifies duplications, gaps, and process inefficiencies, creating a foundation for streamlined operations and improved service delivery.</p>
-        </div>
-
-        <div class="value-box">
-          <h4>Change Readiness</h4>
-          <p>Equips leaders with an objective, evidence-based view of how prepared the workforce, systems, and culture are for transformation.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- IMPACT SECTION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Proven Track Record Across Sectors</h2>
-        </div>
-
-        <div class="content-block">
-          <p>
-            Deployed across sectors — from higher education to public agencies and private enterprises — O-RAM has become a cornerstone of 3N Consulting's performance improvement work. It empowers decision-makers with clarity, structure, and confidence to execute transformation that endures.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- IMAGE SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div style="margin: 2rem 0;">
-          <img src="images/orampic.png" alt="O-RAM Framework Overview" style="width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);">
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="cta-section">
-          <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Ready to Assess Your Organization?</h3>
-          <p style="margin-bottom: 1.5rem; color: #4b5563;">Let's discuss how O-RAM can provide the clarity and insight your organization needs to drive transformation.</p>
-          <a href="contact.html" class="btn btn-primary">Schedule Your O-RAM Assessment →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div style="flex: 1; min-width: 200px;">
-        <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
-        <p style="color: #6b7280;">Results. Delivered.</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
-      <p>&copy; 2024 3N Consulting. All rights reserved.</p>
-    </div>
-  </footer>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

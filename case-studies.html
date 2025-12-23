@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,16 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Reset and base styles */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body {
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: #111827;
             background-color: #f9fafb;
@@ -24,6 +33,7 @@
             top: 0;
             z-index: 10;
         }
+
         .nav-inner {
             max-width: 1120px;
             margin: 0 auto;
@@ -33,9 +43,24 @@
             justify-content: space-between;
             gap: 1.5rem;
         }
-        .brand { display: flex; align-items: center; }
-        .brand img { height: 70px; width: auto; max-width: 250px; }
-        .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand img {
+            height: 70px;
+            width: auto;
+            max-width: 250px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
         .nav-links a {
             color: #e5e7eb;
             text-decoration: none;
@@ -44,8 +69,15 @@
             border-radius: 999px;
             transition: background 0.15s ease, color 0.15s ease;
         }
-        .nav-links a:hover { background: #111827; }
-        .nav-links a.active { background: #e5e7eb; color: #020617; }
+
+        .nav-links a:hover {
+            background: #111827;
+        }
+
+        .nav-links a.active {
+            background: #e5e7eb;
+            color: #020617;
+        }
 
         /* Page header */
         .page-header {
@@ -55,12 +87,14 @@
             text-align: center;
             border-bottom: 1px solid #1f2937;
         }
+
         .page-header h1 {
             font-size: 2.5rem;
             font-weight: 750;
             margin-bottom: 0.5rem;
             letter-spacing: -0.02em;
         }
+
         .page-header p {
             font-size: 1.1rem;
             color: #9ca3af;
@@ -73,6 +107,7 @@
             padding: 4rem 1.5rem;
             background: #f9fafb;
         }
+
         .case-study-grid {
             max-width: 1120px;
             margin: 0 auto;
@@ -94,6 +129,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .case-study-card::before {
             content: '';
             position: absolute;
@@ -106,10 +142,12 @@
             transform-origin: left;
             transition: transform 0.3s ease;
         }
+
         .case-study-card:hover {
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
             transform: translateY(-4px);
         }
+
         .case-study-card:hover::before {
             transform: scaleX(1);
         }
@@ -155,6 +193,7 @@
             font-size: 0.9rem;
             transition: gap 0.2s ease;
         }
+
         .case-study-link:hover {
             gap: 0.75rem;
         }
@@ -170,12 +209,14 @@
             text-align: center;
             border: 1px solid #1f2937;
         }
+
         .cta-section h2 {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
             letter-spacing: -0.02em;
         }
+
         .cta-section p {
             font-size: 1rem;
             color: #d1d5db;
@@ -197,6 +238,7 @@
             border: 1px solid transparent;
             transition: all 0.2s ease;
         }
+
         .cta-button:hover {
             background: #0ea5e9;
             transform: translateY(-2px);
@@ -211,6 +253,7 @@
             background: #f9fafb;
             margin-top: 3rem;
         }
+
         .footer-inner {
             max-width: 1120px;
             margin: 0 auto;
@@ -219,43 +262,55 @@
             gap: 2rem;
             justify-content: space-between;
         }
+
         .footer-section h4 {
             color: #111827;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
+
         .footer-links {
             display: flex;
             gap: 0.9rem;
             flex-wrap: wrap;
         }
+
         .footer-links a {
             color: #6b7280;
             text-decoration: none;
         }
-        .footer-links a:hover { text-decoration: underline; }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
 
         /* Responsive */
         @media (max-width: 900px) {
             .case-study-grid {
                 grid-template-columns: 1fr;
             }
+
             .page-header h1 {
                 font-size: 2rem;
             }
         }
     </style>
+    <link rel="icon" type="image/png" href="images/logos/3N%20Consulting.png">
 </head>
+
 <body>
     <!-- Navigation Header -->
-    <header class="site-header">
+    <header class=" site-header">
         <div class="nav-inner">
             <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
                 <div>
-                    <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
+                    <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+                        style="height: 90px; width: auto; max-width: 300px;">
                 </div>
                 <div style="display: flex; flex-direction: column; line-height: 1.1;">
-                    <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
+                    <div
+                        style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+                        3N Consulting</div>
                     <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
                 </div>
             </div>
@@ -267,7 +322,6 @@
                 <a href="contact.html">Contact Us</a>
                 <a href="thought-leadership.html">Meet Our Team</a>
                 <a href="toolkit.html">Our Toolkit</a>
-                <a href="disclaimers.html">Disclaimers</a>
             </nav>
         </div>
     </header>
@@ -284,62 +338,70 @@
             <article class="case-study-card">
                 <div class="case-study-number">1</div>
                 <h3>Organizational Readiness Assessment Methodology (O-RAM) in Action</h3>
-                <p>A comprehensive approach to evaluating organizational preparedness, identifying gaps, and implementing transformative change across complex structures.</p>
+                <p>A comprehensive approach to evaluating organizational preparedness, identifying gaps, and
+                    implementing transformative change across complex structures.</p>
                 <a href="o-ram-case-study.html" class="case-study-link">Explore →</a>
             </article>
 
             <article class="case-study-card">
                 <div class="case-study-number">2</div>
                 <h3>Preparing for a Cloud-Based Future</h3>
-                <p>Strategic planning and execution of cloud infrastructure migration, ensuring seamless technology transitions while minimizing operational disruption and maximizing ROI.</p>
+                <p>Strategic planning and execution of cloud infrastructure migration, ensuring seamless technology
+                    transitions while minimizing operational disruption and maximizing ROI.</p>
                 <a href="cloud-based-future.html" class="case-study-link">Explore →</a>
             </article>
 
             <article class="case-study-card">
                 <div class="case-study-number">3</div>
                 <h3>Reengineering a National Cosmetics Manufacturer for Scalable Growth</h3>
-                <p>A complete operational redesign enabling rapid scaling, improved efficiency, and market expansion while maintaining quality standards and profitability.</p>
+                <p>A complete operational redesign enabling rapid scaling, improved efficiency, and market expansion
+                    while maintaining quality standards and profitability.</p>
                 <a href="cosmetics-manufacturer.html" class="case-study-link">Explore →</a>
             </article>
 
             <article class="case-study-card">
                 <div class="case-study-number">4</div>
                 <h3>Strengthening Maryland's Educator Pipeline</h3>
-                <p>A transformative data integration project consolidating fragmented systems into a unified analytics platform, enabling data-driven decision-making for educational excellence.</p>
+                <p>A transformative data integration project consolidating fragmented systems into a unified analytics
+                    platform, enabling data-driven decision-making for educational excellence.</p>
                 <a href="data-silos.html" class="case-study-link">Explore →</a>
             </article>
         </div>
 
         <div class="cta-section">
             <h2>Ready to Transform Your Organization?</h2>
-            <p>Let's discuss how we can help you achieve measurable results. Contact us today to explore a tailored consulting engagement.</p>
+            <p>Let's discuss how we can help you achieve measurable results. Contact us today to explore a tailored
+                consulting engagement.</p>
             <a href="contact.html" class="cta-button">Schedule Your Consultation →</a>
         </div>
     </section>
 
     <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div style="flex: 1; min-width: 200px;">
-        <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
-        <p style="color: #6b7280;">Results. Delivered.</p>
-      </div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
-      <p>&copy; 2024 3N Consulting. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div style="flex: 1; min-width: 200px;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+                <p style="color: #6b7280;">Results. Delivered.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+                    target="_blank">LinkedIn</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="thought-leadership.html">Meet Our Team</a>
+                <a href="toolkit.html">Our Toolkit</a>
+
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+            <p>&copy; 2026 3N Consulting. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
