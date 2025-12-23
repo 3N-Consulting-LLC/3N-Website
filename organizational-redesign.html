@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Organizational Redesign | 3N Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Inline CSS so this preview actually renders with layout */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #111827;
       background-color: #f9fafb;
       line-height: 1.6;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
-    .main { flex: 1; }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
 
     .site-header {
       background: #020617;
@@ -25,6 +48,7 @@
       top: 0;
       z-index: 10;
     }
+
     .nav-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -34,15 +58,31 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand-title {
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
-    .brand-logo { height: 70px; width: auto; max-width: 250px; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brand-logo {
+      height: 70px;
+      width: auto;
+      max-width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: #e5e7eb;
       text-decoration: none;
@@ -51,15 +91,43 @@
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
     }
-    .nav-links a:hover { background: #111827; }
-    .nav-links a.active { background: #e5e7eb; color: #020617; }
-    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
 
     @media (max-width: 768px) {
-      .nav-inner { flex-wrap: wrap; }
-      .nav-toggle { display: block; margin-left: auto; }
-      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
-      .nav-links.show { display: flex; }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .hero {
@@ -67,10 +135,12 @@
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
     }
+
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.13em;
@@ -78,23 +148,41 @@
       color: #9ca3af;
       margin-bottom: 0.75rem;
     }
+
     .hero-title {
       font-size: clamp(2rem, 3vw, 2.5rem);
       font-weight: 750;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
-    .hero-highlight { color: #38bdf8; }
+
+    .hero-highlight {
+      color: #38bdf8;
+    }
+
     .hero-body {
       font-size: 0.98rem;
       color: #d1d5db;
       max-width: 40rem;
     }
 
-    .section { padding: 3rem 1.5rem; }
-    .section-alt { background: #f3f4f6; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header { margin-bottom: 2rem; }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -103,12 +191,14 @@
       color: #6b7280;
       margin-bottom: 0.25rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
     }
+
     .section-subtitle {
       color: #4b5563;
       max-width: 50rem;
@@ -118,20 +208,30 @@
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
     }
+
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5rem;
     }
+
     @media (max-width: 900px) {
-      .grid-2 { grid-template-columns: minmax(0,1fr); }
-      .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
+
     @media (max-width: 640px) {
-      .grid-3 { grid-template-columns: minmax(0,1fr); }
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     .card {
@@ -139,15 +239,21 @@
       border: 1px solid #e5e7eb;
       background: #ffffff;
       padding: 1.5rem;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
     }
+
     .card-title {
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: #111827;
     }
-    .card-body { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+      line-height: 1.7;
+    }
 
     .btn {
       display: inline-flex;
@@ -163,10 +269,27 @@
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
     }
-    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
-    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: #111827; border-color: #d1d5db; }
-    .btn-ghost:hover { background: #e5e7eb; }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #111827;
+      border-color: #d1d5db;
+    }
+
+    .btn-ghost:hover {
+      background: #e5e7eb;
+    }
 
     .site-footer {
       border-top: 1px solid #e5e7eb;
@@ -176,6 +299,7 @@
       background: #f9fafb;
       margin-top: 2rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -184,297 +308,354 @@
       gap: 1rem;
       justify-content: space-between;
     }
+
     .footer-links {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: #6b7280;
       text-decoration: none;
     }
-    .footer-links a:hover { text-decoration: underline; }
-    .footer-image { max-width: 150px; height: auto; }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-image {
+      max-width: 150px;
+      height: auto;
+    }
   </style>
 </head>
+
 <body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+              style="height: 90px; width: auto; max-width: 300px;">
+          </div>
+          <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <div
+              style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+              3N Consulting</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
+          </div>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+          <a href="disclaimers.html">Disclaimers</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-eyebrow">Core Capability</div>
+          <h1 class="hero-title">
+            Organizational <span class="hero-highlight">Redesign</span>
+          </h1>
+          <p class="hero-body">
+            Align structure, people, and processes for resilience and agility.
+          </p>
+        </div>
+      </section>
+
+      <!-- ORGANIZATIONAL REDESIGN FOUNDATION -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">Organizational Redesign</div>
+            <h2 class="section-title">Transforming Structure into Strategy</h2>
+            <p class="section-subtitle">
+              Organizational Redesign is the cornerstone of 3N Consulting's practice — our flagship service and the
+              foundation of how we help clients achieve lasting performance. At its core, Organizational Design defines
+              how an organization works: how decisions are made, how people and processes align, and how accountability
+              flows.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            Redesign is the deliberate act of reshaping that structure — resizing, reconfiguring, and reorienting teams
+            and resources to meet new challenges and opportunities. In today's world, the cheese is constantly moving.
+            Digital transformation, artificial intelligence, and market disruption are redefining how value is created
+            and delivered. The organizations that thrive are those that adapt — quickly and intelligently — aligning
+            their operating model to a changing environment. 3N Consulting helps organizations not just react to change,
+            but design for it.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHY IT MATTERS -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Why It Matters</h2>
+            <p class="section-subtitle">
+              Every organization is perfectly designed to get the results it currently gets. When performance falters,
+              growth stalls, or transformation lags, the root cause is often structural — unclear roles, misaligned
+              leadership, duplicated functions, or outdated processes.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+            Organizational Redesign is essential because it ensures that structure follows strategy. As technology,
+            talent, and expectations evolve, so too must the way organizations are built. 3N helps clients answer
+            critical questions:
+          </p>
+          <div style="color: #4b5563; line-height: 1.8; font-size: 0.98rem; margin-left: 1.5rem;">
+            <p style="margin-bottom: 0.75rem;">• Are we structured to deliver our mission efficiently?</p>
+            <p style="margin-bottom: 0.75rem;">• Do our leaders have the span of control and authority to succeed?</p>
+            <p style="margin-bottom: 1rem;">• Is our size right for the work we're doing — or for what's next?</p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+            By addressing these questions through data-driven analysis and pragmatic implementation, we enable
+            organizations to achieve clarity, accountability, and agility — all while improving morale and performance.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHY 3N LEADS THE MARKET -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Why 3N Consulting Leads the Market</h2>
+            <p class="section-subtitle">
+              Organizational Redesign is 3N Consulting's defining capability. It is led by CEO Nick Gupta, who
+              previously built and led Organization Design practices serving Fortune 500 firms and private equity
+              portfolio companies.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem; margin-bottom: 1rem;">
+            His background combines strategy, finance, and operations — enabling a holistic understanding of how
+            structure impacts performance and value. Today, that legacy continues under Dr. DeMuth, one of the nation's
+            foremost authorities in organizational effectiveness and change leadership. Together, Nick and Dr. DeMuth
+            have built a practice that merges Fortune 500 discipline with public sector and higher education mission
+            impact — combining evidence-based design with the empathy and adaptability required for human-centered
+            transformation.
+          </p>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+            Our team is not simply experienced — we are specialists. Organizational Redesign is not a subset of what we
+            do; it is what we do best.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHO WE SERVE -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Who We Serve</h2>
+            <p class="section-subtitle">
+              3N Consulting's Organizational Redesign services span public and private sectors:
+            </p>
+          </div>
+          <div style="color: #4b5563; line-height: 1.8; font-size: 0.98rem; margin-left: 1.5rem; margin-top: 1rem;">
+            <p style="margin-bottom: 1rem;"><strong>Fortune 500 companies</strong> seeking structural agility to compete
+              in AI and digital-first markets.</p>
+            <p style="margin-bottom: 1rem;"><strong>Public sector agencies</strong> modernizing operating models to
+              deliver citizen services more effectively.</p>
+            <p style="margin-bottom: 1rem;"><strong>Higher education institutions</strong> realigning roles and
+              processes to sustain enrollment, equity, and efficiency.</p>
+            <p><strong>Private equity firms</strong> optimizing portfolio companies to unlock post-acquisition value
+              through structure and leadership alignment.</p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
+            Across industries, our redesigns share one trait — they create measurable, sustainable impact.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROPRIETARY TOOLS -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Our Proprietary Tools: O-RAM™ and AAA™</h2>
+            <p class="section-subtitle">
+              3N's Organizational Redesign practice is powered by two proprietary frameworks that transform complexity
+              into structured, repeatable processes.
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div style="margin-bottom: 2rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem;">O-RAM™
+                (Organizational Redesign Assessment Model)</h3>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                A data-driven diagnostic that identifies misalignments between strategy, structure, and performance.
+                O-RAM™ rapidly maps organizational health across leadership, roles, processes, and outcomes —
+                pinpointing where structure helps or hinders success.
+              </p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem;">AAA™
+                (Align–Analyze–Act)</h3>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                A proven agile methodology that delivers "quick hits" and measurable results in short, iterative cycles.
+                AAA™ moves redesign from theory to implementation, engaging stakeholders at every level to ensure
+                adoption and momentum.
+              </p>
+            </div>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
+            Together, these assets transform the complexity of organizational change into a structured, repeatable
+            process that drives results — fast.
+          </p>
+        </div>
+      </section>
+
+      <!-- TRACK RECORD -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Our Track Record</h2>
+            <p class="section-subtitle">
+              3N has executed Organizational Redesigns that have reshaped how institutions and enterprises operate:
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div style="margin-bottom: 1.5rem;">
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">For a Maryland-based college</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                We restructured administrative functions and procurement processes to eliminate redundancy, strengthen
+                accountability, and enhance student-facing services.
+              </p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">For a private manufacturer</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                We redesigned the leadership and production model, reducing operational friction and restoring
+                profitability.
+              </p>
+            </div>
+            <div>
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">For a state agency</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                We modernized an antiquated division, realigning people, technology, and governance for digital
+                transformation and stronger fiscal control.
+              </p>
+            </div>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
+            Across every engagement, our redesigns lead to tangible performance gains — sharper decision-making, reduced
+            waste, empowered leadership, and measurable mission delivery.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHEN ORGANIZATIONS TURN TO 3N -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">When Organizations Turn to 3N</h2>
+            <p class="section-subtitle">
+              Clients engage 3N when they face moments of truth:
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <div style="margin-bottom: 1.5rem;">
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Leadership Alignment Challenges</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                When the right people are in the wrong roles, and leadership dynamics are limiting outcomes.
+              </p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Underperformance or Stagnation</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                When a division or function is under-delivering and the root cause isn't clear.
+              </p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Transformation Readiness</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                When technology and innovation are outpacing the current operating model.
+              </p>
+            </div>
+            <div>
+              <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Growth or Contraction</p>
+              <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
+                When scaling up, merging, or resizing requires rethinking the structure and decision-making model.
+              </p>
+            </div>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
+            In each case, we provide not just assessment but action — a clear path from "what's wrong" to "what's next."
+          </p>
+        </div>
+      </section>
+
+      <!-- THE 3N DIFFERENCE -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">The 3N Difference</h2>
+            <p class="section-subtitle">
+              3N Consulting's Organizational Redesign is where strategy meets structure. We don't rearrange boxes on an
+              org chart — we realign how organizations think, lead, and deliver.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem; margin-bottom: 1rem;">
+            Our approach blends analytical rigor with human understanding, ensuring that design is not only efficient
+            but livable. We bring the precision of private sector consulting, the purpose of public service, and the
+            agility of an entrepreneurial firm. That is why clients return to 3N when stakes are high, missions are
+            critical, and change must deliver.
+          </p>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; font-weight: 600;">
+            At 3N Consulting, Organizational Redesign isn't just what we offer — it's who we are.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
         <div>
-          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
-        </div>
-        <div style="display: flex; flex-direction: column; line-height: 1.1;">
-          <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
-          <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-eyebrow">Core Capability</div>
-        <h1 class="hero-title">
-          Organizational <span class="hero-highlight">Redesign</span>
-        </h1>
-        <p class="hero-body">
-          Align structure, people, and processes for resilience and agility.
-        </p>
-      </div>
-    </section>
-
-    <!-- ORGANIZATIONAL REDESIGN FOUNDATION -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Organizational Redesign</div>
-          <h2 class="section-title">Transforming Structure into Strategy</h2>
-          <p class="section-subtitle">
-            Organizational Redesign is the cornerstone of 3N Consulting's practice — our flagship service and the foundation of how we help clients achieve lasting performance. At its core, Organizational Design defines how an organization works: how decisions are made, how people and processes align, and how accountability flows.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          Redesign is the deliberate act of reshaping that structure — resizing, reconfiguring, and reorienting teams and resources to meet new challenges and opportunities. In today's world, the cheese is constantly moving. Digital transformation, artificial intelligence, and market disruption are redefining how value is created and delivered. The organizations that thrive are those that adapt — quickly and intelligently — aligning their operating model to a changing environment. 3N Consulting helps organizations not just react to change, but design for it.
-        </p>
-      </div>
-    </section>
-
-    <!-- WHY IT MATTERS -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Why It Matters</h2>
-          <p class="section-subtitle">
-            Every organization is perfectly designed to get the results it currently gets. When performance falters, growth stalls, or transformation lags, the root cause is often structural — unclear roles, misaligned leadership, duplicated functions, or outdated processes.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem; margin-bottom: 1.5rem;">
-          Organizational Redesign is essential because it ensures that structure follows strategy. As technology, talent, and expectations evolve, so too must the way organizations are built. 3N helps clients answer critical questions:
-        </p>
-        <div style="color: #4b5563; line-height: 1.8; font-size: 0.98rem; margin-left: 1.5rem;">
-          <p style="margin-bottom: 0.75rem;">• Are we structured to deliver our mission efficiently?</p>
-          <p style="margin-bottom: 0.75rem;">• Do our leaders have the span of control and authority to succeed?</p>
-          <p style="margin-bottom: 1rem;">• Is our size right for the work we're doing — or for what's next?</p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-          By addressing these questions through data-driven analysis and pragmatic implementation, we enable organizations to achieve clarity, accountability, and agility — all while improving morale and performance.
-        </p>
-      </div>
-    </section>
-
-    <!-- WHY 3N LEADS THE MARKET -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Why 3N Consulting Leads the Market</h2>
-          <p class="section-subtitle">
-            Organizational Redesign is 3N Consulting's defining capability. It is led by CEO Nick Gupta, who previously built and led Organization Design practices serving Fortune 500 firms and private equity portfolio companies.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem; margin-bottom: 1rem;">
-          His background combines strategy, finance, and operations — enabling a holistic understanding of how structure impacts performance and value. Today, that legacy continues under Dr. DeMuth, one of the nation's foremost authorities in organizational effectiveness and change leadership. Together, Nick and Dr. DeMuth have built a practice that merges Fortune 500 discipline with public sector and higher education mission impact — combining evidence-based design with the empathy and adaptability required for human-centered transformation.
-        </p>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-          Our team is not simply experienced — we are specialists. Organizational Redesign is not a subset of what we do; it is what we do best.
-        </p>
-      </div>
-    </section>
-
-    <!-- WHO WE SERVE -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Who We Serve</h2>
-          <p class="section-subtitle">
-            3N Consulting's Organizational Redesign services span public and private sectors:
-          </p>
-        </div>
-        <div style="color: #4b5563; line-height: 1.8; font-size: 0.98rem; margin-left: 1.5rem; margin-top: 1rem;">
-          <p style="margin-bottom: 1rem;"><strong>Fortune 500 companies</strong> seeking structural agility to compete in AI and digital-first markets.</p>
-          <p style="margin-bottom: 1rem;"><strong>Public sector agencies</strong> modernizing operating models to deliver citizen services more effectively.</p>
-          <p style="margin-bottom: 1rem;"><strong>Higher education institutions</strong> realigning roles and processes to sustain enrollment, equity, and efficiency.</p>
-          <p><strong>Private equity firms</strong> optimizing portfolio companies to unlock post-acquisition value through structure and leadership alignment.</p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
-          Across industries, our redesigns share one trait — they create measurable, sustainable impact.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROPRIETARY TOOLS -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Our Proprietary Tools: O-RAM™ and AAA™</h2>
-          <p class="section-subtitle">
-            3N's Organizational Redesign practice is powered by two proprietary frameworks that transform complexity into structured, repeatable processes.
-          </p>
-        </div>
-        <div style="margin-top: 1.5rem;">
-          <div style="margin-bottom: 2rem;">
-            <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem;">O-RAM™ (Organizational Redesign Assessment Model)</h3>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              A data-driven diagnostic that identifies misalignments between strategy, structure, and performance. O-RAM™ rapidly maps organizational health across leadership, roles, processes, and outcomes — pinpointing where structure helps or hinders success.
-            </p>
+          <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
+          <div style="margin-top:0.4rem; font-size:0.85rem;">
+            We build long-term partnerships, take ownership of outcomes, and practice fiscal discipline so savings flow
+            to clients.
           </div>
-          <div>
-            <h3 style="font-size: 1.1rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem;">AAA™ (Align–Analyze–Act)</h3>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              A proven agile methodology that delivers "quick hits" and measurable results in short, iterative cycles. AAA™ moves redesign from theory to implementation, engaging stakeholders at every level to ensure adoption and momentum.
-            </p>
+          <div style="margin-top:0.75rem; font-size:0.85rem;">
+            <strong>Phone:</strong> (301) 723-7057<br>
+            <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
           </div>
         </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
-          Together, these assets transform the complexity of organizational change into a structured, repeatable process that drives results — fast.
-        </p>
-      </div>
-    </section>
-
-    <!-- TRACK RECORD -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Our Track Record</h2>
-          <p class="section-subtitle">
-            3N has executed Organizational Redesigns that have reshaped how institutions and enterprises operate:
-          </p>
-        </div>
-        <div style="margin-top: 1.5rem;">
-          <div style="margin-bottom: 1.5rem;">
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">For a Maryland-based college</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              We restructured administrative functions and procurement processes to eliminate redundancy, strengthen accountability, and enhance student-facing services.
-            </p>
-          </div>
-          <div style="margin-bottom: 1.5rem;">
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">For a private manufacturer</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              We redesigned the leadership and production model, reducing operational friction and restoring profitability.
-            </p>
-          </div>
-          <div>
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">For a state agency</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              We modernized an antiquated division, realigning people, technology, and governance for digital transformation and stronger fiscal control.
-            </p>
-          </div>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
-          Across every engagement, our redesigns lead to tangible performance gains — sharper decision-making, reduced waste, empowered leadership, and measurable mission delivery.
-        </p>
-      </div>
-    </section>
-
-    <!-- WHEN ORGANIZATIONS TURN TO 3N -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">When Organizations Turn to 3N</h2>
-          <p class="section-subtitle">
-            Clients engage 3N when they face moments of truth:
-          </p>
-        </div>
-        <div style="margin-top: 1.5rem;">
-          <div style="margin-bottom: 1.5rem;">
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Leadership Alignment Challenges</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              When the right people are in the wrong roles, and leadership dynamics are limiting outcomes.
-            </p>
-          </div>
-          <div style="margin-bottom: 1.5rem;">
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Underperformance or Stagnation</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              When a division or function is under-delivering and the root cause isn't clear.
-            </p>
-          </div>
-          <div style="margin-bottom: 1.5rem;">
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Transformation Readiness</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              When technology and innovation are outpacing the current operating model.
-            </p>
-          </div>
-          <div>
-            <p style="color: #111827; font-weight: 600; margin-bottom: 0.5rem;">Growth or Contraction</p>
-            <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem;">
-              When scaling up, merging, or resizing requires rethinking the structure and decision-making model.
-            </p>
-          </div>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1.5rem;">
-          In each case, we provide not just assessment but action — a clear path from "what's wrong" to "what's next."
-        </p>
-      </div>
-    </section>
-
-    <!-- THE 3N DIFFERENCE -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">The 3N Difference</h2>
-          <p class="section-subtitle">
-            3N Consulting's Organizational Redesign is where strategy meets structure. We don't rearrange boxes on an org chart — we realign how organizations think, lead, and deliver.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem; margin-bottom: 1rem;">
-          Our approach blends analytical rigor with human understanding, ensuring that design is not only efficient but livable. We bring the precision of private sector consulting, the purpose of public service, and the agility of an entrepreneurial firm. That is why clients return to 3N when stakes are high, missions are critical, and change must deliver.
-        </p>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; font-weight: 600;">
-          At 3N Consulting, Organizational Redesign isn't just what we offer — it's who we are.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
-        <div style="margin-top:0.4rem; font-size:0.85rem;">
-          We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.
-        </div>
-        <div style="margin-top:0.75rem; font-size:0.85rem;">
-          <strong>Phone:</strong> (301) 723-7057<br>
-          <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
+        <img src="images/logos/Certified NMSDC MBE Logo.png" alt="Footer Image" class="footer-image">
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+            target="_blank">LinkedIn</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="disclaimers.html">Disclaimers</a>
         </div>
       </div>
-      <img src="images/logos/Certified NMSDC MBE Logo.png" alt="Footer Image" class="footer-image">
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </div>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>
 
-<script>
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('show');
-    });
-  }
-</script>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    }
+  </script>
 </body>
+
 </html>

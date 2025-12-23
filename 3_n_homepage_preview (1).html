@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>3N Consulting | Results. Delivered.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Inline CSS so this preview actually renders with layout */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #111827;
       background-color: #f9fafb;
       line-height: 1.6;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
-    .main { flex: 1; }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
 
     .site-header {
       background: #020617;
@@ -25,6 +48,7 @@
       top: 0;
       z-index: 10;
     }
+
     .nav-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -34,14 +58,25 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand-title {
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: #e5e7eb;
       text-decoration: none;
@@ -50,15 +85,43 @@
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
     }
-    .nav-links a:hover { background: #111827; }
-    .nav-links a.active { background: #e5e7eb; color: #020617; }
-    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
 
     @media (max-width: 768px) {
-      .nav-inner { flex-wrap: wrap; }
-      .nav-toggle { display: block; margin-left: auto; }
-      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
-      .nav-links.show { display: flex; }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .hero {
@@ -66,6 +129,7 @@
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
     }
+
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -74,6 +138,7 @@
       gap: 3rem;
       align-items: center;
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.13em;
@@ -81,19 +146,25 @@
       color: #9ca3af;
       margin-bottom: 0.75rem;
     }
+
     .hero-title {
       font-size: clamp(2.1rem, 3vw, 2.7rem);
       font-weight: 750;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
-    .hero-highlight { color: #38bdf8; }
+
+    .hero-highlight {
+      color: #38bdf8;
+    }
+
     .hero-body {
       font-size: 0.98rem;
       color: #d1d5db;
       max-width: 32rem;
       margin-bottom: 1.5rem;
     }
+
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
@@ -102,17 +173,19 @@
       color: #9ca3af;
       margin-bottom: 2rem;
     }
+
     .chip {
       border-radius: 999px;
       padding: 0.25rem 0.75rem;
       border: 1px solid #1f2937;
-      background: rgba(15,23,42,0.7);
+      background: rgba(15, 23, 42, 0.7);
     }
+
     .hero-media {
       border-radius: 1.2rem;
       border: 1px solid #1f2937;
-      background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 50%),
-                  radial-gradient(circle at bottom right, rgba(52,211,153,0.12), transparent 55%);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 50%),
+        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.12), transparent 55%);
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -120,7 +193,14 @@
       font-size: 0.85rem;
       color: #e5e7eb;
     }
-    .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
     .badge {
       border-radius: 999px;
       border: 1px solid #1f2937;
@@ -128,12 +208,26 @@
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      background: rgba(15,23,42,0.8);
+      background: rgba(15, 23, 42, 0.8);
       white-space: nowrap;
     }
-    .badge-outline { background: transparent; }
-    .logo-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
-    .logo-row img { max-height: 40px; width: auto; }
+
+    .badge-outline {
+      background: transparent;
+    }
+
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .logo-row img {
+      max-height: 40px;
+      width: auto;
+    }
+
     .caps-label {
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -141,10 +235,23 @@
       color: #9ca3af;
     }
 
-    .section { padding: 3rem 1.5rem; }
-    .section-alt { background: #f3f4f6; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header { margin-bottom: 1.5rem; }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -153,12 +260,14 @@
       color: #6b7280;
       margin-bottom: 0.25rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
     }
+
     .section-subtitle {
       color: #4b5563;
       max-width: 40rem;
@@ -167,15 +276,24 @@
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5rem;
     }
+
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: minmax(0,1fr); }
-      .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
+
     @media (max-width: 640px) {
-      .grid-3 { grid-template-columns: minmax(0,1fr); }
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     .card {
@@ -183,18 +301,35 @@
       border: 1px solid #e5e7eb;
       background: #ffffff;
       padding: 1.1rem 1.1rem 1.25rem;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
     }
+
     .card-title {
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
     }
-    .card-body { font-size: 0.9rem; color: #4b5563; }
 
-    .testimonial-quote { font-style: italic; margin-bottom: 0.4rem; }
-    .testimonial-client { font-weight: 600; margin-bottom: 0.2rem; }
-    .testimonial-ratings { font-size: 0.8rem; color: #4b5563; line-height: 1.4; }
+    .card-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 0.4rem;
+    }
+
+    .testimonial-client {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .testimonial-ratings {
+      font-size: 0.8rem;
+      color: #4b5563;
+      line-height: 1.4;
+    }
 
     .btn {
       display: inline-flex;
@@ -210,10 +345,27 @@
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
     }
-    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
-    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: #111827; border-color: #d1d5db; }
-    .btn-ghost:hover { background: #e5e7eb; }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #111827;
+      border-color: #d1d5db;
+    }
+
+    .btn-ghost:hover {
+      background: #e5e7eb;
+    }
 
     .site-footer {
       border-top: 1px solid #e5e7eb;
@@ -222,6 +374,7 @@
       color: #6b7280;
       background: #f9fafb;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -230,312 +383,327 @@
       gap: 1rem;
       justify-content: space-between;
     }
+
     .footer-links {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: #6b7280;
       text-decoration: none;
     }
-    .footer-links a:hover { text-decoration: underline; }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="brand">
-        <div>
-          <div class="brand-title">3N Consulting</div>
-          <div class="brand-tagline">Results. Delivered.</div>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links">
-        <a href="#" class="active">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Services</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Thought Leadership</a>
-        <a href="#">Disclaimers</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-eyebrow">Execution-focused consulting measured on outcomes</div>
-          <h1 class="hero-title">
-            Results. <span class="hero-highlight">Delivered.</span>
-          </h1>
-          <p class="hero-body">
-            3N Consulting is a Maryland-based management consulting firm that
-            builds long-term partnerships, takes ownership of outcomes, and
-            practices frugality so savings flow to clients.
-          </p>
-          <div class="hero-meta">
-            <span class="chip">Certified MD Minority Business Enterprise (MBE)</span>
-            <span class="chip">Small Business Reserve (SBR) Program</span>
-            <span class="chip">NMSDC Certified MBE</span>
-          </div>
-          <div class="hero-cta">
-            <a href="#" class="btn btn-primary">Discuss your initiative →</a>
-            <a href="#" class="btn btn-ghost">View recent case studies</a>
-          </div>
-        </div>
-
-        <aside class="hero-media">
-          <div class="caps-label">Our work in motion</div>
-          <div style="background:#020617;border-radius:0.9rem;padding:1.5rem;text-align:center;font-size:0.85rem;color:#9ca3af;">
-            Video / animation placeholder
-          </div>
-          <div class="badge-row">
-            <span class="badge">MD MBE • SBR</span>
-            <span class="badge badge-outline">NMSDC Certified MBE</span>
-          </div>
-          <div class="logo-row">
-            <div style="height:40px;width:80px;border-radius:0.5rem;border:1px dashed #1f2937;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">MD MBE</div>
-            <div style="height:40px;width:80px;border-radius:0.5rem;border:1px dashed #1f2937;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">NMSDC</div>
-          </div>
-          <p style="font-size:0.8rem; color:#9ca3af;">
-            Proud to support Maryland’s public agencies, colleges, and communities.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- WHY 3N -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Why 3N Consulting?</div>
-          <h2 class="section-title">
-            Because we maintain integrity. Because we value clients. And because we deliver results.
-          </h2>
-          <p class="section-subtitle">
-            Our model is built for outcome-based partnerships, true ownership of commitments,
-            and a cost structure that puts client value first.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="card-title">Vested in client success</h3>
-            <p class="card-body">
-              <strong>Vested in Client Success:</strong> Outcome-based partnerships and long-term relationships.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Ownership</h3>
-            <p class="card-body">
-              <strong>Ownership:</strong> We don’t “staff”—we own results and keep our commitments.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Cost structure</h3>
-            <p class="card-body">
-              <strong>Cost Structure:</strong> Frugal by design—invest in talent, minimize overhead, pass savings on.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header" style="display:flex;justify-content:space-between;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand">
           <div>
-            <div class="section-kicker">Client testimonials</div>
-            <h2 class="section-title">What our clients say</h2>
+            <div class="brand-title">3N Consulting</div>
+            <div class="brand-tagline">Results. Delivered.</div>
           </div>
-          <a href="#" class="btn btn-ghost">Recent case studies →</a>
         </div>
-        <p class="section-subtitle">
-          Our performance is continuously evaluated. Below are excerpts from formal client satisfaction surveys.
-        </p>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="testimonial-client">State Education Agency ~ Project Executive</div>
-            <p class="testimonial-quote">
-              “3N delivered tremendous value”
-            </p>
-            <div class="testimonial-ratings">
-              <strong>Client Satisfaction Survey Rating:</strong><br>
-              Quality of Work: “Exceptional”<br>
-              Management Team: “Exceptional”<br>
-              Cost Control: “Exceptional”<br>
-              Schedule Management: “Very Good”
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="testimonial-client">State Treasurer’s Office ~ Deputy State Treasurer</div>
-            <p class="testimonial-quote">
-              “Their communication was fantastic”
-            </p>
-            <div class="testimonial-ratings">
-              <strong>Client Satisfaction Survey Rating:</strong><br>
-              Quality of Work: “Very Good”<br>
-              Management Team: “Exceptional”<br>
-              Cost Control: “Exceptional”<br>
-              Schedule Management: “Exceptional”
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="testimonial-client">
-              CEO, Cosmetics, Health and Beauty Products Manufacturing firm
-            </div>
-            <p class="testimonial-quote">
-              “We would highly recommend them to others”
-            </p>
-            <div class="testimonial-ratings">
-              <strong>Client Satisfaction Survey Rating:</strong><br>
-              Quality of Work: “Exceptional”<br>
-              Management Team: “Very Good”<br>
-              Cost Control: “Exceptional”<br>
-              Schedule Management: “Exceptional”
-            </div>
-          </article>
-        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="#" class="active">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Services</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Thought Leadership</a>
+          <a href="#">Disclaimers</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <!-- CAPABILITIES -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Capabilities</div>
-          <h2 class="section-title">Core areas where we deliver results</h2>
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow">Execution-focused consulting measured on outcomes</div>
+            <h1 class="hero-title">
+              Results. <span class="hero-highlight">Delivered.</span>
+            </h1>
+            <p class="hero-body">
+              3N Consulting is a Maryland-based management consulting firm that
+              builds long-term partnerships, takes ownership of outcomes, and
+              practices fiscal discipline so savings flow to clients.
+            </p>
+            <div class="hero-meta">
+              <span class="chip">Certified MD Minority Business Enterprise (MBE)</span>
+              <span class="chip">Small Business Reserve (SBR) Program</span>
+              <span class="chip">NMSDC Certified MBE</span>
+            </div>
+            <div class="hero-cta">
+              <a href="#" class="btn btn-primary">Discuss your initiative →</a>
+              <a href="#" class="btn btn-ghost">View recent case studies</a>
+            </div>
+          </div>
+
+          <aside class="hero-media">
+            <div class="caps-label">Our work in motion</div>
+            <div
+              style="background:#020617;border-radius:0.9rem;padding:1.5rem;text-align:center;font-size:0.85rem;color:#9ca3af;">
+              Video / animation placeholder
+            </div>
+            <div class="badge-row">
+              <span class="badge">MD MBE • SBR</span>
+              <span class="badge badge-outline">NMSDC Certified MBE</span>
+            </div>
+            <div class="logo-row">
+              <div
+                style="height:40px;width:80px;border-radius:0.5rem;border:1px dashed #1f2937;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">
+                MD MBE</div>
+              <div
+                style="height:40px;width:80px;border-radius:0.5rem;border:1px dashed #1f2937;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">
+                NMSDC</div>
+            </div>
+            <p style="font-size:0.8rem; color:#9ca3af;">
+              Proud to support Maryland’s public agencies, colleges, and communities.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- WHY 3N -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">Why 3N Consulting?</div>
+            <h2 class="section-title">
+              Because we maintain integrity. Because we value clients. And because we deliver results.
+            </h2>
+            <p class="section-subtitle">
+              Our model is built for outcome-based partnerships, true ownership of commitments,
+              and a cost structure that puts client value first.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3 class="card-title">Vested in client success</h3>
+              <p class="card-body">
+                <strong>Vested in Client Success:</strong> Outcome-based partnerships and long-term relationships.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Ownership</h3>
+              <p class="card-body">
+                <strong>Ownership:</strong> We don’t “staff”—we own results and keep our commitments.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Cost structure</h3>
+              <p class="card-body">
+                <strong>Cost Structure:</strong> Fiscal discipline by design—invest in talent, minimize overhead, pass
+                savings on.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header"
+            style="display:flex;justify-content:space-between;align-items:baseline;gap:0.75rem;flex-wrap:wrap;">
+            <div>
+              <div class="section-kicker">Client testimonials</div>
+              <h2 class="section-title">What our clients say</h2>
+            </div>
+            <a href="#" class="btn btn-ghost">Recent case studies →</a>
+          </div>
           <p class="section-subtitle">
-            These capability areas link into your service lines and toolkits, supported by
-            proven methods like O-RAM and AAA.
+            Our performance is continuously evaluated. Below are excerpts from formal client satisfaction surveys.
           </p>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="testimonial-client">State Education Agency ~ Project Executive</div>
+              <p class="testimonial-quote">
+                “3N delivered tremendous value”
+              </p>
+              <div class="testimonial-ratings">
+                <strong>Client Satisfaction Survey Rating:</strong><br>
+                Quality of Work: “Exceptional”<br>
+                Management Team: “Exceptional”<br>
+                Cost Control: “Exceptional”<br>
+                Schedule Management: “Very Good”
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="testimonial-client">State Treasurer’s Office ~ Deputy State Treasurer</div>
+              <p class="testimonial-quote">
+                “Their communication was fantastic”
+              </p>
+              <div class="testimonial-ratings">
+                <strong>Client Satisfaction Survey Rating:</strong><br>
+                Quality of Work: “Very Good”<br>
+                Management Team: “Exceptional”<br>
+                Cost Control: “Exceptional”<br>
+                Schedule Management: “Exceptional”
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="testimonial-client">
+                CEO, Cosmetics, Health and Beauty Products Manufacturing firm
+              </div>
+              <p class="testimonial-quote">
+                “We would highly recommend them to others”
+              </p>
+              <div class="testimonial-ratings">
+                <strong>Client Satisfaction Survey Rating:</strong><br>
+                Quality of Work: “Exceptional”<br>
+                Management Team: “Very Good”<br>
+                Cost Control: “Exceptional”<br>
+                Schedule Management: “Exceptional”
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-title">Organizational Redesign</div>
-            <p class="card-body">
-              Align structure, people, and processes for resilience and agility.
+      <!-- CAPABILITIES -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">Capabilities</div>
+            <h2 class="section-title">Core areas where we deliver results</h2>
+            <p class="section-subtitle">
+              These capability areas link into your service lines and toolkits, supported by
+              proven methods like O-RAM and AAA.
             </p>
-          </article>
+          </div>
 
-          <article class="card">
-            <div class="card-title">Strategy &amp; Operations</div>
-            <p class="card-body">
-              Corporate strategy. Interim management. Lean improvements that minimize waste and maximize efficiency.
-            </p>
-          </article>
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-title">Organizational Redesign</div>
+              <p class="card-body">
+                Align structure, people, and processes for resilience and agility.
+              </p>
+            </article>
 
-          <article class="card">
-            <div class="card-title">Data Analytics</div>
-            <p class="card-body">
-              Frameworks &amp; dashboards that uncover patterns and predict trends.
-            </p>
-          </article>
+            <article class="card">
+              <div class="card-title">Strategy &amp; Operations</div>
+              <p class="card-body">
+                Corporate strategy. Interim management. Lean improvements that minimize waste and maximize efficiency.
+              </p>
+            </article>
 
-          <article class="card">
-            <div class="card-title">Digital Transformation</div>
-            <p class="card-body">
-              From legacy modernization to AI—reduce the ~70% failure risk with alignment.
-            </p>
-          </article>
+            <article class="card">
+              <div class="card-title">Data Analytics</div>
+              <p class="card-body">
+                Frameworks &amp; dashboards that uncover patterns and predict trends.
+              </p>
+            </article>
 
-          <article class="card">
-            <div class="card-title">Human Capital &amp; Change Management</div>
-            <p class="card-body">
-              Strengthen engagement, accelerate adoption, and lead with purpose.
+            <article class="card">
+              <div class="card-title">Digital Transformation</div>
+              <p class="card-body">
+                From legacy modernization to AI—reduce the ~70% failure risk with alignment.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-title">Human Capital &amp; Change Management</div>
+              <p class="card-body">
+                Strengthen engagement, accelerate adoption, and lead with purpose.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTIONS -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">Productized solution offerings</div>
+            <h2 class="section-title">Solutions we can rapidly deploy</h2>
+            <p class="section-subtitle">
+              Solutions we can rapidly deploy through assets developed over years of
+              knowledge and experience—in procurement, manufacturing, and technology.
             </p>
-          </article>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3 class="card-title">Manufacturing</h3>
+              <p class="card-body">
+                Planning, operations, and process redesign for manufacturers seeking to
+                scale while maintaining service and quality.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">CIO Services</h3>
+              <p class="card-body">
+                Portfolio rationalization, IT strategy, and value-focused technology
+                investment for public sector and mid-market organizations.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Procurement</h3>
+              <p class="card-body">
+                A structured procurement solution to unlock savings, improve compliance,
+                and turn purchasing into a strategic advantage.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
+          <div style="margin-top:0.4rem; font-size:0.85rem;">
+            We build long-term partnerships, take ownership of outcomes, and practice fiscal discipline so savings flow
+            to clients.
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.85rem;">
+            <strong>Phone:</strong> (301) 723-7057<br>
+            <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#">LinkedIn</a>
+          <a href="#">About Us</a>
+          <a href="#">Services</a>
+          <a href="#">Careers</a>
+          <a href="#">Thought Leadership</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Disclaimers</a>
         </div>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <!-- SOLUTIONS -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Productized solution offerings</div>
-          <h2 class="section-title">Solutions we can rapidly deploy</h2>
-          <p class="section-subtitle">
-            Solutions we can rapidly deploy through assets developed over years of
-            knowledge and experience—in procurement, manufacturing, and technology.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3 class="card-title">Manufacturing</h3>
-            <p class="card-body">
-              Planning, operations, and process redesign for manufacturers seeking to
-              scale while maintaining service and quality.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">CIO Services</h3>
-            <p class="card-body">
-              Portfolio rationalization, IT strategy, and value-focused technology
-              investment for public sector and mid-market organizations.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Procurement</h3>
-            <p class="card-body">
-              A structured procurement solution to unlock savings, improve compliance,
-              and turn purchasing into a strategic advantage.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
-        <div style="margin-top:0.4rem; font-size:0.85rem;">
-          We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.
-        </div>
-        <div style="margin-top:0.75rem; font-size:0.85rem;">
-          <strong>Phone:</strong> (301) 723-7057<br>
-          <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">About Us</a>
-        <a href="#">Services</a>
-        <a href="#">Careers</a>
-        <a href="#">Thought Leadership</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Disclaimers</a>
-      </div>
-    </div>
-  </footer>
-</div>
-
-<script>
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('show');
-    });
-  }
-</script>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    }
+  </script>
 </body>
+
 </html>

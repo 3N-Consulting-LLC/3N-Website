@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Human Capital & Change Management | 3N Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     /* Inline CSS so this preview actually renders with layout */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #111827;
       background-color: #f9fafb;
       line-height: 1.6;
     }
-    img, video { max-width: 100%; height: auto; display: block; }
-    .site-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
-    .main { flex: 1; }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
 
     .site-header {
       background: #020617;
@@ -25,6 +48,7 @@
       top: 0;
       z-index: 10;
     }
+
     .nav-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -34,15 +58,31 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
+
     .brand-title {
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-    .brand-tagline { font-size: 0.75rem; color: #9ca3af; }
-    .brand-logo { height: 70px; width: auto; max-width: 250px; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brand-logo {
+      height: 70px;
+      width: auto;
+      max-width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: #e5e7eb;
       text-decoration: none;
@@ -51,15 +91,43 @@
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
     }
-    .nav-links a:hover { background: #111827; }
-    .nav-links a.active { background: #e5e7eb; color: #020617; }
-    .nav-toggle { display: none; border: none; background: transparent; color: #e5e7eb; font-size: 1.3rem; }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
 
     @media (max-width: 768px) {
-      .nav-inner { flex-wrap: wrap; }
-      .nav-toggle { display: block; margin-left: auto; }
-      .nav-links { width: 100%; display: none; padding-top: 0.5rem; }
-      .nav-links.show { display: flex; }
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .hero {
@@ -67,10 +135,12 @@
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
     }
+
     .hero-inner {
       max-width: 1120px;
       margin: 0 auto;
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.13em;
@@ -78,23 +148,41 @@
       color: #9ca3af;
       margin-bottom: 0.75rem;
     }
+
     .hero-title {
       font-size: clamp(2rem, 3vw, 2.5rem);
       font-weight: 750;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
-    .hero-highlight { color: #38bdf8; }
+
+    .hero-highlight {
+      color: #38bdf8;
+    }
+
     .hero-body {
       font-size: 0.98rem;
       color: #d1d5db;
       max-width: 40rem;
     }
 
-    .section { padding: 3rem 1.5rem; }
-    .section-alt { background: #f3f4f6; }
-    .section-inner { max-width: 1120px; margin: 0 auto; }
-    .section-header { margin-bottom: 2rem; }
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
     .section-kicker {
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -103,12 +191,14 @@
       color: #6b7280;
       margin-bottom: 0.25rem;
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.75rem;
     }
+
     .section-subtitle {
       color: #4b5563;
       max-width: 50rem;
@@ -118,20 +208,30 @@
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
     }
+
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.5rem;
     }
+
     @media (max-width: 900px) {
-      .grid-2 { grid-template-columns: minmax(0,1fr); }
-      .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
+
     @media (max-width: 640px) {
-      .grid-3 { grid-template-columns: minmax(0,1fr); }
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     .card {
@@ -139,15 +239,21 @@
       border: 1px solid #e5e7eb;
       background: #ffffff;
       padding: 1.5rem;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.04);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
     }
+
     .card-title {
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
       color: #111827;
     }
-    .card-body { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+      line-height: 1.7;
+    }
 
     .btn {
       display: inline-flex;
@@ -163,10 +269,27 @@
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
     }
-    .btn-primary { background: #38bdf8; color: #020617; border-color: #0ea5e9; }
-    .btn-primary:hover { background: #0ea5e9; transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: #111827; border-color: #d1d5db; }
-    .btn-ghost:hover { background: #e5e7eb; }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #111827;
+      border-color: #d1d5db;
+    }
+
+    .btn-ghost:hover {
+      background: #e5e7eb;
+    }
 
     .site-footer {
       border-top: 1px solid #e5e7eb;
@@ -176,6 +299,7 @@
       background: #f9fafb;
       margin-top: 2rem;
     }
+
     .footer-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -184,187 +308,238 @@
       gap: 1rem;
       justify-content: space-between;
     }
+
     .footer-links {
       display: flex;
       gap: 0.9rem;
       flex-wrap: wrap;
     }
+
     .footer-links a {
       color: #6b7280;
       text-decoration: none;
     }
-    .footer-links a:hover { text-decoration: underline; }
-    .footer-image { max-width: 150px; height: auto; }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-image {
+      max-width: 150px;
+      height: auto;
+    }
   </style>
 </head>
+
 <body>
-<div class="site-wrapper">
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+              style="height: 90px; width: auto; max-width: 300px;">
+          </div>
+          <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <div
+              style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+              3N Consulting</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
+          </div>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+          <a href="disclaimers.html">Disclaimers</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-eyebrow">Core Capability</div>
+          <h1 class="hero-title">
+            Human Capital & <span class="hero-highlight">Change Management</span>
+          </h1>
+          <p class="hero-body">
+            Strengthen engagement, accelerate adoption, and lead with purpose.
+          </p>
+        </div>
+      </section>
+
+      <!-- HUMAN CAPITAL -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">Human Capital</div>
+            <h2 class="section-title">Empowering People to Drive Performance</h2>
+            <p class="section-subtitle">
+              At 3N Consulting, we believe that organizational transformation succeeds or fails on one factor above all
+              others: people. Our Human Capital practice helps organizations align their workforce, leadership, and
+              culture with strategic goals to achieve measurable improvements in performance, engagement, and service
+              delivery.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            We partner with clients to design human capital strategies that unlock potential at every level of the
+            organization — ensuring that talent, structure, and leadership are not just managed, but purposefully
+            aligned to mission and results. Our approach combines quantitative analysis, behavioral insight, and
+            organizational design to create workplaces that perform better, communicate more effectively, and adapt more
+            confidently to change.
+          </p>
+        </div>
+      </section>
+
+      <!-- STRATEGIC WORKFORCE PLANNING -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Strategic Workforce Planning & Talent Optimization</h2>
+            <p class="section-subtitle">
+              3N Consulting helps organizations build the right workforce for the future. Through strategic workforce
+              planning, we identify critical roles, assess skill gaps, and design data-informed strategies to ensure
+              that staffing aligns with both short-term priorities and long-term growth.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            Our consultants develop frameworks for recruitment, retention, and succession planning that balance
+            efficiency with equity — ensuring continuity, capability, and inclusivity across the enterprise. We also
+            help clients define clear competency models and performance expectations, building transparency and
+            accountability into the talent lifecycle. The result is a workforce strategy that supports operational
+            agility and strengthens the organization's ability to execute its mission.
+          </p>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP & ORGANIZATIONAL DEVELOPMENT -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Leadership & Organizational Development</h2>
+            <p class="section-subtitle">
+              Strong leadership drives every successful transformation. 3N's leadership development programs focus on
+              building strategic capacity, emotional intelligence, and decision-making discipline among executives and
+              emerging leaders alike.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            We work with management teams to clarify leadership roles, streamline decision structures, and strengthen
+            communication across levels of the organization. Our methodology blends executive coaching, team alignment
+            sessions, and performance feedback loops to ensure that leaders are not only empowered to lead change — but
+            equipped to sustain it. The outcome is a culture of trust, clarity, and accountability that accelerates
+            performance improvement and fosters long-term engagement.
+          </p>
+        </div>
+      </section>
+
+      <!-- CULTURE, ENGAGEMENT & CHANGE MANAGEMENT -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Culture, Engagement & Change Management</h2>
+            <p class="section-subtitle">
+              An organization's culture defines how strategy becomes reality. We assess and strengthen workplace culture
+              to ensure it supports collaboration, inclusion, and innovation.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            3N's consultants design targeted engagement strategies that improve communication, reduce turnover, and
+            align employees around shared goals. When major change occurs — whether structural, digital, or strategic —
+            we apply a proven change management framework that prioritizes transparency, readiness, and adoption. By
+            understanding how people experience change, we help leaders minimize resistance, sustain momentum, and embed
+            new ways of working that endure beyond the transformation phase.
+          </p>
+        </div>
+      </section>
+
+      <!-- HUMAN CAPITAL ANALYTICS & GOVERNANCE -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Human Capital Analytics & Governance</h2>
+            <p class="section-subtitle">
+              We integrate data and governance to bring objectivity and discipline to workforce decisions. 3N Consulting
+              helps organizations define and track key performance indicators (KPIs) for human capital management.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            We track indicators such as workforce productivity, engagement levels, leadership pipeline health, and
+            training ROI. Through structured governance processes, we ensure that HR policies, compliance systems, and
+            organizational structures operate efficiently and transparently. Our consultants provide insights that
+            enable leadership to make informed, evidence-based decisions — transforming HR from a support function into
+            a strategic partner driving organizational success.
+          </p>
+        </div>
+      </section>
+
+      <!-- LASTING VALUE -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <h2 class="section-title">Lasting Value Through People</h2>
+            <p class="section-subtitle">
+              3N Consulting's Human Capital methodology is rooted in a simple truth: performance improves when people
+              are engaged, aligned, and empowered. We combine strategic foresight with practical implementation to help
+              organizations build resilient workforces, high-performing cultures, and leadership teams capable of
+              sustaining excellence.
+            </p>
+          </div>
+          <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
+            Whether guiding workforce redesign for public institutions, advising boards on leadership strategy, or
+            supporting organizational change in the private sector, 3N's Human Capital practice delivers what every
+            transformation requires most — people who believe in the mission, and leaders who know how to bring it to
+            life.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
         <div>
-          <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width: auto; max-width: 300px;">
+          <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
+          <div style="margin-top:0.4rem; font-size:0.85rem;">
+            We build long-term partnerships, take ownership of outcomes, and practice fiscal discipline so savings flow
+            to clients.
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.85rem;">
+            <strong>Phone:</strong> (301) 723-7057<br>
+            <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
+          </div>
         </div>
-        <div style="display: flex; flex-direction: column; line-height: 1.1;">
-          <div style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">3N Consulting</div>
-          <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="toolkit.html">Our Toolkit</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-eyebrow">Core Capability</div>
-        <h1 class="hero-title">
-          Human Capital & <span class="hero-highlight">Change Management</span>
-        </h1>
-        <p class="hero-body">
-          Strengthen engagement, accelerate adoption, and lead with purpose.
-        </p>
-      </div>
-    </section>
-
-    <!-- HUMAN CAPITAL -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <div class="section-kicker">Human Capital</div>
-          <h2 class="section-title">Empowering People to Drive Performance</h2>
-          <p class="section-subtitle">
-            At 3N Consulting, we believe that organizational transformation succeeds or fails on one factor above all others: people. Our Human Capital practice helps organizations align their workforce, leadership, and culture with strategic goals to achieve measurable improvements in performance, engagement, and service delivery.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          We partner with clients to design human capital strategies that unlock potential at every level of the organization — ensuring that talent, structure, and leadership are not just managed, but purposefully aligned to mission and results. Our approach combines quantitative analysis, behavioral insight, and organizational design to create workplaces that perform better, communicate more effectively, and adapt more confidently to change.
-        </p>
-      </div>
-    </section>
-
-    <!-- STRATEGIC WORKFORCE PLANNING -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Strategic Workforce Planning & Talent Optimization</h2>
-          <p class="section-subtitle">
-            3N Consulting helps organizations build the right workforce for the future. Through strategic workforce planning, we identify critical roles, assess skill gaps, and design data-informed strategies to ensure that staffing aligns with both short-term priorities and long-term growth.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          Our consultants develop frameworks for recruitment, retention, and succession planning that balance efficiency with equity — ensuring continuity, capability, and inclusivity across the enterprise. We also help clients define clear competency models and performance expectations, building transparency and accountability into the talent lifecycle. The result is a workforce strategy that supports operational agility and strengthens the organization's ability to execute its mission.
-        </p>
-      </div>
-    </section>
-
-    <!-- LEADERSHIP & ORGANIZATIONAL DEVELOPMENT -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Leadership & Organizational Development</h2>
-          <p class="section-subtitle">
-            Strong leadership drives every successful transformation. 3N's leadership development programs focus on building strategic capacity, emotional intelligence, and decision-making discipline among executives and emerging leaders alike.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          We work with management teams to clarify leadership roles, streamline decision structures, and strengthen communication across levels of the organization. Our methodology blends executive coaching, team alignment sessions, and performance feedback loops to ensure that leaders are not only empowered to lead change — but equipped to sustain it. The outcome is a culture of trust, clarity, and accountability that accelerates performance improvement and fosters long-term engagement.
-        </p>
-      </div>
-    </section>
-
-    <!-- CULTURE, ENGAGEMENT & CHANGE MANAGEMENT -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Culture, Engagement & Change Management</h2>
-          <p class="section-subtitle">
-            An organization's culture defines how strategy becomes reality. We assess and strengthen workplace culture to ensure it supports collaboration, inclusion, and innovation.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          3N's consultants design targeted engagement strategies that improve communication, reduce turnover, and align employees around shared goals. When major change occurs — whether structural, digital, or strategic — we apply a proven change management framework that prioritizes transparency, readiness, and adoption. By understanding how people experience change, we help leaders minimize resistance, sustain momentum, and embed new ways of working that endure beyond the transformation phase.
-        </p>
-      </div>
-    </section>
-
-    <!-- HUMAN CAPITAL ANALYTICS & GOVERNANCE -->
-    <section class="section section-alt">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Human Capital Analytics & Governance</h2>
-          <p class="section-subtitle">
-            We integrate data and governance to bring objectivity and discipline to workforce decisions. 3N Consulting helps organizations define and track key performance indicators (KPIs) for human capital management.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          We track indicators such as workforce productivity, engagement levels, leadership pipeline health, and training ROI. Through structured governance processes, we ensure that HR policies, compliance systems, and organizational structures operate efficiently and transparently. Our consultants provide insights that enable leadership to make informed, evidence-based decisions — transforming HR from a support function into a strategic partner driving organizational success.
-        </p>
-      </div>
-    </section>
-
-    <!-- LASTING VALUE -->
-    <section class="section">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title">Lasting Value Through People</h2>
-          <p class="section-subtitle">
-            3N Consulting's Human Capital methodology is rooted in a simple truth: performance improves when people are engaged, aligned, and empowered. We combine strategic foresight with practical implementation to help organizations build resilient workforces, high-performing cultures, and leadership teams capable of sustaining excellence.
-          </p>
-        </div>
-        <p style="color: #4b5563; line-height: 1.7; font-size: 0.98rem; margin-top: 1rem;">
-          Whether guiding workforce redesign for public institutions, advising boards on leadership strategy, or supporting organizational change in the private sector, 3N's Human Capital practice delivers what every transformation requires most — people who believe in the mission, and leaders who know how to bring it to life.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
-        <div style="margin-top:0.4rem; font-size:0.85rem;">
-          We build long-term partnerships, take ownership of outcomes, and practice frugality so savings flow to clients.
-        </div>
-        <div style="margin-top:0.75rem; font-size:0.85rem;">
-          <strong>Phone:</strong> (301) 723-7057<br>
-          <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
+        <img src="images/logos/Certified NMSDC MBE Logo.png" alt="Footer Image" class="footer-image">
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+            target="_blank">LinkedIn</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
+          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="disclaimers.html">Disclaimers</a>
         </div>
       </div>
-      <img src="images/logos/Certified NMSDC MBE Logo.png" alt="Footer Image" class="footer-image">
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="careers.html">Careers</a>
-        <a href="thought-leadership.html">Meet Our Team</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="disclaimers.html">Disclaimers</a>
-      </div>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>
 
-<script>
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('show');
-    });
-  }
-</script>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    }
+  </script>
 </body>
+
 </html>
