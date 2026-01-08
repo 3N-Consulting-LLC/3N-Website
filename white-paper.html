@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>White Paper - 3N Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:#0f172a; background:#f9fafb; line-height:1.6; }
+    img { max-width: 100%; height:auto; display:block; }
+
+    .site-wrapper { min-height:100vh; display:flex; flex-direction:column; }
+    .main { flex:1; }
+
+    /* Header/nav (reuse your site styles) */
+    .site-header { background:#020617; color:#e5e7eb; border-bottom:1px solid #1f2937; position:sticky; top:0; z-index:10; }
+    .nav-inner { max-width:1120px; margin:0 auto; padding:0.75rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:0.75rem; }
+    .nav-links a { color:#e5e7eb; text-decoration:none; font-size:0.85rem; padding:0.35rem 0.7rem; border-radius:999px; transition:background .15s ease,color .15s ease; }
+    .nav-links a:hover { background:#111827; }
+    .nav-links a.active { background:#e5e7eb; color:#020617; }
+    .nav-toggle { display:none; border:none; background:transparent; color:#e5e7eb; font-size:1.3rem; }
+    @media (max-width: 768px) {
+      .nav-inner { flex-wrap:wrap; }
+      .nav-toggle { display:block; margin-left:auto; }
+      .nav-links { width:100%; display:none; padding-top:.5rem; }
+      .nav-links.show { display:flex; }
+    }
+
+    /* P&C-style white paper header */
+    .wp-hero {
+      background:#f3f4f6;
+      border-bottom:1px solid #e5e7eb;
+      padding: 3rem 1.5rem;
+    }
+    .wp-hero-inner {
+      max-width:1120px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap:3rem;
+      align-items:start;
+    }
+    @media (max-width: 900px) {
+      .wp-hero-inner { grid-template-columns: 1fr; }
+    }
+
+    .kicker {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      margin-bottom:1rem;
+    }
+    .kicker .pill {
+      font-size:.72rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      background:#0ea5e9;
+      color:#020617;
+    }
+    .wp-title {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height:1.15;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .wp-meta {
+      color:#475569;
+      font-size:.95rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .wp-summary {
+      color:#334155;
+      max-width: 60ch;
+      font-size:1rem;
+      line-height:1.8;
+      margin-top: .25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .actions-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      align-items:center;
+      margin-top: 1rem;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.4rem;
+      border-radius:999px;
+      padding: .7rem 1.15rem;
+      font-size:.9rem;
+      font-weight:700;
+      text-decoration:none;
+      border: 1px solid transparent;
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn-primary {
+      background:#0f172a;
+      color:#ffffff;
+      border-color:#0f172a;
+    }
+    .btn-primary:hover { transform: translateY(-1px); background:#111827; }
+    .btn-secondary {
+      background:#ffffff;
+      color:#0f172a;
+      border-color:#cbd5e1;
+    }
+    .btn-secondary:hover { transform: translateY(-1px); background:#f8fafc; }
+
+    .cover-wrap {
+      display:flex;
+      justify-content:flex-end;
+      align-items:flex-start;
+    }
+
+    .cover {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(15,23,42,.08);
+      overflow:hidden;
+      background:#fff;
+    }
+
+
+    /* Content area */
+    .content {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.25rem 1.5rem 3rem;
+    }
+    .content h2 {
+      margin-top: 2rem;
+      margin-bottom: .75rem;
+      font-size: 1.6rem;
+      letter-spacing:-.01em;
+    }
+    .content h3 {
+      margin-top: 1.6rem;
+      margin-bottom: .6rem;
+      font-size: 1.25rem;
+    }
+    .content p {
+      margin: .8rem 0;
+      color:#0f172a;
+      line-height: 1.9;
+      font-size: 1.02rem;
+    }
+    .content ul { margin: .75rem 0 .75rem 1.25rem; }
+    .content li { margin: .35rem 0; line-height: 1.8; }
+
+    .content figure {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      overflow:hidden;
+      background:#fff;
+    }
+    .content figure img { width:100%; }
+    .content figcaption {
+      padding: .65rem .9rem;
+      font-size: .9rem;
+      color:#475569;
+      border-top:1px solid #e5e7eb;
+    }
+
+    .divider { height:1px; background:#e5e7eb; margin: 1.25rem 0; }
+
+    /* Footer */
+    .site-footer { border-top:1px solid #e5e7eb; padding:1.5rem 1.5rem 2rem; font-size:.8rem; color:#6b7280; background:#f9fafb; margin-top:2rem; }
+    .footer-inner { max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; }
+    .footer-links { display:flex; gap:.9rem; flex-wrap:wrap; }
+    .footer-links a { color:#6b7280; text-decoration:none; }
+    .footer-links a:hover { text-decoration:underline; }
+  </style>
+
+  <link rel="icon" type="image/png" href="images/logos/new 3n logo.png">
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display:flex; align-items:center; gap:1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo" style="height: 90px; width:auto; max-width:300px;">
+          </div>
+          <div style="display:flex; flex-direction:column; line-height:1.1;">
+            <div style="font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.9rem; color:#e5e7eb;">3N Consulting</div>
+            <div style="font-size:.75rem; color:#9ca3af; margin-top:.2rem;">Results. Delivered.</div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="thought-leadership.html" class="active">Thought Leadership</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+        </nav>
+      </div>
+    </header>
+
+<!-- White paper header -->
+      <section class="wp-hero">
+        <div class="wp-hero-inner">
+
+          <!-- LEFT: text -->
+          <div>
+            <div class="kicker">
+              <span class="pill" id="wpCategory">WHITE PAPERS</span>
+            </div>
+
+            <h1 class="wp-title" id="wpTitle">Loading…</h1>
+
+            <div class="wp-meta" id="wpMeta"></div>
+
+            <p class="wp-summary" id="wpSummary" style="display:none;"></p>
+
+            <div class="actions-row" id="wpActions"></div>
+          </div>
+
+          <!-- RIGHT: cover -->
+          <div class="cover-wrap">
+            <div class="cover" id="wpCover" style="display:none;"></div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- Content -->
+      <section class="content" id="wpContent"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div style="flex:1; min-width:200px;">
+          <div style="font-weight:600; margin-bottom:.5rem;">3N Consulting</div>
+          <p style="color:#6b7280;">Results. Delivered.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="thought-leadership.html">Thought Leadership</a>
+          <a href="contact.html">Contact</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid #e5e7eb; color:#9ca3af;">
+        <p>&copy; 2026 3N Consulting. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ===== Sanity settings =====
+    const SANITY_PROJECT_ID = "l89oo1tq";
+    const SANITY_DATASET = "production";
+    const SANITY_API_VERSION = "2025-01-01";
+
+    const getParam = (name) => new URLSearchParams(window.location.search).get(name);
+
+    const q = (groq) =>
+      fetch(`https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(groq)}`)
+        .then(r => r.json());
+
+    const fmtDate = (iso) => {
+      if (!iso) return "";
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+    };
+
+    function escapeHtml(str) {
+      return (str || "").replace(/[&<>"']/g, (m) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[m]));
+    }
+
+
+    // Portable Text renderer with support for images (basic)
+    function isSafeUrl(url) {
+      if (!url) return false;
+      // allow http(s), mailto, tel, and relative links
+      return (
+        url.startsWith("http://") ||
+        url.startsWith("https://") ||
+        url.startsWith("mailto:") ||
+        url.startsWith("tel:") ||
+        url.startsWith("/") ||
+        url.startsWith("#")
+      );
+    }
+
+    function renderSpansWithMarks(children = [], markDefs = []) {
+      const defsByKey = {};
+      for (const d of markDefs || []) defsByKey[d._key] = d;
+
+      let html = "";
+
+      for (const ch of children) {
+        if (!ch) continue;
+
+        // line breaks
+        if (ch._type === "span" && ch.text === "\n") {
+          html += "<br/>";
+          continue;
+        }
+
+        // normal span
+        if (ch._type === "span") {
+          let text = escapeHtml(ch.text || "");
+          const marks = ch.marks || [];
+
+          // wrap text for each mark (Sanity commonly stores link marks as keys into markDefs)
+          for (const m of marks) {
+            const def = defsByKey[m];
+            if (def && def._type === "link") {
+              const href = def.href || def.url; // depending on your schema
+              const safeHref = isSafeUrl(href) ? href : "#";
+              const target = def.blank ? ` target="_blank" rel="noopener"` : "";
+              text = `<a href="${escapeHtml(safeHref)}"${target}>${text}</a>`;
+            }
+          }
+
+          html += text;
+        }
+
+        // hardBreak type (rare, but possible)
+        if (ch._type === "hardBreak") html += "<br/>";
+      }
+
+      return html;
+    }
+
+    // Portable Text renderer with support for images + links
+    function renderPortableText(blocks) {
+      if (!Array.isArray(blocks)) return "";
+      let html = "";
+
+      for (const b of blocks) {
+        // text blocks
+        if (b._type === "block") {
+          const inner = renderSpansWithMarks(b.children || [], b.markDefs || []);
+          const style = b.style || "normal";
+
+          if (style === "h2") html += `<h2>${inner}</h2>`;
+          else if (style === "h3") html += `<h3>${inner}</h3>`;
+          else html += `<p>${inner}</p>`;
+        }
+
+        // images inside portable text arrays
+        if (b._type === "image" && b.asset && b.asset.url) {
+          const alt = escapeHtml(b.alt || "");
+          const cap = escapeHtml(b.caption || "");
+          html += `
+            <figure>
+              <img src="${b.asset.url}" alt="${alt}">
+              ${cap ? `<figcaption>${cap}</figcaption>` : ""}
+            </figure>
+          `;
+        }
+      }
+
+      return html;
+    }
+
+
+
+    async function loadWhitePaper() {
+      const slug = getParam("slug");
+      if (!slug) {
+        document.getElementById("wpTitle").textContent = "No white paper selected.";
+        document.getElementById("wpContent").innerHTML = `<p><a href="thought-leadership.html">Back to Thought Leadership</a></p>`;
+        return;
+      }
+
+      // Pull both legacy + new structured fields, plus cover image + pdf url
+      const groq = `*[_type=="whitePaper" && slug.current==$slug][0]{
+        title,
+        subtitle,
+        publishDate,
+        summary,
+        authors,
+        readTimeMinutes,
+        tags,
+        featured,
+        sections[]{
+          heading,
+          content[]{
+            ...,
+            "asset": asset->{
+              url
+            }
+          }
+        },
+        body[]{
+          ...,
+          "asset": asset->{
+            url
+          }
+        },
+        "pdfUrl": pdf.asset->url,
+        "coverUrl": coverImage.asset->url
+      }`;
+
+      const res = await q(groq.replace("$slug", `"${slug}"`));
+      const item = res.result;
+
+      if (!item) {
+        document.getElementById("wpTitle").textContent = "We couldn’t find that white paper.";
+        document.getElementById("wpContent").innerHTML = `<p><a href="thought-leadership.html">Back to Thought Leadership</a></p>`;
+        return;
+      }
+
+      // Title + meta
+      document.title = `${item.title} - 3N Consulting`;
+      document.getElementById("wpTitle").textContent = item.title || "";
+
+      const metaBits = [];
+      if (item.publishDate) metaBits.push(fmtDate(item.publishDate));
+      if (Array.isArray(item.authors) && item.authors.length) metaBits.push(`By ${item.authors.join(", ")}`);
+      if (item.readTimeMinutes) metaBits.push(`${item.readTimeMinutes} min read`);
+      document.getElementById("wpMeta").textContent = metaBits.join(" • ");
+
+      // Summary
+      if (item.summary) {
+        const s = document.getElementById("wpSummary");
+        s.style.display = "block";
+        s.textContent = item.summary;
+      }
+
+      // Actions (Download + Back)
+      const actions = document.getElementById("wpActions");
+      const backBtn = `<a class="btn btn-secondary" href="thought-leadership.html">Back to list</a>`;
+      const pdfBtn = item.pdfUrl
+        ? `<a class="btn btn-primary" href="${item.pdfUrl}" target="_blank" rel="noopener">Download PDF</a>`
+        : "";
+      actions.innerHTML = backBtn + pdfBtn;
+
+      // Cover image
+      if (item.coverUrl) {
+        const cover = document.getElementById("wpCover");
+        cover.style.display = "block";
+        cover.innerHTML = `<img src="${item.coverUrl}" alt="${escapeHtml(item.title || "White paper cover")}">`;
+      }
+
+      // Content (prefer sections; fallback to legacy body)
+      const content = document.getElementById("wpContent");
+      let html = "";
+
+      if (Array.isArray(item.sections) && item.sections.length) {
+        for (const s of item.sections) {
+          if (s.heading) html += `<h2>${escapeHtml(s.heading)}</h2>`;
+          html += renderPortableText(s.content || []);
+          html += `<div class="divider"></div>`;
+        }
+      } else {
+        html += renderPortableText(item.body || []);
+      }
+
+      if (!html.trim()) {
+        html = `<p>${escapeHtml(item.summary || "No content yet.")}</p>`;
+      }
+
+      content.innerHTML = html;
+    }
+
+    loadWhitePaper();
+  </script>
+</body>
+</html>

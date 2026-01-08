@@ -109,7 +109,7 @@
       font-size: 1.3rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .nav-inner {
         flex-wrap: wrap;
       }
@@ -128,13 +128,144 @@
       .nav-links.show {
         display: flex;
       }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .hero-inner {
+        order: 1;
+      }
+
+      .hero-bg {
+        display: block;
+        order: 2;
+        position: relative;
+        inset: auto;
+        height: 250px;
+        margin-top: 0;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      .hero-bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.95;
+      }
+
+
+      /* Fade overlay changes: darken top slightly so it blends */
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          140deg,
+          rgba(2, 6, 23, 0.75) 100%,
+          rgba(2, 6, 23, 0.25) 45%,
+          rgba(2, 6, 23, 0.0) 100%
+        );
+      }
+
+        .hero-media {
+          height: auto;
+          align-self: auto;
+          justify-content: flex-start;
+          margin-top: 1rem;
+        }
+
     }
 
     .hero {
       padding: 4rem 1.5rem 3rem;
       background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
       color: #e5e7eb;
+      position: relative;
+      overflow: hidden;
     }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg-video {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50vw;     /* half screen */
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    /* Mobile/tablet: put the video BELOW the text (no background strip) */
+    @media (max-width: 900px) {
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      /* CRITICAL overrides */
+      .hero-bg {
+        position: relative;   /* <-- this is the missing piece */
+        inset: auto;
+        width: 100%;
+        height: 250px;
+        margin: 0;
+        border-radius: 1rem;
+        overflow: hidden;
+        order: 2;
+      }
+
+      .hero-inner { order: 1; }
+
+      .hero-bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.95;
+      }
+    }
+
+        
+
+   .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      
+      background: linear-gradient(
+        90deg,
+          rgba(2, 6, 23, 1) 0%,
+          rgba(2, 6, 23, 1) 50%,
+          rgba(2, 6, 23, 0.5) 58%,
+          rgba(2, 6, 23, 0.0) 72%
+      );
+    } 
+
+    @media (max-width: 900px) {
+      .hero-bg::after {
+        background: linear-gradient(
+          180deg,
+          rgba(2, 6, 23, 0.25) 0%,
+          rgba(2, 6, 23, 0.05) 55%,
+          rgba(2, 6, 23, 0.0) 100%
+        );
+      }
+    }
+
 
     .hero-inner {
       max-width: 1120px;
@@ -143,6 +274,9 @@
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
       gap: 3rem;
       align-items: center;
+
+      position: relative;
+      z-index: 1;
     }
 
     .hero-eyebrow {
@@ -188,16 +322,17 @@
     }
 
     .hero-media {
-      border-radius: 1.2rem;
-      border: 1px solid #1f2937;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 50%),
-        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.12), transparent 55%);
-      padding: 1rem;
+      background: transparent;
+      border: none;
+      height: 100%;
+      align-self: stretch;       
       display: flex;
       flex-direction: column;
+      justify-content: flex-end; 
       gap: 0.75rem;
-      font-size: 0.85rem;
-      color: #e5e7eb;
+      background: transparent;   
+      border: 0;
+      padding: 0; 
     }
 
     .badge-row {
@@ -249,6 +384,12 @@
       background: #f3f4f6;
     }
 
+    .section-2 {
+      padding: 3rem 1.5rem;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
+      color: #e5e7eb;
+    }
+
     .section-inner {
       max-width: 1120px;
       margin: 0 auto;
@@ -276,6 +417,38 @@
 
     .section-subtitle {
       color: #4b5563;
+      max-width: 40rem;
+      font-size: 0.98rem;
+    }
+
+    .section-2 .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-2 .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-2 .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fbfbfb;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-2 .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #38bdf8;
+    }
+
+    .section-2 .section-subtitle {
+      color: #fcfcfc;
       max-width: 40rem;
       font-size: 0.98rem;
     }
@@ -335,18 +508,18 @@
 
     .testimonial-quote {
       font-style: italic;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
       color: #000000;
     }
 
     .testimonial-client {
       font-weight: 600;
-      margin-bottom: 0.2rem;
+      margin-bottom: 1.1rem;
       color: #000000;
     }
 
     .testimonial-ratings {
-      font-size: 0.8rem;
+      font-size: 1.1rem;
       color: #000000;
       line-height: 1.4;
     }
@@ -499,7 +672,7 @@
       }
     }
   </style>
-  <link rel="icon" type="image/png" href="images/logos/3N%20Consulting.png">
+  <link rel="icon" type="image/png" href="images/logos/new 3n logo.png">
 </head>
 
 <body>
@@ -523,9 +696,10 @@
           <a href="#" class="active">Home</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
+          <a href="thought-leadership.html">Thought Leadership</a>
           <a href="careers.html">Careers</a>
           <a href="contact.html">Contact Us</a>
-          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
           <a href="toolkit.html">Our Toolkit</a>
 
         </nav>
@@ -535,6 +709,11 @@
     <main class="main">
       <!-- HERO -->
       <section class="hero">
+        <div class="hero-bg">
+          <video class="hero-bg-video" autoplay loop muted playsinline>
+              <source src="images/vid/3N Consulting Website Video.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="hero-inner">
           <div>
             <div class="hero-eyebrow">Execution-focused consulting measured on outcomes</div>
@@ -558,12 +737,6 @@
           </div>
 
           <aside class="hero-media">
-            <div class="caps-label">Our work in motion</div>
-            <video id="hero-video" style="background:#020617;border-radius:0.9rem;width:600%;height:auto;" autoplay loop
-              muted playsinline>
-              <source src="images/vid/3N Consulting Website Video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
             <div class="badge-row">
               <span class="badge">MD MBE • SBR</span>
               <span class="badge badge-outline">NMSDC Certified MBE</span>
@@ -623,7 +796,7 @@
       </section>
 
       <!-- TESTIMONIALS -->
-      <section class="section">
+      <section class="section-2">
         <div class="section-inner">
           <div class="section-header">
             <div class="section-kicker">Client testimonials</div>
@@ -634,7 +807,7 @@
           </p>
 
           <div id="testimonial-carousel" class="carousel-card card"
-            style="max-width: 600px; margin: 2rem auto; background: #38bdf8; color: black;">
+            style="max-width: 600px; margin: 2rem auto; background: #f3f4f6; color: black;">
             <div class="testimonial-client">State Education Agency ~ Project Executive</div>
             <p class="testimonial-quote">
               "3N delivered tremendous value"
@@ -649,11 +822,9 @@
           </div>
 
           <div class="carousel-container">
-            <button class="carousel-button" id="prev-testimonial">← Previous</button>
             <div class="carousel-counter">
               <span id="testimonial-counter">1</span> / <span id="testimonial-total">4</span>
             </div>
-            <button class="carousel-button" id="next-testimonial">Next →</button>
           </div>
         </div>
       </section>
@@ -720,7 +891,7 @@
       </section>
 
       <!-- SOLUTIONS -->
-      <section class="section">
+      <section class="section-2">
         <div class="section-inner">
           <div class="section-header">
             <div class="section-kicker">Productized solution offerings</div>
@@ -776,7 +947,7 @@
           </div>
           <div style="margin-top:0.75rem; font-size:0.85rem;">
             <strong>Phone:</strong> (301) 723-7057<br>
-            <strong>Address:</strong> 6710A Rockledge Drive, Bethesda, MD 20817
+            <strong>Address:</strong> 6710A Rockledge Drive, Suite 400, Bethesda, MD 20817
           </div>
         </div>
         <img src="images/logos/Certified NMSDC MBE Logo.png" alt="Footer Image" class="footer-image">
@@ -785,8 +956,9 @@
             target="_blank">LinkedIn</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
+          <a href="thought-leadership.html">Thought Leadership</a>
           <a href="careers.html">Careers</a>
-          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
           <a href="toolkit.html">Our Toolkit</a>
           <a href="contact.html">Contact Us</a>
           <a href="disclaimers.html">Disclaimers</a>
@@ -843,23 +1015,14 @@
       document.getElementById('testimonial-total').textContent = testimonials.length;
     }
 
-    document.getElementById('prev-testimonial').addEventListener('click', () => {
-      if (currentTestimonial > 0) {
-        currentTestimonial--;
-      } else {
-        currentTestimonial = testimonials.length - 1;
-      }
+    // Auto-rotate testimonials every 5 seconds
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
       updateTestimonial();
-    });
+    }, 5000);
 
-    document.getElementById('next-testimonial').addEventListener('click', () => {
-      if (currentTestimonial < testimonials.length - 1) {
-        currentTestimonial++;
-      } else {
-        currentTestimonial = 0;
-      }
-      updateTestimonial();
-    });
+    // Call updateTestimonial initially to display the first testimonial
+    updateTestimonial();
 
     // Initialize
     updateTestimonial();

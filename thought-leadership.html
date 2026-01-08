@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Meet Our Team - 3N Consulting</title>
+  <title>Thought Leadership - 3N Consulting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* Inline CSS so this preview actually renders with layout */
+    /* Keep your existing base styles */
     *,
     *::before,
     *::after {
@@ -57,24 +57,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
-    }
-
-    .brand-title {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
-    .brand-tagline {
-      font-size: 0.75rem;
-      color: #9ca3af;
-    }
-
-    .brand-logo {
-      height: 70px;
-      width: auto;
-      max-width: 250px;
     }
 
     .nav-links {
@@ -180,98 +162,47 @@
       margin: 0 auto;
     }
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-
-    .team-card {
-      border-radius: 1rem;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.15);
-    }
-
-    .team-card-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      opacity: 0.5;
-    }
-
-    .team-card-image {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1rem;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #38bdf8;
-    }
-
-    .team-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #020617;
-    }
-
-    .team-card p {
-      font-size: 0.9rem;
-      color: #6b7280;
-    }
-
-    .team-section-title {
-      text-align: center;
+    .section-header {
       margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #020617;
-    }
-
-    .team-section-subtitle {
-      text-align: center;
-      color: #4b5563;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 0.98rem;
-      line-height: 1.8;
-    }
-
-    .team-section {
-      margin-bottom: 3rem;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      border: 2px solid #38bdf8;
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .cta-box h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #020617;
+      letter-spacing: -0.02em;
       margin-bottom: 1rem;
     }
 
-    .cta-box p {
+    .section-subtitle {
       color: #4b5563;
-      margin-bottom: 1.5rem;
+      max-width: 48rem;
       font-size: 0.98rem;
       line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-block {
+      color: #4b5563;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #38bdf8;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
     }
 
     .btn {
@@ -297,6 +228,17 @@
 
     .btn-primary:hover {
       background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+
+    .btn-secondary:hover {
+      background: #e5e7eb;
       transform: translateY(-1px);
     }
 
@@ -333,6 +275,143 @@
       text-decoration: underline;
     }
 
+    /* Thought leadership specific */
+    .search {
+      flex: 1;
+      min-width: 240px;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      outline: none;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 980px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-height: 220px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 750;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+
+    .meta {
+      font-size: 0.82rem;
+      color: #6b7280;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      color: #374151;
+    }
+
+    .card-summary {
+      color: #4b5563;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .detail {
+      margin-top: 1.5rem;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+
+    .detail h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .detail .detail-meta {
+      margin-bottom: 1rem;
+      color: #6b7280;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .detail-body {
+      color: #374151;
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .detail-body h3 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+
+    .detail-body p {
+      margin: 0.65rem 0;
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .status {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
     @media (max-width: 768px) {
       .hero {
         padding: 3rem 1.5rem 2rem;
@@ -341,17 +420,13 @@
       .section {
         padding: 2rem 1.5rem;
       }
-
-      .team-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
     }
   </style>
-  <link rel="icon" type="image/png" href="images/logos/3N%20Consulting.png">
+  <link rel="icon" type="image/png" href="images/logos/new 3n logo.png">
 </head>
 
 <body>
-  <div class=" site-wrapper">
+  <div class="site-wrapper">
     <header class="site-header">
       <div class="nav-inner">
         <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
@@ -371,9 +446,10 @@
           <a href="index.html">Home</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
+          <a href="thought-leadership.html" class="active">Thought Leadership</a>
           <a href="careers.html">Careers</a>
           <a href="contact.html">Contact Us</a>
-          <a href="thought-leadership.html" class="active">Meet Our Team</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
           <a href="toolkit.html">Our Toolkit</a>
         </nav>
       </div>
@@ -384,123 +460,41 @@
       <section class="hero">
         <div class="hero-inner">
           <div>
-            <div class="hero-eyebrow">Our Leadership & Expertise</div>
-            <h1 class="hero-title">Our Team</h1>
+            <div class="hero-eyebrow">Insights & Research</div>
+            <h1 class="hero-title">Thought Leadership</h1>
             <p class="hero-body">
-              Meet the experienced consultants and industry leaders behind 3N Consulting.
+              Explore 3N Consulting’s white papers, research briefs, and practical guidance designed to help public
+              sector leaders drive measurable results.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- BOARD MEMBERS -->
+      <!-- WHITE PAPERS LIST + DETAIL -->
       <section class="section section-alt">
         <div class="section-inner">
-          <h2 class="team-section-title">Board Members</h2>
-          <p class="team-section-subtitle">Leadership Shaping Our Mission and Direction</p>
-          <div class="team-grid">
-            <a href="nick-sickler.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Nick Sickler.png" alt="Nick Sickler" class="team-card-image">
-                <h3>Nick Sickler</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
+          <div class="section-header">
+            <div class="section-kicker">White Papers</div>
+            <h2 class="section-title">Browse our latest publications</h2>
+            <p class="section-subtitle">
+              Select a white paper to read on the site and download the PDF version when available.
+            </p>
+          </div>
 
-            <a href="marc-hochman.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Marc Hochman.png" alt="Marc Hochman" class="team-card-image">
-                <h3>Marc Hochman</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
+          <div id="detail" class="detail" style="display:none;"></div>
 
-            <a href="david-mann.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/David Mann.png" alt="David Mann" class="team-card-image">
-                <h3>David Mann</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
+          <div id="whitepapers" class="grid"></div>
+          <div id="status" class="status"></div>
+
+          <div class="highlight-box">
+            <p><strong>Have questions or want to collaborate on research?</strong></p>
+            <p>
+              Reach us at
+              <a href="mailto:engage@3nconsultinggroup.com" class="email-link">engage@3nconsultinggroup.com</a>.
+            </p>
           </div>
         </div>
       </section>
-
-      <!-- THOUGHT LEADERS -->
-      <section class="section">
-        <div class="section-inner">
-          <h2 class="team-section-title">Our Thought Leaders</h2>
-          <p class="team-section-subtitle">Driving Insight, Innovation, and Industry Expertise</p>
-          <div class="team-grid">
-            <a href="rachel-demuth.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Rachel DeMuth.png" alt="Rachel DeMuth" class="team-card-image">
-                <h3>Rachel DeMuth</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-
-            <a href="nick-gupta.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Nick Gupta.png" alt="Nick Gupta" class="team-card-image">
-                <h3>Nick Gupta</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-
-            <a href="dyan-sellers.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Dyan Sellers.jpg" alt="Dyan Sellers" class="team-card-image">
-                <h3>Dyan Sellers</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-
-            <a href="david-hochman.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/David Hochman.jpg" alt="David Hochman" class="team-card-image">
-                <h3>David Hochman</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- FEATURED TEAM MEMBERS -->
-      <section class="section section-alt">
-        <div class="section-inner">
-          <h2 class="team-section-title">Featured Team Members</h2>
-          <p class="team-section-subtitle">Team Members Driving Key Initiatives</p>
-          <div class="team-grid">
-            <a href="soorya-rajendran.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Soorya Rajendran.png" alt="Soorya Rajendran" class="team-card-image">
-                <h3>Soorya Rajendran</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-
-            <a href="anirudh-peesay.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Anu Peesay.png" alt="Anirudh (Anu) Peesay" class="team-card-image">
-                <h3>Anirudh ("Anu") Peesay</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-
-            <a href="dhatri-mulpuri.html" style="text-decoration: none; color: inherit;">
-              <div class="team-card">
-                <img src="images/team members/Dhatri Mulpuri.png" alt="Dhatri Mulpuri" class="team-card-image">
-                <h3>Dhatri Mulpuri</h3>
-                <p>View Profile →</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-
     </main>
 
     <footer class="site-footer">
@@ -510,13 +504,13 @@
           <p style="color: #6b7280;">Results. Delivered.</p>
         </div>
         <div class="footer-links">
-          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
-            target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="services.html">Services</a>
+          <a href="thought-leadership.html">Thought Leadership</a>
           <a href="contact.html">Contact</a>
-          <a href="thought-leadership.html">Meet Our Team</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
           <a href="toolkit.html">Our Toolkit</a>
         </div>
       </div>
@@ -528,6 +522,289 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Thought Leadership JS (Sanity fetch) -->
+  <script>
+  // === Sanity project settings ===
+  const SANITY_PROJECT_ID = "l89oo1tq";
+  const SANITY_DATASET = "production";
+  const SANITY_API_VERSION = "2025-01-01";
+
+  // List + Detail queries
+  const LIST_QUERY = `*[_type=="whitePaper"]|order(publishDate desc){
+    title,
+    "slug": slug.current,
+    publishDate,
+    summary,
+    tags,
+    "pdfUrl": pdf.asset->url
+  }`;
+
+const DETAIL_QUERY = `*[_type=="whitePaper" && slug.current==$slug][0]{
+  title,
+  subtitle,
+  "slug": slug.current,
+  publishDate,
+  summary,
+  tags,
+  authors,
+  readTimeMinutes,
+  "coverImageUrl": coverImage.asset->url,
+  sections[]{
+    heading,
+    content[]{
+      ...,
+      _type == "image" => {
+        ...,
+        "url": asset->url,
+        "alt": coalesce(alt, ""),
+        "caption": coalesce(caption, "")
+      }
+    }
+  },
+  body[]{
+    ...,
+    _type == "image" => {
+      ...,
+      "url": asset->url,
+      "alt": coalesce(alt, ""),
+      "caption": coalesce(caption, "")
+    }
+  },
+  "pdfUrl": pdf.asset->url
+}`;
+
+
+  const gridEl = document.getElementById("whitepapers");
+  const statusEl = document.getElementById("status");
+  const detailEl = document.getElementById("detail");
+
+  // ✅ Fetch helper that supports GROQ params like $slug
+  const q = async (groq, params = {}) => {
+  const url = new URL(
+        `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}`
+  );
+    url.searchParams.set("query", groq);
+
+    Object.entries(params).forEach(([key, val]) => {
+        // ✅ JSON-encode params (strings must be quoted)
+        url.searchParams.set(`$${key}`, JSON.stringify(val));
+  });
+
+    const r = await fetch(url.toString());
+    return r.json();
+    };
+
+
+  const fmtDate = (iso) => {
+    if (!iso) return "";
+    try {
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    } catch {
+      return "";
+    }
+  };
+
+  const getParam = (name) => new URLSearchParams(window.location.search).get(name);
+
+  function escapeHtml(str) {
+    return (str || "").replace(/[&<>"']/g, (m) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[m]));
+  }
+
+function renderPortableText(blocks) {
+  if (!Array.isArray(blocks)) return "";
+
+  let html = "";
+  let listOpen = false;
+  let listType = null;
+
+  const closeList = () => {
+    if (listOpen) {
+      html += listType === "number" ? `</ol>` : `</ul>`;
+      listOpen = false;
+      listType = null;
+    }
+  };
+
+  for (const b of blocks) {
+    // Images
+    if (b._type === "image") {
+      closeList();
+      const url = b.url || b.asset?.url;
+      if (!url) continue;
+      const alt = escapeHtml(b.alt || "");
+      const cap = escapeHtml(b.caption || "");
+      html += `
+        <figure style="margin:1rem 0;">
+          <img src="${url}" alt="${alt}" style="max-width:100%;border-radius:12px;border:1px solid #e5e7eb;">
+          ${cap ? `<figcaption style="color:#64748b;font-size:0.9rem;margin-top:0.35rem;">${cap}</figcaption>` : ""}
+        </figure>
+      `;
+      continue;
+    }
+
+    // Text blocks
+    if (b._type !== "block") continue;
+
+    const style = b.style || "normal";
+    const childrenText = (b.children || []).map(ch => escapeHtml(ch.text || "")).join("");
+
+    // Handle lists (very basic)
+        if (b.listItem) {
+        const lt = b.listItem === "number" ? "number" : "bullet";
+        if (!listOpen || listType !== lt) {
+            closeList();
+            html += lt === "number" ? `<ol style="margin:0.75rem 0 0.75rem 1.25rem;">` : `<ul style="margin:0.75rem 0 0.75rem 1.25rem;">`;
+            listOpen = true;
+            listType = lt;
+        }
+        html += `<li style="margin:0.35rem 0;">${childrenText}</li>`;
+        continue;
+        } else {
+        closeList();
+        }
+
+        if (style === "h2") html += `<h3>${childrenText}</h3>`;
+        else if (style === "h3") html += `<h4>${childrenText}</h4>`;
+        else if (style === "h4") html += `<h5>${childrenText}</h5>`;
+        else html += `<p>${childrenText}</p>`;
+    }
+
+    closeList();
+    return html;
+    }
+
+
+  function cardTemplate(item) {
+    const title = escapeHtml(item.title);
+    const summary = escapeHtml(item.summary || "");
+    const date = fmtDate(item.publishDate);
+    const tags = Array.isArray(item.tags) ? item.tags.slice(0, 3) : [];
+
+    const tagHtml = tags.map(t => `<span class="pill">${escapeHtml(t)}</span>`).join("");
+    const metaBits = [date ? `<span>${date}</span>` : "", tagHtml].filter(Boolean).join(" ");
+
+    // ✅ slug is a STRING because you mapped "slug": slug.current
+    const slug = encodeURIComponent(item.slug || "");
+
+    return `
+      <article class="card">
+        <div class="card-title">${title}</div>
+        <div class="meta">${metaBits}</div>
+        <div class="card-summary">${summary || " "}</div>
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="white-paper.html?slug=${slug}">Open</a>
+          ${item.pdfUrl ? `<a class="btn btn-secondary" href="${item.pdfUrl}" target="_blank" rel="noopener">Download PDF</a>` : ""}
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadList() {
+    statusEl.textContent = "Loading white papers...";
+    const res = await q(LIST_QUERY);
+    const items = res.result || [];
+    statusEl.textContent = items.length ? "" : "No results yet.";
+    return items;
+  }
+
+  async function loadDetail(slug) {
+  if (!slug) return null;
+
+  detailEl.style.display = "block";
+  detailEl.innerHTML = `<div class="status">Loading selected white paper...</div>`;
+
+  const res = await q(DETAIL_QUERY, { slug });
+  const item = res.result;
+
+  if (!item) {
+    detailEl.innerHTML = `<div class="status">We couldn’t find that white paper.</div>`;
+    return null;
+  }
+
+  const title = escapeHtml(item.title || "");
+  const subtitle = escapeHtml(item.subtitle || "");
+  const date = fmtDate(item.publishDate);
+  const tags = Array.isArray(item.tags) ? item.tags.map(t => `<span class="pill">${escapeHtml(t)}</span>`).join("") : "";
+
+  const pdfBtn = item.pdfUrl
+    ? `<a class="btn btn-primary" href="${item.pdfUrl}" target="_blank" rel="noopener">Download PDF</a>`
+    : "";
+
+  const cover = item.coverImageUrl
+    ? `<img src="${item.coverImageUrl}" alt="${escapeHtml(item.title || "Cover")}" style="width:100%;max-height:360px;object-fit:cover;border-radius:12px;margin:1rem 0;">`
+    : "";
+
+  // Prefer sections; fallback to body; fallback to summary
+  let contentHtml = "";
+
+  if (Array.isArray(item.sections) && item.sections.length) {
+    contentHtml = item.sections.map(sec => {
+      const h = escapeHtml(sec.heading || "");
+      const c = renderPortableText(sec.content || []);
+      return `<section style="margin-top:1.25rem;">
+                <h3 style="margin:0.75rem 0 0.25rem;">${h}</h3>
+                ${c}
+              </section>`;
+    }).join("");
+  } else if (Array.isArray(item.body) && item.body.length) {
+    contentHtml = renderPortableText(item.body);
+  } else {
+    contentHtml = `<p>${escapeHtml(item.summary || "")}</p>`;
+  }
+
+  detailEl.innerHTML = `
+    <h2>${title}</h2>
+    ${subtitle ? `<p style="color:#475569;margin-top:0.35rem;">${subtitle}</p>` : ""}
+
+    <div class="detail-meta" style="margin-top:0.75rem;">
+      ${date ? `<span>${date}</span>` : ""}
+      ${tags}
+    </div>
+
+    <div class="detail-actions">
+      <a class="btn btn-secondary" href="thought-leadership.html#whitepapers">Back to list</a>
+      ${pdfBtn}
+    </div>
+
+    ${cover}
+
+    <div class="detail-body">
+      ${contentHtml}
+    </div>
+  `;
+
+  return item;
+}
+
+
+
+
+  (async function init() {
+    try {
+      const allItems = await loadList();
+      gridEl.innerHTML = allItems.map(cardTemplate).join("");
+
+
+      const slug = getParam("slug");
+      if (slug) {
+        await loadDetail(slug);
+        // optional: auto scroll into view
+        document.getElementById("detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "Error loading content. (Check CORS settings in Sanity Manage > API > CORS Origins.)";
+    }
+  })();
+</script>
 </body>
 
 </html>
