@@ -691,7 +691,7 @@ function renderPortableText(blocks) {
     const tagHtml = tags.map(t => `<span class="pill">${escapeHtml(t)}</span>`).join("");
     const metaBits = [date ? `<span>${date}</span>` : "", tagHtml].filter(Boolean).join(" ");
 
-    // ✅ slug is a STRING because you mapped "slug": slug.current
+    // slug is a STRING because you mapped "slug": slug.current
     const slug = encodeURIComponent(item.slug || "");
 
     return `

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Job Opportunities - 3N Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Inline CSS so this preview actually renders with layout */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111827;
+      background-color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    .site-header {
+      background: #020617;
+      color: #e5e7eb;
+      border-bottom: 1px solid #1f2937;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .brand-tagline {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .brand-logo {
+      height: 70px;
+      width: auto;
+      max-width: 250px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .nav-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      background: #111827;
+    }
+
+    .nav-links a.active {
+      background: #e5e7eb;
+      color: #020617;
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        padding-top: 0.5rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 45%, #020617 100%);
+      color: #e5e7eb;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-body {
+      font-size: 0.98rem;
+      color: #d1d5db;
+      max-width: 48rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-alt {
+      background: #f3f4f6;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: #4b5563;
+      max-width: 48rem;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .under-construction {
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .under-construction-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .construction-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .construction-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+
+    .construction-text {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #020617;
+      border-color: #0ea5e9;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+    }
+
+    .site-footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.5rem 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      background: #f9fafb;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1.5rem 2rem;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    #bzOpeningsContainer {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    #bzOpeningsContainer>div>div,
+    #bzOpeningsContainer>ul>li,
+    #bzOpeningsContainer li,
+    #bzOpeningsContainer [class*="job"],
+    #bzOpeningsContainer [class*="opening"],
+    #bzOpeningsContainer [class*="position"],
+    #bzOpeningsContainer .breezy-job-card {
+      background: #001f3f !important;
+      border: 1px solid #1e3a8a !important;
+      color: #ffffff !important;
+      border-radius: 1rem !important;
+      padding: 1rem !important;
+      margin-bottom: 1.5rem !important;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04) !important;
+      cursor: default !important;
+    }
+
+    #bzOpeningsContainer>div>div:hover,
+    #bzOpeningsContainer>ul>li:hover,
+    #bzOpeningsContainer li:hover,
+    #bzOpeningsContainer [class*="job"]:hover,
+    #bzOpeningsContainer [class*="opening"]:hover,
+    #bzOpeningsContainer [class*="position"]:hover,
+    #bzOpeningsContainer .breezy-job-card:hover {
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    #bzOpeningsContainer h1,
+    #bzOpeningsContainer h2,
+    #bzOpeningsContainer h3,
+    #bzOpeningsContainer h4,
+    #bzOpeningsContainer h5,
+    #bzOpeningsContainer h6,
+    #bzOpeningsContainer [class*="title"],
+    #bzOpeningsContainer [class*="heading"],
+    #bzOpeningsContainer strong,
+    #bzOpeningsContainer b {
+      color: #ffffff !important;
+    }
+
+    #bzOpeningsContainer p,
+    #bzOpeningsContainer span,
+    #bzOpeningsContainer li {
+      color: #e5e7eb !important;
+    }
+
+    #bzOpeningsContainer a {
+      color: #38bdf8 !important;
+    }
+
+    #bzOpeningsContainer a:hover {
+      color: #0ea5e9 !important;
+    }
+
+    #bzOpeningsContainer button,
+    #bzOpeningsContainer [type="button"],
+    #bzOpeningsContainer [type="submit"] {
+      background: #38bdf8 !important;
+      color: #020617 !important;
+      border-color: #0ea5e9 !important;
+      padding: 0.75rem 2rem !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: background 0.15s ease, transform 0.08s ease !important;
+    }
+
+    #bzOpeningsContainer button:hover,
+    #bzOpeningsContainer [type="button"]:hover,
+    #bzOpeningsContainer [type="submit"]:hover {
+      background: #0ea5e9 !important;
+      transform: translateY(-1px) !important;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="images/logos/new 3n logo.png">
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand" style="display: flex; align-items: center; gap: 1rem;">
+          <div>
+            <img src="images/logos/new 3n logo.png" alt="3N Consulting Logo"
+              style="height: 90px; width: auto; max-width: 300px;">
+          </div>
+          <div style="display: flex; flex-direction: column; line-height: 1.1;">
+            <div
+              style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; color: #e5e7eb;">
+              3N Consulting</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.2rem;">Results. Delivered.</div>
+          </div>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="thought-leadership.html">Thought Leadership</a>
+          <a href="careers2.html">Careers</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- JOB OPENINGS -->
+      <section class="section section-alt">
+        <div class="section-inner">
+          <section class="section section-alt">
+            <div class="section-inner">
+          <div style="margin-bottom: 1.5rem;">
+            <a href="careers.html" class="btn btn-primary">← Back to Careers</a>
+          </div>
+          <!-- Page Title -->
+          <div class="section-header">
+            <div class="section-kicker">Join Our Talent Pool</div>
+            <h1 class="section-title">3N Consulting LLC Applicant Form</h1>
+            <p class="section-subtitle">
+              Thank you for your interest in joining 3N Consulting LLC. Please complete the application
+              form below to be considered for current and future opportunities. All submissions are
+              reviewed by our recruitment team.
+            </p>
+          </div>
+
+          
+              <div id="bzOpeningsContainer">
+            <div id="zr_div_844656000000072351"></div>
+            <script type="text/javascript">(function() {var f = document.createElement("iframe");f.src =
+             "https://3nconsultinggroup.zohorecruit.com/forms/4dd90b3885ca63068c9901f32c3c95af5ed67fee95fc795c59de5e39ac647777";
+             f.style.border="none";f.style.height="700px";f.style.width="90%";f.style.transition="all 0.5s ease";
+             var d = document.getElementById("zr_div_844656000000072351");d.appendChild(f);window.addEventListener
+             ("message", function (){var zr_ifrm_data = event.data.split("|");var zr_perma = zr_ifrm_data[0];var zr_ifrm_ht_nw =
+              ( parseInt(zr_ifrm_data[1], 10) + 15 ) + "px";var iframe = document.getElementById("zr_div_844656000000072351").getElementsByTagName
+              ("iframe")[0];if ( (iframe.src).indexOf("formperma") > 0 && (iframe.src).indexOf(zr_perma) > 0 ) {var prevIframeHeight =
+               iframe.style.height;if ( prevIframeHeight != zr_ifrm_ht_nw ) {iframe.style.height = zr_ifrm_ht_nw;}}}, false);})();</script>
+          </div>
+          <script src=""></script>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 600; margin-bottom: 0.5rem;">3N Consulting</div>
+          <p style="color: #6b7280;">Results. Delivered.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
+            target="_blank">LinkedIn</a>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="thought-leadership.html">Thought Leadership</a>
+          <a href="contact.html">Contact</a>
+          <a href="meet-our-team.html">Meet Our Team</a>
+          <a href="toolkit.html">Our Toolkit</a>
+
+        </div>
+      </div>
+      <div
+        style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; color: #9ca3af;">
+        <p>&copy; 2026 3N Consulting. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
