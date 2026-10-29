@@ -369,6 +369,96 @@
       width: auto;
     }
 
+    /* CERTIFICATIONS SCROLLING STRIP */
+    .certifications-strip {
+      background: #020617;
+      border-top: 1px solid #1f2937;
+      border-bottom: 1px solid #1f2937;
+      padding: 18px 0;
+      overflow: hidden;
+    }
+
+    .certifications-label {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+    }
+
+    .certifications-marquee {
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+      );
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+      );
+    }
+
+    .certifications-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 14px;
+      animation: cert-scroll 45s linear infinite;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border: 1px solid #1e293b;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      white-space: nowrap;
+    }
+
+    .cert-item strong {
+      color: #f8fafc;
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+
+    .cert-item span {
+      color: #94a3b8;
+      font-size: 0.72rem;
+    }
+
+    .certifications-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes cert-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .certifications-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+      }
+    }
+
     .caps-label {
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -726,9 +816,9 @@
               practices fiscal discipline so savings flow to clients.
             </p>
             <div class="hero-meta">
-              <span class="chip">Certified MD Minority Business Enterprise (MBE)</span>
-              <span class="chip">Small Business Reserve (SBR) Program</span>
-              <span class="chip">NMSDC Certified MBE</span>
+              <span class="chip">Certified Minority-Owned Business</span>
+              <span class="chip">MD • VA • PA</span>
+              <span class="chip">Nationally Certified MBE</span>
             </div>
             <div class="hero-cta">
               <a href="contact.html" class="btn btn-primary">Discuss your initiative →</a>
@@ -737,64 +827,128 @@
           </div>
 
           <aside class="hero-media">
-            <div class="badge-row">
-              <span class="badge">MD MBE • SBR</span>
-              <span class="badge badge-outline">NMSDC Certified MBE</span>
-            </div>
-            <div class="logo-row">
-              <div
-                style="height:40px;width:80px;border-radius:0.5rem;border:1px dashed #1f2937;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">
-                MD MBE</div>
-              <div
-                style="height:40px;width:80px;border-radius:0.5rem;border:1px dashed #1f2937;display:flex;align-items:center;justify-content:center;font-size:0.7rem;">
-                NMSDC</div>
-            </div>
-            <p style="font-size:0.8rem; color:#9ca3af;">
-              Proud to support Maryland's public agencies, colleges, and communities.
-            </p>
+          <div class="badge-row">
+            <span class="badge">MD • VA • PA</span>
+            <span class="badge badge-outline">National MBE</span>
+          </div>
+
+          <div class="logo-row">
+            <img src="images/logos/Certified NMSDC MBE Logo.png" alt="NMSDC Certified MBE">
+            <img src="images/logos/SWAM_LOGO.jpg" alt="Virginia SWaM Certified Small Minority-Owned Business">
+          </div>
+
+          <p style="font-size:0.8rem; color:#9ca3af;">
+            Certified and registered to support public-sector clients across the Mid-Atlantic.
+          </p>
           </aside>
         </div>
       </section>
 
-      <!-- WHY 3N -->
-      <section class="section section-alt">
-        <div class="section-inner">
-          <div class="section-header">
-            <div class="section-kicker">Why 3N Consulting?</div>
-            <h2 class="section-title">
-              Because we maintain integrity, value clients, and deliver results.
-            </h2>
-            <p class="section-subtitle">
-              Our model is built for outcome-based partnerships, true ownership of commitments,
-              and a cost structure that puts client value first.
-            </p>
-          </div>
+      <!-- CERTIFICATIONS STRIP -->
+      <section class="certifications-strip">
+        <div class="certifications-label">
+          CERTIFICATIONS & SUPPLIER DIVERSITY
+        </div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3 class="card-title">Vested in client success</h3>
-              <p class="card-body">
-                Outcome-based partnerships and long-term relationships.
-              </p>
-            </article>
+        <div class="certifications-marquee">
+          <div class="certifications-track">
 
-            <article class="card">
-              <h3 class="card-title">Ownership</h3>
-              <p class="card-body">
-                We don't "staff"—we own results and keep our commitments.
-              </p>
-            </article>
+            <div class="cert-item">
+              <strong>MDOT</strong>
+              <span>MBE • SBE</span>
+            </div>
 
-            <article class="card">
-              <h3 class="card-title">Cost structure</h3>
-              <p class="card-body">
-                Fiscal discipline by design—invest in talent, minimize overhead, pass savings on.
-              </p>
-            </article>
+            <div class="cert-item">
+              <strong>NMSDC</strong>
+              <span>Certified MBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Virginia SWaM</strong>
+              <span>Small • Minority-Owned</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Pennsylvania</strong>
+              <span>Small Diverse Business</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Montgomery County</strong>
+              <span>MFD-MBE • LSBRP • LBPP</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Prince George's County</strong>
+              <span>MBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Howard County</strong>
+              <span>EBO • MBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Charles County</strong>
+              <span>MWBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Pennsylvania</strong>
+              <span>Small • Micro Business</span>
+            </div>
+
+            <!-- DUPLICATE SET FOR CONTINUOUS SCROLL -->
+
+            <div class="cert-item">
+              <strong>MDOT</strong>
+              <span>MBE • SBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>NMSDC</strong>
+              <span>Certified MBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Virginia SWaM</strong>
+              <span>Small • Minority-Owned</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Pennsylvania</strong>
+              <span>Small Diverse Business</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Montgomery County</strong>
+              <span>MFD-MBE • LSBRP • LBPP</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Prince George's County</strong>
+              <span>MBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Howard County</strong>
+              <span>EBO • MBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Charles County</strong>
+              <span>MWBE</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Pennsylvania</strong>
+              <span>Small • Micro Business</span>
+            </div>
+
           </div>
         </div>
       </section>
-
+      
       <!-- TESTIMONIALS -->
       <section class="section-2">
         <div class="section-inner">
