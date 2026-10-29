@@ -228,6 +228,97 @@
       width: auto;
     }
 
+    /* CERTIFICATIONS SCROLLING STRIP */
+    .certifications-strip {
+      background: #020617;
+      border-top: 1px solid #1f2937;
+      border-bottom: 1px solid #1f2937;
+      padding: 18px 0;
+      overflow: hidden;
+    }
+
+    .certifications-label {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+    }
+
+    .certifications-marquee {
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+      );
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+      );
+    }
+
+    .certifications-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 14px;
+      animation: cert-scroll 45s linear infinite;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border: 1px solid #1e293b;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7);
+      white-space: nowrap;
+    }
+
+    .cert-item strong {
+      color: #f8fafc;
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+
+    .cert-item span {
+      color: #94a3b8;
+      font-size: 0.72rem;
+    }
+
+    .certifications-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes cert-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .certifications-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+      }
+    }
+
+
     .caps-label {
       text-transform: uppercase;
       letter-spacing: 0.16em;
@@ -440,9 +531,9 @@
             practices fiscal discipline so savings flow to clients.
           </p>
           <div class="hero-meta">
-            <span class="chip">Certified MD Minority Business Enterprise (MBE)</span>
-            <span class="chip">Small Business Reserve (SBR) Program</span>
-            <span class="chip">NMSDC Certified MBE</span>
+            <span class="chip">Certified Minority-Owned Business</span>
+            <span class="chip">MD • VA • PA</span>
+            <span class="chip">Nationally Certified MBE</span>
           </div>
           <div class="hero-cta">
             <a href="#" class="btn btn-primary">Discuss your initiative →</a>
@@ -457,8 +548,8 @@
             Video / animation placeholder
           </div>
           <div class="badge-row">
-            <span class="badge">MD MBE • SBR</span>
-            <span class="badge badge-outline">NMSDC Certified MBE</span>
+            <span class="badge">MD • VA • PA</span>
+            <span class="badge badge-outline">National MBE</span>
           </div>
           <div class="logo-row">
             <div
@@ -475,6 +566,110 @@
       </div>
     </section>
 
+    <!-- CERTIFICATIONS STRIP -->
+    <section class="certifications-strip">
+      <div class="certifications-label">
+        CERTIFICATIONS & SUPPLIER DIVERSITY
+      </div>
+
+      <div class="certifications-marquee">
+        <div class="certifications-track">
+
+          <div class="cert-item">
+            <strong>MDOT</strong>
+            <span>MBE • SBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>NMSDC</strong>
+            <span>Certified MBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Virginia SWaM</strong>
+            <span>Small • Minority-Owned</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Pennsylvania</strong>
+            <span>Small Diverse Business</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Montgomery County</strong>
+            <span>MFD-MBE • LSBRP • LBPP</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Prince George's County</strong>
+            <span>MBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Howard County</strong>
+            <span>EBO • MBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Charles County</strong>
+            <span>MWBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Pennsylvania</strong>
+            <span>Small • Micro Business</span>
+          </div>
+
+          <!-- DUPLICATE SET FOR CONTINUOUS SCROLL -->
+
+          <div class="cert-item">
+            <strong>MDOT</strong>
+            <span>MBE • SBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>NMSDC</strong>
+            <span>Certified MBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Virginia SWaM</strong>
+            <span>Small • Minority-Owned</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Pennsylvania</strong>
+            <span>Small Diverse Business</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Montgomery County</strong>
+            <span>MFD-MBE • LSBRP • LBPP</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Prince George's County</strong>
+            <span>MBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Howard County</strong>
+            <span>EBO • MBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Charles County</strong>
+            <span>MWBE</span>
+          </div>
+
+          <div class="cert-item">
+            <strong>Pennsylvania</strong>
+            <span>Small • Micro Business</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
     <!-- WHY 3N -->
     <section class="section section-alt">
       <div class="section-inner">
@@ -715,7 +910,11 @@
         </div>
         <div style="margin-top:0.75rem; font-size:0.85rem;">
           <strong>Phone:</strong> (301) 723-7057<br>
-          <strong>Address:</strong> 7315 Wisconson Ave Suite 400, PMB163, Bethesda, MD 20814
+          <strong>Address:</strong> 3N Consulting LLC
+7315 Wisconsin Ave
+Suite 400 W PMB 163
+Bethesda, MD 20814
+United States
         </div>
       </div>
       <div class="footer-links">
