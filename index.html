@@ -593,6 +593,32 @@
       text-decoration: underline;
     }
 
+    .footer-certifications {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-cert-box {
+      width: 150px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+
+    .footer-cert-logo {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
     .footer-image {
       max-width: 150px;
       height: auto;
@@ -899,39 +925,62 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-inner">
+    <div class="footer-inner">
+
+      <div>
         <div>
-          <div><strong>Results. Delivered.</strong> Execution-focused consulting measured on outcomes.</div>
-          <div style="margin-top:0.4rem; font-size:0.85rem;">
-            We build long-term partnerships, take ownership of outcomes, and practice fiscal discipline so savings flow
-            to clients.
-          </div>
-          <div style="margin-top:0.75rem; font-size:0.85rem;">
-            <strong>Phone:</strong> (301) 723-7057<br>
-            <strong>Address:</strong> 3N Consulting LLC
-7315 Wisconsin Ave
-Suite 400 W PMB 163
-Bethesda, MD 20814
-United States
-          </div>
+          <strong>Results. Delivered.</strong>
+          Execution-focused consulting measured on outcomes.
         </div>
-        <img src="images/logos/Certified NMSDC MBE Logo.png" alt="Footer Image" class="footer-image">
-        <img src="images/logos/SWAM_LOGO.jpg" alt="Virginia SWaM Certified Small Minority-Owned Business" class="footer-image">
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all"
-            target="_blank">LinkedIn</a>
-          <a href="about.html">About Us</a>
-          <a href="services.html">Services</a>
-          <a href="thought-leadership.html">Thought Leadership</a>
-          <a href="careers.html">Careers</a>
-          <a href="meet-our-team.html">Meet Our Team</a>
-          <a href="toolkit.html">Our Toolkit</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="disclaimers.html">Disclaimers</a>
+
+        <div style="margin-top:0.4rem; font-size:0.85rem;">
+          We build long-term partnerships, take ownership of outcomes, and practice fiscal discipline so savings flow to clients.
+        </div>
+
+        <div style="margin-top:0.75rem; font-size:0.85rem;">
+          <strong>Phone:</strong> (301) 723-7057<br>
+          <strong>Address:</strong> 3N Consulting LLC<br>
+          7315 Wisconsin Ave<br>
+          Suite 400 W PMB 163<br>
+          Bethesda, MD 20814<br>
+          United States
         </div>
       </div>
-    </footer>
-  </div>
+
+      <div class="footer-certifications">
+
+        <div class="footer-cert-box">
+          <img
+            src="images/logos/Certified NMSDC MBE Logo.png"
+            alt="NMSDC Certified MBE"
+            class="footer-cert-logo"
+          >
+        </div>
+
+        <div class="footer-cert-box">
+          <img
+            src="images/logos/SWAM_LOGO.jpg"
+            alt="Virginia SWaM Certified Small Minority-Owned Business"
+            class="footer-cert-logo"
+          >
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/company/3n-consulting-group/posts/?feedView=all" target="_blank">LinkedIn</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="thought-leadership.html">Thought Leadership</a>
+        <a href="careers.html">Careers</a>
+        <a href="meet-our-team.html">Meet Our Team</a>
+        <a href="toolkit.html">Our Toolkit</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="disclaimers.html">Disclaimers</a>
+      </div>
+
+    </div>
+  </footer>
 
   <script src="script.js"></script>
   <script>
