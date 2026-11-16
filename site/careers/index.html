@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="/styles.css?v=mobile-type" />
     <script defer src="/navigation.js?v=steady-menus"></script>
     <script defer src="/page-navigation.js?v=1"></script>
-    <link rel="stylesheet" href="/careers/jobs.css" />
-    <script defer src="/careers/jobs.js?v=posting-cards"></script>
+    <link rel="stylesheet" href="/careers/jobs.css?v=3n-board" />
+    <script defer src="/careers/jobs.js?v=3n-board"></script>
   </head>
   <body class="interior">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -97,10 +97,22 @@
 </section>
 <section id="open-positions" class="page-width practice-section" aria-labelledby="jobs-heading">
   <h2 id="jobs-heading">Open positions</h2>
+  <div id="job-filters" class="job-filters" hidden>
+    <div class="job-filter">
+      <label for="job-search">Search jobs</label>
+      <input id="job-search" type="search" placeholder="Job title or location">
+    </div>
+    <div class="job-filter">
+      <label for="job-type">Employment type</label>
+      <select id="job-type"><option value="">All types</option></select>
+    </div>
+    <label class="job-remote"><input id="job-remote" type="checkbox"> Remote jobs only</label>
+  </div>
   <p id="job-status" role="status">Loading open positions…</p>
   <ul id="job-list" class="job-list" role="list" hidden></ul>
   <template id="job-card">
     <li class="job-card">
+      <p class="job-type"></p>
       <h3 class="job-title"></h3>
       <p class="job-meta"></p>
       <p class="job-summary"></p>

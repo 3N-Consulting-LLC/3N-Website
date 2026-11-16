@@ -50,3 +50,74 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+#open-positions {
+  scroll-margin-top: 90px;
+}
+
+.job-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 16px 24px;
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: #edf3f7;
+  border-top: 2px solid var(--blue);
+  color: var(--blue);
+}
+
+.job-filters[hidden] {
+  display: none;
+}
+
+.job-filter {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.job-filter :is(input, select) {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: white;
+  color: var(--blue);
+  font: inherit;
+  font-size: 16px;
+}
+
+.job-remote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.job-remote input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--blue);
+}
+
+.job-type {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.job-card:hover {
+  border-color: #94aabc;
+}
+
+@media (max-width: 680px) {
+  .job-filters {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+}
