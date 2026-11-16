@@ -1,0 +1,6 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.zohocdn.com; style-src 'self' 'unsafe-inline' https://static.zohocdn.com; img-src 'self' data: https://cdn.sanity.io https://static.zohocdn.com https://3nconsultinggroup.zohorecruit.com; font-src 'self' https://static.zohocdn.com; connect-src 'self' https://formspree.io/f/xeoykvke https://3nconsultinggroup.zohorecruit.com; frame-src https://3nconsultinggroup.zohorecruit.com; form-action https://formspree.io/f/xeoykvke; object-src 'none'; base-uri 'none'; frame-ancestors 'none'

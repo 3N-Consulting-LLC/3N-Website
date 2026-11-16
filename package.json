@@ -1,0 +1,15 @@
+{
+  "name": "3n-consulting-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/check-build.mjs && node --test scripts/banner-video.mjs scripts/contact-form.mjs scripts/page-navigation.mjs"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@portabletext/to-html": "6.0.0"
+  }
+}
