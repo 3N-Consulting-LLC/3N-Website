@@ -30,7 +30,7 @@ for (const path of publications) {
 }
 
 const careers = readFileSync(join(root, "careers/index.html"), "utf8");
-assert.match(careers, /id="rec_job_listing_div"/);
+assert.match(careers, /id="job-list"/);
 assert.match(careers, /<iframe[^>]+src="https:\/\/3nconsultinggroup\.zohorecruit\.com\/forms\//);
 assert.match(readFileSync(join(root, "contact/index.html"), "utf8"), /action="https:\/\/formspree\.io\/f\/xeoykvke"/);
 console.log(`Checked ${pages.length} pages, ${publications.length} publications, and the Zoho and Formspree integrations.`);
