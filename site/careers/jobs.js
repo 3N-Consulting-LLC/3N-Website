@@ -1,5 +1,6 @@
 const jobStatus = document.querySelector("#job-status");
 const jobList = document.querySelector("#job-list");
+const jobCard = document.querySelector("#job-card");
 const recruit = "https://3nconsultinggroup.zohorecruit.com";
 const endpoint = recruit + "/recruit/v2/public/Job_Openings?pagename=Careers&source=CareerSite";
 
@@ -15,13 +16,21 @@ async function listJobs() {
       const title = job.Posting_Title || job.Job_Opening_Name;
       if (!title || typeof job.$url !== "string" || !job.$url.startsWith(recruit + "/jobs/Careers/")) continue;
 
-      const item = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = job.$url;
-      link.textContent = title;
-      item.append(link);
-      if (job.Job_Type) item.append(` · ${job.Job_Type}`);
-      jobs.append(item);
+      const card = jobCard.content.cloneNode(true);
+      card.querySelector(".job-title").textContent = title;
+      const location = job.Remote_Job === "Yes" ? "Remote" : [job.City, job.Country].filter(Boolean).join(", ");
+      const meta = card.querySelector(".job-meta");
+      meta.textContent = [location, job.Job_Type === "Any" ? "" : job.Job_Type].filter(Boolean).join(" · ");
+      meta.hidden = !meta.textContent;
+
+      const summary = card.querySelector(".job-summary");
+      summary.textContent = job.Job_Description?.replaceAll("**", "").trim() ?? "";
+      summary.hidden = !summary.textContent;
+
+      const apply = card.querySelector(".job-apply");
+      apply.href = job.$url;
+      apply.setAttribute("aria-label", `View details and apply for ${title}`);
+      jobs.append(card);
     }
 
     if (!jobs.childElementCount) {

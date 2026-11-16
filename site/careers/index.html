@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="/styles.css?v=mobile-type" />
     <script defer src="/navigation.js?v=steady-menus"></script>
     <script defer src="/page-navigation.js?v=1"></script>
-      <script defer src="/careers/jobs.js"></script>
+    <link rel="stylesheet" href="/careers/jobs.css" />
+    <script defer src="/careers/jobs.js?v=posting-cards"></script>
   </head>
   <body class="interior">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -94,6 +95,20 @@
     </figure>
   </div>
 </section>
+<section id="open-positions" class="page-width practice-section" aria-labelledby="jobs-heading">
+  <h2 id="jobs-heading">Open positions</h2>
+  <p id="job-status" role="status">Loading open positions…</p>
+  <ul id="job-list" class="job-list" role="list" hidden></ul>
+  <template id="job-card">
+    <li class="job-card">
+      <h3 class="job-title"></h3>
+      <p class="job-meta"></p>
+      <p class="job-summary"></p>
+      <a class="job-apply">View details and apply</a>
+    </li>
+  </template>
+  <p><a href="https://3nconsultinggroup.zohorecruit.com/jobs/Careers">Open the job board on Zoho Recruit</a></p>
+</section>
 <section id="why-join" class="page-width practice-section">
   <div class="detail-copy">
     <h2>Why Join 3N Consulting?</h2>
@@ -108,12 +123,6 @@
 <li>Collaborative environment with experienced consultants</li>
 </ul>
   </div>
-</section>
-<section id="open-positions" class="page-width practice-section">
-  <h2>Open positions</h2>
-  <p id="job-status" role="status">Loading open positions…</p>
-  <ul id="job-list" hidden></ul>
-  <p><a href="https://3nconsultinggroup.zohorecruit.com/jobs/Careers">Open the job board on Zoho Recruit</a></p>
 </section>
 <section id="talent-pool" class="page-width practice-section">
   <div class="detail-copy">
