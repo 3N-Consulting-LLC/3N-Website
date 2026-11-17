@@ -2540,7 +2540,7 @@ button:focus-visible {
 
 .nav-row .nav-submenu a {
   display: block;
-  padding: 8px 0;
+  padding: 8px 14px;
   border: 0;
   font-size: 16px;
   line-height: 1.4;
